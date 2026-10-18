@@ -1,0 +1,522 @@
+[
+  {
+    "id": "cn-001",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains OSI layers in this situation?",
+    "options": [
+      "A seven-layer reference model separates networking responsibilities.",
+      "Routing is exclusively a presentation-layer function.",
+      "The scenario's correct answer would be: Presentation layer.",
+      "The scenario's correct answer would be: Application layer only."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A seven-layer reference model separates networking responsibilities. The network layer handles logical addressing and routing; lower layers carry local frames and signals.",
+    "tags": [
+      "osi-layers"
+    ],
+    "context": "A router selects the next network hop for an IP packet. Consider the OSI reference model.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A seven-layer reference model separates networking responsibilities. The network layer handles logical addressing and routing; lower layers carry local frames and signals.",
+      "That claim conflicts with the principle: A seven-layer reference model separates networking responsibilities. The network layer handles logical addressing and routing; lower layers carry local frames and signals.",
+      "Presentation concerns representation-related functions, not IP path selection.",
+      "Application protocols do not perform this router’s next-hop function."
+    ],
+    "takeAway": "OSI layers: A seven-layer reference model separates networking responsibilities."
+  },
+  {
+    "id": "cn-002",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which layer is most directly associated with this routing task?",
+    "options": [
+      "Network layer",
+      "Presentation layer",
+      "Application layer only",
+      "Physical layer only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The network layer handles logical addressing and routing; lower layers carry local frames and signals.",
+    "tags": [
+      "osi-layers"
+    ],
+    "context": "A router selects the next network hop for an IP packet. Consider the OSI reference model.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "The network layer handles logical addressing and routing; lower layers carry local frames and signals.",
+      "Presentation concerns representation-related functions, not IP path selection.",
+      "Application protocols do not perform this router’s next-hop function.",
+      "Physical signalling alone does not choose logical IP routes."
+    ],
+    "takeAway": "OSI layers: A seven-layer reference model separates networking responsibilities."
+  },
+  {
+    "id": "cn-003",
+    "topic": "CN",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains TCP/IP in this situation?",
+    "options": [
+      "An Internet protocol suite spanning link, internet, transport and application functions.",
+      "TCP/IP and OSI require identical layer counts.",
+      "The scenario's correct answer would be: Guaranteeing an ordered byte stream by itself.",
+      "The scenario's correct answer would be: Formatting the application’s JSON response."
+    ],
+    "correctAnswer": 0,
+    "explanation": "An Internet protocol suite spanning link, internet, transport and application functions. IP provides network-layer addressing and packet forwarding; TCP supplies the reliable ordered-stream abstraction.",
+    "tags": [
+      "tcp-ip"
+    ],
+    "context": "An Internet application sends data through TCP, whose segments are carried by IP packets over a local link.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An Internet protocol suite spanning link, internet, transport and application functions. IP provides network-layer addressing and packet forwarding; TCP supplies the reliable ordered-stream abstraction.",
+      "That claim conflicts with the principle: An Internet protocol suite spanning link, internet, transport and application functions. IP provides network-layer addressing and packet forwarding; TCP supplies the reliable ordered-stream abstraction.",
+      "IP alone does not promise TCP’s ordered reliable delivery.",
+      "Application formatting occurs above the network protocol."
+    ],
+    "takeAway": "TCP/IP: An Internet protocol suite spanning link, internet, transport and application functions."
+  },
+  {
+    "id": "cn-004",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which responsibility belongs to IP in this stack?",
+    "options": [
+      "Addressing and forwarding packets between networks",
+      "Guaranteeing an ordered byte stream by itself",
+      "Formatting the application’s JSON response",
+      "Assigning permanent passwords to users"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IP provides network-layer addressing and packet forwarding; TCP supplies the reliable ordered-stream abstraction.",
+    "tags": [
+      "tcp-ip"
+    ],
+    "context": "An Internet application sends data through TCP, whose segments are carried by IP packets over a local link.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "IP provides network-layer addressing and packet forwarding; TCP supplies the reliable ordered-stream abstraction.",
+      "IP alone does not promise TCP’s ordered reliable delivery.",
+      "Application formatting occurs above the network protocol.",
+      "User password management is unrelated to IP."
+    ],
+    "takeAway": "TCP/IP: An Internet protocol suite spanning link, internet, transport and application functions."
+  },
+  {
+    "id": "cn-005",
+    "topic": "CN",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains TCP vs UDP in this situation?",
+    "options": [
+      "TCP provides ordered reliable streams; UDP provides datagrams without that guarantee.",
+      "UDP guarantees retransmission and ordered delivery.",
+      "The scenario's correct answer would be: UDP alone with no application reliability logic.",
+      "The scenario's correct answer would be: ARP."
+    ],
+    "correctAnswer": 0,
+    "explanation": "TCP provides ordered reliable streams; UDP provides datagrams without that guarantee. TCP provides ordered reliable stream delivery through sequence numbers, acknowledgements and recovery mechanisms.",
+    "tags": [
+      "tcp-vs-udp"
+    ],
+    "context": "An application needs an ordered byte stream with retransmission of lost data. Compare ordinary TCP and UDP transport behaviour.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "TCP provides ordered reliable streams; UDP provides datagrams without that guarantee. TCP provides ordered reliable stream delivery through sequence numbers, acknowledgements and recovery mechanisms.",
+      "That claim conflicts with the principle: TCP provides ordered reliable streams; UDP provides datagrams without that guarantee. TCP provides ordered reliable stream delivery through sequence numbers, acknowledgements and recovery mechanisms.",
+      "UDP delivers datagrams without that built-in reliability contract.",
+      "ARP resolves local IPv4 neighbours to link-layer addresses."
+    ],
+    "takeAway": "TCP vs UDP: TCP provides ordered reliable streams; UDP provides datagrams without that guarantee."
+  },
+  {
+    "id": "cn-006",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which choice supplies this transport guarantee?",
+    "options": [
+      "TCP",
+      "UDP alone with no application reliability logic",
+      "ARP",
+      "DNS"
+    ],
+    "correctAnswer": 0,
+    "explanation": "TCP provides ordered reliable stream delivery through sequence numbers, acknowledgements and recovery mechanisms.",
+    "tags": [
+      "tcp-vs-udp"
+    ],
+    "context": "An application needs an ordered byte stream with retransmission of lost data. Compare ordinary TCP and UDP transport behaviour.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "TCP provides ordered reliable stream delivery through sequence numbers, acknowledgements and recovery mechanisms.",
+      "UDP delivers datagrams without that built-in reliability contract.",
+      "ARP resolves local IPv4 neighbours to link-layer addresses.",
+      "DNS resolves records rather than transporting an ordered stream."
+    ],
+    "takeAway": "TCP vs UDP: TCP provides ordered reliable streams; UDP provides datagrams without that guarantee."
+  },
+  {
+    "id": "cn-007",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains HTTP and HTTPS in this situation?",
+    "options": [
+      "HTTPS carries HTTP over authenticated encrypted TLS connections.",
+      "HTTPS proves every webpage statement is trustworthy.",
+      "The scenario's correct answer would be: A guarantee that every statement on the page is factual.",
+      "The scenario's correct answer would be: A guarantee that the site can never contain harmful content."
+    ],
+    "correctAnswer": 0,
+    "explanation": "HTTPS carries HTTP over authenticated encrypted TLS connections. TLS protects the connection and authenticates an endpoint under its trust model; content honesty is separate.",
+    "tags": [
+      "http-and-https"
+    ],
+    "context": "A browser connects to a valid HTTPS server certificate using TLS, then receives a webpage containing a false business claim.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "HTTPS carries HTTP over authenticated encrypted TLS connections. TLS protects the connection and authenticates an endpoint under its trust model; content honesty is separate.",
+      "That claim conflicts with the principle: HTTPS carries HTTP over authenticated encrypted TLS connections. TLS protects the connection and authenticates an endpoint under its trust model; content honesty is separate.",
+      "Encryption does not fact-check webpage content.",
+      "A protected connection can still carry untrustworthy content."
+    ],
+    "takeAway": "HTTP and HTTPS: HTTPS carries HTTP over authenticated encrypted TLS connections."
+  },
+  {
+    "id": "cn-008",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "What does HTTPS establish in this situation?",
+    "options": [
+      "Transport protection and authenticated server identity, not truth of every claim",
+      "A guarantee that every statement on the page is factual",
+      "A guarantee that the site can never contain harmful content",
+      "A replacement for all application authorization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "TLS protects the connection and authenticates an endpoint under its trust model; content honesty is separate.",
+    "tags": [
+      "http-and-https"
+    ],
+    "context": "A browser connects to a valid HTTPS server certificate using TLS, then receives a webpage containing a false business claim.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "TLS protects the connection and authenticates an endpoint under its trust model; content honesty is separate.",
+      "Encryption does not fact-check webpage content.",
+      "A protected connection can still carry untrustworthy content.",
+      "Applications still need access control."
+    ],
+    "takeAway": "HTTP and HTTPS: HTTPS carries HTTP over authenticated encrypted TLS connections."
+  },
+  {
+    "id": "cn-009",
+    "topic": "CN",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains DNS in this situation?",
+    "options": [
+      "Resolves names and other records using distributed DNS infrastructure.",
+      "DNS assigns a device its network lease.",
+      "The scenario's correct answer would be: DHCP for name resolution.",
+      "The scenario's correct answer would be: ARP for a remote domain name."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Resolves names and other records using distributed DNS infrastructure. DNS resolves names and other supported records; address configuration and local neighbour resolution are different functions.",
+    "tags": [
+      "dns"
+    ],
+    "context": "A browser needs an IP address for api.example before connecting. It queries the distributed naming system for the relevant record.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Resolves names and other records using distributed DNS infrastructure. DNS resolves names and other supported records; address configuration and local neighbour resolution are different functions.",
+      "That claim conflicts with the principle: Resolves names and other records using distributed DNS infrastructure. DNS resolves names and other supported records; address configuration and local neighbour resolution are different functions.",
+      "DHCP provides network configuration leases, not this hostname lookup.",
+      "ARP works on local IPv4 neighbour mappings, not domain records."
+    ],
+    "takeAway": "DNS: Resolves names and other records using distributed DNS infrastructure."
+  },
+  {
+    "id": "cn-010",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which service is being used?",
+    "options": [
+      "DNS",
+      "DHCP for name resolution",
+      "ARP for a remote domain name",
+      "A database normalization rule"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DNS resolves names and other supported records; address configuration and local neighbour resolution are different functions.",
+    "tags": [
+      "dns"
+    ],
+    "context": "A browser needs an IP address for api.example before connecting. It queries the distributed naming system for the relevant record.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "DNS resolves names and other supported records; address configuration and local neighbour resolution are different functions.",
+      "DHCP provides network configuration leases, not this hostname lookup.",
+      "ARP works on local IPv4 neighbour mappings, not domain records.",
+      "Normalization does not resolve network names."
+    ],
+    "takeAway": "DNS: Resolves names and other records using distributed DNS infrastructure."
+  },
+  {
+    "id": "cn-011",
+    "topic": "CN",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains DHCP in this situation?",
+    "options": [
+      "Automatically supplies network configuration leases.",
+      "DHCP is the same as resolving a hostname.",
+      "The scenario's correct answer would be: DNS alone.",
+      "The scenario's correct answer would be: ARP alone."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Automatically supplies network configuration leases. DHCP leases network configuration to clients, including address and related settings.",
+    "tags": [
+      "dhcp"
+    ],
+    "context": "A laptop joins a local network and receives an IP address, subnet information, gateway and a lease interval automatically.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Automatically supplies network configuration leases. DHCP leases network configuration to clients, including address and related settings.",
+      "That claim conflicts with the principle: Automatically supplies network configuration leases. DHCP leases network configuration to clients, including address and related settings.",
+      "DNS maps names and records; it does not supply the stated address lease.",
+      "ARP resolves a local next hop’s link address, not the whole lease configuration."
+    ],
+    "takeAway": "DHCP: Automatically supplies network configuration leases."
+  },
+  {
+    "id": "cn-012",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which service commonly provides this configuration?",
+    "options": [
+      "DHCP",
+      "DNS alone",
+      "ARP alone",
+      "HTTP response caching"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DHCP leases network configuration to clients, including address and related settings.",
+    "tags": [
+      "dhcp"
+    ],
+    "context": "A laptop joins a local network and receives an IP address, subnet information, gateway and a lease interval automatically.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "DHCP leases network configuration to clients, including address and related settings.",
+      "DNS maps names and records; it does not supply the stated address lease.",
+      "ARP resolves a local next hop’s link address, not the whole lease configuration.",
+      "Caching HTTP responses does not configure the host network."
+    ],
+    "takeAway": "DHCP: Automatically supplies network configuration leases."
+  },
+  {
+    "id": "cn-013",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains ARP in this situation?",
+    "options": [
+      "Resolves IPv4 neighbours to link-layer addresses on a local network.",
+      "ARP directly resolves an arbitrary remote host across the Internet.",
+      "The scenario's correct answer would be: DNS for an arbitrary remote hostname.",
+      "The scenario's correct answer would be: TCP congestion control."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Resolves IPv4 neighbours to link-layer addresses on a local network. ARP resolves an IPv4 neighbour’s protocol address to a local link-layer address.",
+    "tags": [
+      "arp"
+    ],
+    "context": "An IPv4 host knows the IP address of its local next hop but needs the corresponding Ethernet MAC address before sending a frame.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Resolves IPv4 neighbours to link-layer addresses on a local network. ARP resolves an IPv4 neighbour’s protocol address to a local link-layer address.",
+      "That claim conflicts with the principle: Resolves IPv4 neighbours to link-layer addresses on a local network. ARP resolves an IPv4 neighbour’s protocol address to a local link-layer address.",
+      "DNS name records do not directly supply this local Ethernet mapping.",
+      "Congestion control regulates sending behaviour, not neighbour MAC lookup."
+    ],
+    "takeAway": "ARP: Resolves IPv4 neighbours to link-layer addresses on a local network."
+  },
+  {
+    "id": "cn-014",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which protocol can provide that mapping on the local network?",
+    "options": [
+      "ARP",
+      "DNS for an arbitrary remote hostname",
+      "TCP congestion control",
+      "HTTPS certificate validation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ARP resolves an IPv4 neighbour’s protocol address to a local link-layer address.",
+    "tags": [
+      "arp"
+    ],
+    "context": "An IPv4 host knows the IP address of its local next hop but needs the corresponding Ethernet MAC address before sending a frame.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "ARP resolves an IPv4 neighbour’s protocol address to a local link-layer address.",
+      "DNS name records do not directly supply this local Ethernet mapping.",
+      "Congestion control regulates sending behaviour, not neighbour MAC lookup.",
+      "Certificate checks authenticate TLS identities rather than resolve link addresses."
+    ],
+    "takeAway": "ARP: Resolves IPv4 neighbours to link-layer addresses on a local network."
+  },
+  {
+    "id": "cn-015",
+    "topic": "CN",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Subnetting in this situation?",
+    "options": [
+      "An address prefix identifies a network portion.",
+      "Every /24 has 256 usable host addresses in conventional allocation.",
+      "The scenario's correct answer would be: 256.",
+      "The scenario's correct answer would be: 255."
+    ],
+    "correctAnswer": 0,
+    "explanation": "An address prefix identifies a network portion. There are 2^(32-24)=256 addresses; subtract the network and broadcast addresses to obtain 254 under the stated convention.",
+    "tags": [
+      "subnetting"
+    ],
+    "context": "An ordinary IPv4 /24 subnet uses one network address and one broadcast address, with the rest allocated conventionally to hosts.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An address prefix identifies a network portion. There are 2^(32-24)=256 addresses; subtract the network and broadcast addresses to obtain 254 under the stated convention.",
+      "That claim conflicts with the principle: An address prefix identifies a network portion. There are 2^(32-24)=256 addresses; subtract the network and broadcast addresses to obtain 254 under the stated convention.",
+      "256 counts every address, including the reserved two.",
+      "Only subtracting one omits the second reserved address."
+    ],
+    "takeAway": "Subnetting: An address prefix identifies a network portion."
+  },
+  {
+    "id": "cn-016",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "How many conventional usable host addresses remain?",
+    "options": [
+      "254",
+      "256",
+      "255",
+      "24"
+    ],
+    "correctAnswer": 0,
+    "explanation": "There are 2^(32-24)=256 addresses; subtract the network and broadcast addresses to obtain 254 under the stated convention.",
+    "tags": [
+      "subnetting"
+    ],
+    "context": "An ordinary IPv4 /24 subnet uses one network address and one broadcast address, with the rest allocated conventionally to hosts.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "There are 2^(32-24)=256 addresses; subtract the network and broadcast addresses to obtain 254 under the stated convention.",
+      "256 counts every address, including the reserved two.",
+      "Only subtracting one omits the second reserved address.",
+      "24 is the prefix length, not the host count."
+    ],
+    "takeAway": "Subnetting: An address prefix identifies a network portion."
+  },
+  {
+    "id": "cn-017",
+    "topic": "CN",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Routers and switches in this situation?",
+    "options": [
+      "Routers forward between networks while switches typically forward local Ethernet frames.",
+      "An Ethernet hub learns destination MAC routes.",
+      "The scenario's correct answer would be: Hub, then a word processor.",
+      "The scenario's correct answer would be: Router, then an Ethernet hub."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Routers forward between networks while switches typically forward local Ethernet frames. A typical Ethernet switch learns local MAC-to-port mappings; a router chooses network paths for packets.",
+    "tags": [
+      "routers-and-switches"
+    ],
+    "context": "A device learns source MAC addresses on its ports and forwards Ethernet frames within a LAN. Another device forwards IP packets between networks.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Routers forward between networks while switches typically forward local Ethernet frames. A typical Ethernet switch learns local MAC-to-port mappings; a router chooses network paths for packets.",
+      "That claim conflicts with the principle: Routers forward between networks while switches typically forward local Ethernet frames. A typical Ethernet switch learns local MAC-to-port mappings; a router chooses network paths for packets.",
+      "A hub repeats signals without the switch’s learned forwarding behaviour.",
+      "The roles are not reversed, and a hub does not route IP networks."
+    ],
+    "takeAway": "Routers and switches: Routers forward between networks while switches typically forward local Ethernet frames."
+  },
+  {
+    "id": "cn-018",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which pair matches these roles?",
+    "options": [
+      "Switch, then router",
+      "Hub, then a word processor",
+      "Router, then an Ethernet hub",
+      "DNS, then DHCP"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A typical Ethernet switch learns local MAC-to-port mappings; a router chooses network paths for packets.",
+    "tags": [
+      "routers-and-switches"
+    ],
+    "context": "A device learns source MAC addresses on its ports and forwards Ethernet frames within a LAN. Another device forwards IP packets between networks.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A typical Ethernet switch learns local MAC-to-port mappings; a router chooses network paths for packets.",
+      "A hub repeats signals without the switch’s learned forwarding behaviour.",
+      "The roles are not reversed, and a hub does not route IP networks.",
+      "DNS and DHCP are services, not these forwarding-device roles."
+    ],
+    "takeAway": "Routers and switches: Routers forward between networks while switches typically forward local Ethernet frames."
+  },
+  {
+    "id": "cn-019",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains TCP handshake and ports in this situation?",
+    "options": [
+      "SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints.",
+      "TCP establishes a connection using only one SYN packet.",
+      "The scenario's correct answer would be: A second initial SYN that replaces all acknowledgements.",
+      "The scenario's correct answer would be: An ARP reply as the TCP acknowledgement."
+    ],
+    "correctAnswer": 0,
+    "explanation": "SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints. The third handshake step acknowledges the server’s SYN, yielding SYN → SYN-ACK → ACK.",
+    "tags": [
+      "tcp-handshake-and-ports"
+    ],
+    "context": "A client initiates a normal TCP connection by sending SYN; the server replies SYN-ACK.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints. The third handshake step acknowledges the server’s SYN, yielding SYN → SYN-ACK → ACK.",
+      "That claim conflicts with the principle: SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints. The third handshake step acknowledges the server’s SYN, yielding SYN → SYN-ACK → ACK.",
+      "A new initial SYN is not the specified third acknowledgement.",
+      "ARP and TCP operate on different concerns."
+    ],
+    "takeAway": "TCP handshake and ports: SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints."
+  },
+  {
+    "id": "cn-020",
+    "topic": "CN",
+    "difficulty": "medium",
+    "question": "What is the next handshake message from the client?",
+    "options": [
+      "ACK",
+      "A second initial SYN that replaces all acknowledgements",
+      "An ARP reply as the TCP acknowledgement",
+      "No further message is part of the handshake"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The third handshake step acknowledges the server’s SYN, yielding SYN → SYN-ACK → ACK.",
+    "tags": [
+      "tcp-handshake-and-ports"
+    ],
+    "context": "A client initiates a normal TCP connection by sending SYN; the server replies SYN-ACK.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "The third handshake step acknowledges the server’s SYN, yielding SYN → SYN-ACK → ACK.",
+      "A new initial SYN is not the specified third acknowledgement.",
+      "ARP and TCP operate on different concerns.",
+      "The ordinary three-way handshake includes this client ACK."
+    ],
+    "takeAway": "TCP handshake and ports: SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints."
+  }
+]

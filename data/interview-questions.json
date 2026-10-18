@@ -1,0 +1,662 @@
+[
+  {
+    "id": "interview-0-0",
+    "topic": "Tell Me About Yourself",
+    "question": "Give a 90-second introduction for a fresher technology role.",
+    "guide": "Open with education and focus; give one project contribution and one measurable learning outcome; close with the role you seek."
+  },
+  {
+    "id": "interview-0-1",
+    "topic": "Tell Me About Yourself",
+    "question": "How would you adapt your introduction for a technical interviewer?",
+    "guide": "Spend more time on the architecture, your contribution and validation; keep personal background concise."
+  },
+  {
+    "id": "interview-0-2",
+    "topic": "Tell Me About Yourself",
+    "question": "Which strength can you demonstrate with a specific example?",
+    "guide": "Choose a strength with a situation, action and observable result."
+  },
+  {
+    "id": "interview-0-3",
+    "topic": "Tell Me About Yourself",
+    "question": "How have you addressed a weakness in your preparation?",
+    "guide": "Explain a real weakness, your improvement routine and evidence of progress."
+  },
+  {
+    "id": "interview-0-4",
+    "topic": "Tell Me About Yourself",
+    "question": "Why are you interested in a services and consulting environment?",
+    "guide": "Discuss working across business domains, learning client constraints and collaborating on reliable delivery."
+  },
+  {
+    "id": "interview-0-5",
+    "topic": "Tell Me About Yourself",
+    "question": "What did you learn outside your college syllabus?",
+    "guide": "Show a self-directed project, a concrete skill and how you verified your understanding."
+  },
+  {
+    "id": "interview-0-6",
+    "topic": "Tell Me About Yourself",
+    "question": "Explain a technical topic you recently changed your mind about.",
+    "guide": "Describe your old assumption, counterevidence and revised understanding."
+  },
+  {
+    "id": "interview-0-7",
+    "topic": "Tell Me About Yourself",
+    "question": "What would you aim to learn in your first three months?",
+    "guide": "Discuss team practices, product domain, testing, tools and feedback from mentors."
+  },
+  {
+    "id": "interview-0-8",
+    "topic": "Tell Me About Yourself",
+    "question": "How would you explain a gap in your academic or project history?",
+    "guide": "Be factual, concise and focus on constructive steps you took."
+  },
+  {
+    "id": "interview-0-9",
+    "topic": "Tell Me About Yourself",
+    "question": "What makes you ready for a fresher engineering role?",
+    "guide": "Support your answer with fundamentals, demonstrated work, testing habits and willingness to learn."
+  },
+  {
+    "id": "interview-1-0",
+    "topic": "Resume",
+    "question": "Which résumé claim would you most like to demonstrate live?",
+    "guide": "Choose something you personally implemented and can explain end to end."
+  },
+  {
+    "id": "interview-1-1",
+    "topic": "Resume",
+    "question": "How do you distinguish familiarity from proficiency on your résumé?",
+    "guide": "Describe tasks you can perform independently and areas where you still need guidance."
+  },
+  {
+    "id": "interview-1-2",
+    "topic": "Resume",
+    "question": "Tell me about an achievement and how it was measured.",
+    "guide": "Explain the baseline, your contribution and the metric without inventing numbers."
+  },
+  {
+    "id": "interview-1-3",
+    "topic": "Resume",
+    "question": "Which course strengthened your engineering fundamentals most?",
+    "guide": "Connect a concept to a real task."
+  },
+  {
+    "id": "interview-1-4",
+    "topic": "Resume",
+    "question": "What was your contribution to a group project?",
+    "guide": "Distinguish your responsibilities from the team outcome."
+  },
+  {
+    "id": "interview-1-5",
+    "topic": "Resume",
+    "question": "How did an internship or college responsibility change your work habits?",
+    "guide": "Discuss feedback, collaboration, deadlines and validation."
+  },
+  {
+    "id": "interview-1-6",
+    "topic": "Resume",
+    "question": "Explain a library listed on your résumé without relying on its marketing description.",
+    "guide": "Describe its inputs, outputs, lifecycle and limits."
+  },
+  {
+    "id": "interview-1-7",
+    "topic": "Resume",
+    "question": "Which listed technology would you choose differently today?",
+    "guide": "Compare trade-offs using your project requirements."
+  },
+  {
+    "id": "interview-1-8",
+    "topic": "Resume",
+    "question": "How would you verify a certification skill in practice?",
+    "guide": "Describe a small task or project demonstrating the skill."
+  },
+  {
+    "id": "interview-1-9",
+    "topic": "Resume",
+    "question": "What question about your résumé would be hardest to answer?",
+    "guide": "Identify the gap and prepare an honest, specific explanation."
+  },
+  {
+    "id": "interview-2-0",
+    "topic": "Projects",
+    "question": "Draw the request flow of your strongest project.",
+    "guide": "Trace UI, API, validation, storage and the response; identify boundaries."
+  },
+  {
+    "id": "interview-2-1",
+    "topic": "Projects",
+    "question": "Why did you choose your project’s database?",
+    "guide": "Compare data shape, query patterns, constraints and operational needs."
+  },
+  {
+    "id": "interview-2-2",
+    "topic": "Projects",
+    "question": "What was the hardest bug and how did you isolate it?",
+    "guide": "Explain reproduction, evidence, root cause, fix and regression verification."
+  },
+  {
+    "id": "interview-2-3",
+    "topic": "Projects",
+    "question": "How does your project handle invalid input?",
+    "guide": "Discuss validation on both client and server and clear error responses."
+  },
+  {
+    "id": "interview-2-4",
+    "topic": "Projects",
+    "question": "How did you test the most important user flow?",
+    "guide": "Describe a meaningful integration test and the failure it would catch."
+  },
+  {
+    "id": "interview-2-5",
+    "topic": "Projects",
+    "question": "What happens if a dependency is unavailable?",
+    "guide": "Discuss timeouts, retries where appropriate and graceful failure."
+  },
+  {
+    "id": "interview-2-6",
+    "topic": "Projects",
+    "question": "How would your design change with ten times more users?",
+    "guide": "Identify a bottleneck and a measured scaling step; avoid premature complexity."
+  },
+  {
+    "id": "interview-2-7",
+    "topic": "Projects",
+    "question": "Where are secrets stored in your project?",
+    "guide": "Explain server-side environment configuration and avoiding client exposure."
+  },
+  {
+    "id": "interview-2-8",
+    "topic": "Projects",
+    "question": "Which feature did you remove or simplify and why?",
+    "guide": "Connect scope decisions to user value and constraints."
+  },
+  {
+    "id": "interview-2-9",
+    "topic": "Projects",
+    "question": "What would you improve before a real production launch?",
+    "guide": "Discuss monitoring, persistence, deployment, access control and reliability."
+  },
+  {
+    "id": "interview-3-0",
+    "topic": "OOP",
+    "question": "Explain encapsulation using a bank-account class.",
+    "guide": "Private state and validated operations preserve invariants; access modifiers alone are not enough."
+  },
+  {
+    "id": "interview-3-1",
+    "topic": "OOP",
+    "question": "Compare composition and inheritance with a concrete example.",
+    "guide": "Use has-a and is-a relationships and explain coupling."
+  },
+  {
+    "id": "interview-3-2",
+    "topic": "OOP",
+    "question": "What is runtime polymorphism in Java?",
+    "guide": "Overridden instance methods dispatch based on the actual object type."
+  },
+  {
+    "id": "interview-3-3",
+    "topic": "OOP",
+    "question": "How are overriding and overloading different?",
+    "guide": "Overriding changes inherited behaviour; overloading selects among distinct parameter signatures."
+  },
+  {
+    "id": "interview-3-4",
+    "topic": "OOP",
+    "question": "Can return type alone distinguish Java overloads?",
+    "guide": "No; the parameter signature must distinguish them."
+  },
+  {
+    "id": "interview-3-5",
+    "topic": "OOP",
+    "question": "When would you choose an interface over an abstract class?",
+    "guide": "A contract across unrelated types versus shared implementation and state."
+  },
+  {
+    "id": "interview-3-6",
+    "topic": "OOP",
+    "question": "What is constructor chaining?",
+    "guide": "One constructor delegates initialization to another; explain super and this rules in Java."
+  },
+  {
+    "id": "interview-3-7",
+    "topic": "OOP",
+    "question": "How do static members differ from instance members?",
+    "guide": "Class ownership versus instance state; static methods have no this."
+  },
+  {
+    "id": "interview-3-8",
+    "topic": "OOP",
+    "question": "What is the Liskov substitution principle?",
+    "guide": "A subtype must preserve the behaviour expected by users of the base contract."
+  },
+  {
+    "id": "interview-3-9",
+    "topic": "OOP",
+    "question": "How would you make a class immutable?",
+    "guide": "Restrict mutation, initialize state fully and use defensive copies for mutable components."
+  },
+  {
+    "id": "interview-4-0",
+    "topic": "DBMS",
+    "question": "Differentiate primary, candidate and foreign keys.",
+    "guide": "Minimal uniqueness, chosen identity and referential integrity are distinct concepts."
+  },
+  {
+    "id": "interview-4-1",
+    "topic": "DBMS",
+    "question": "Explain normalization through an order-items example.",
+    "guide": "Identify dependencies, repeating groups, partial and transitive dependencies."
+  },
+  {
+    "id": "interview-4-2",
+    "topic": "DBMS",
+    "question": "How is BCNF stricter than 3NF?",
+    "guide": "Every determinant must be a superkey in BCNF; 3NF allows a prime dependent attribute exception."
+  },
+  {
+    "id": "interview-4-3",
+    "topic": "DBMS",
+    "question": "Explain ACID using a money transfer.",
+    "guide": "Both updates commit together, preserve constraints, isolate concurrent effects and survive supported failures."
+  },
+  {
+    "id": "interview-4-4",
+    "topic": "DBMS",
+    "question": "What is a dirty read?",
+    "guide": "Reading another transaction’s uncommitted write."
+  },
+  {
+    "id": "interview-4-5",
+    "topic": "DBMS",
+    "question": "How can a database deadlock happen?",
+    "guide": "Show two transactions acquiring two locks in opposite order."
+  },
+  {
+    "id": "interview-4-6",
+    "topic": "DBMS",
+    "question": "Why might an index slow down writes?",
+    "guide": "Index structures must also be updated and maintained."
+  },
+  {
+    "id": "interview-4-7",
+    "topic": "DBMS",
+    "question": "Compare clustered and non-clustered indexes.",
+    "guide": "Discuss row locality versus a separate lookup structure and engine differences."
+  },
+  {
+    "id": "interview-4-8",
+    "topic": "DBMS",
+    "question": "How does isolation level affect read anomalies?",
+    "guide": "Discuss dirty reads, nonrepeatable reads and phantoms; implementation varies by engine."
+  },
+  {
+    "id": "interview-4-9",
+    "topic": "DBMS",
+    "question": "When would a view or stored procedure be useful?",
+    "guide": "Expose derived queries or encapsulate server routines; neither alone guarantees security."
+  },
+  {
+    "id": "interview-5-0",
+    "topic": "SQL",
+    "question": "Write SQL to find the second-highest distinct salary.",
+    "guide": "Use DENSE_RANK over descending salary and filter rank 2 in an outer query; ties differ from ROW_NUMBER."
+  },
+  {
+    "id": "interview-5-1",
+    "topic": "SQL",
+    "question": "Explain WHERE versus HAVING with a grouped query.",
+    "guide": "WHERE filters source rows; HAVING filters aggregate groups."
+  },
+  {
+    "id": "interview-5-2",
+    "topic": "SQL",
+    "question": "Find customers who have never placed an order.",
+    "guide": "Use NOT EXISTS or LEFT JOIN with a null check on a nonnullable order key."
+  },
+  {
+    "id": "interview-5-3",
+    "topic": "SQL",
+    "question": "Why can a WHERE filter turn a LEFT JOIN into inner-join-like output?",
+    "guide": "A right-side predicate rejects null-extended rows."
+  },
+  {
+    "id": "interview-5-4",
+    "topic": "SQL",
+    "question": "Compare COUNT(*) and COUNT(column).",
+    "guide": "COUNT(*) counts rows; COUNT(column) excludes null values."
+  },
+  {
+    "id": "interview-5-5",
+    "topic": "SQL",
+    "question": "What is a correlated subquery?",
+    "guide": "It references values from the outer query."
+  },
+  {
+    "id": "interview-5-6",
+    "topic": "SQL",
+    "question": "Show a running total using a window function.",
+    "guide": "SUM(amount) OVER with ORDER BY and an explicit ROWS frame gives predictable row-based accumulation."
+  },
+  {
+    "id": "interview-5-7",
+    "topic": "SQL",
+    "question": "Explain RANK versus DENSE_RANK on ties.",
+    "guide": "RANK leaves gaps; DENSE_RANK does not."
+  },
+  {
+    "id": "interview-5-8",
+    "topic": "SQL",
+    "question": "What does NULL = NULL evaluate to in SQL?",
+    "guide": "Unknown under ordinary SQL three-valued logic; use IS NULL to test nullness."
+  },
+  {
+    "id": "interview-5-9",
+    "topic": "SQL",
+    "question": "How would you inspect a slow query before adding an index?",
+    "guide": "Inspect the plan, predicate selectivity, joins, table sizes and measured execution."
+  },
+  {
+    "id": "interview-6-0",
+    "topic": "OS",
+    "question": "Compare processes and threads.",
+    "guide": "Processes have separate address spaces; threads share process resources but have execution state."
+  },
+  {
+    "id": "interview-6-1",
+    "topic": "OS",
+    "question": "Compare FCFS, SJF and Round Robin scheduling.",
+    "guide": "Explain waiting time, burst estimates, starvation and quantum trade-offs."
+  },
+  {
+    "id": "interview-6-2",
+    "topic": "OS",
+    "question": "What is saved during a context switch?",
+    "guide": "Execution state such as registers and program counter; details depend on platform."
+  },
+  {
+    "id": "interview-6-3",
+    "topic": "OS",
+    "question": "State the four necessary deadlock conditions.",
+    "guide": "Mutual exclusion, hold-and-wait, no preemption and circular wait."
+  },
+  {
+    "id": "interview-6-4",
+    "topic": "OS",
+    "question": "Compare a mutex with a counting semaphore.",
+    "guide": "Ownership-based exclusion versus a count of available permits."
+  },
+  {
+    "id": "interview-6-5",
+    "topic": "OS",
+    "question": "How do you synchronize a bounded producer-consumer buffer?",
+    "guide": "Use exclusion plus empty/full availability coordination."
+  },
+  {
+    "id": "interview-6-6",
+    "topic": "OS",
+    "question": "Explain paging and a page fault.",
+    "guide": "Virtual pages map to frames; a valid nonresident page may require loading."
+  },
+  {
+    "id": "interview-6-7",
+    "topic": "OS",
+    "question": "How does segmentation differ from paging?",
+    "guide": "Variable-size logical regions versus fixed-size pages."
+  },
+  {
+    "id": "interview-6-8",
+    "topic": "OS",
+    "question": "What is thrashing and how can it be reduced?",
+    "guide": "Working sets exceed memory, causing excessive paging; reduce memory pressure or active workload."
+  },
+  {
+    "id": "interview-6-9",
+    "topic": "OS",
+    "question": "Describe FIFO versus LRU page replacement.",
+    "guide": "Arrival order versus recency; discuss implementation cost and locality."
+  },
+  {
+    "id": "interview-7-0",
+    "topic": "CN",
+    "question": "Explain the role of each OSI layer briefly.",
+    "guide": "Connect physical transmission, frames, routing, transport and application responsibilities."
+  },
+  {
+    "id": "interview-7-1",
+    "topic": "CN",
+    "question": "Trace what happens after entering an HTTPS URL.",
+    "guide": "DNS, connection setup, TLS validation, HTTP request and response; caching and protocols may alter steps."
+  },
+  {
+    "id": "interview-7-2",
+    "topic": "CN",
+    "question": "Compare TCP and UDP for a live communication application.",
+    "guide": "Ordered reliability versus datagrams and application-managed latency/reliability trade-offs."
+  },
+  {
+    "id": "interview-7-3",
+    "topic": "CN",
+    "question": "Describe the TCP three-way handshake.",
+    "guide": "SYN, SYN-ACK, ACK synchronize sequence-number expectations."
+  },
+  {
+    "id": "interview-7-4",
+    "topic": "CN",
+    "question": "What does DNS do and what does DHCP do?",
+    "guide": "Name resolution versus network configuration leases."
+  },
+  {
+    "id": "interview-7-5",
+    "topic": "CN",
+    "question": "How does ARP help an IPv4 host send to its next hop?",
+    "guide": "Resolve a local neighbour’s IP to a link-layer address."
+  },
+  {
+    "id": "interview-7-6",
+    "topic": "CN",
+    "question": "Compare a router, switch and hub.",
+    "guide": "Network routing, learned frame forwarding and repeated physical signals."
+  },
+  {
+    "id": "interview-7-7",
+    "topic": "CN",
+    "question": "How many conventional usable host addresses are in an IPv4 /24?",
+    "guide": "256 total; conventionally 254 after network and broadcast addresses, with allocation caveats."
+  },
+  {
+    "id": "interview-7-8",
+    "topic": "CN",
+    "question": "What does a TLS certificate establish?",
+    "guide": "Authenticated server identity under a trust model; it does not guarantee honest content."
+  },
+  {
+    "id": "interview-7-9",
+    "topic": "CN",
+    "question": "Why are transport ports needed alongside IP addresses?",
+    "guide": "They distinguish application endpoints on a host."
+  },
+  {
+    "id": "interview-8-0",
+    "topic": "DSA",
+    "question": "Solve a pair-sum problem without checking every pair.",
+    "guide": "Store previous values in a hash map; check complement before inserting; expected O(n)."
+  },
+  {
+    "id": "interview-8-1",
+    "topic": "DSA",
+    "question": "How do you handle an all-negative maximum-subarray input?",
+    "guide": "Initialize from the first element rather than zero to enforce a nonempty subarray."
+  },
+  {
+    "id": "interview-8-2",
+    "topic": "DSA",
+    "question": "When is a sliding window valid for a sum constraint?",
+    "guide": "Discuss monotonicity and why negatives break simple shrinking strategies."
+  },
+  {
+    "id": "interview-8-3",
+    "topic": "DSA",
+    "question": "Explain the invariant in binary search.",
+    "guide": "Specify inclusive or half-open bounds and prove each update discards only impossible values."
+  },
+  {
+    "id": "interview-8-4",
+    "topic": "DSA",
+    "question": "How do you find the first occurrence among duplicates?",
+    "guide": "Search the left boundary and verify the value."
+  },
+  {
+    "id": "interview-8-5",
+    "topic": "DSA",
+    "question": "Why use a stack for bracket matching?",
+    "guide": "The latest unmatched opener must be closed first."
+  },
+  {
+    "id": "interview-8-6",
+    "topic": "DSA",
+    "question": "How would you reverse a singly linked list?",
+    "guide": "Save next, reverse the link, then advance previous and current."
+  },
+  {
+    "id": "interview-8-7",
+    "topic": "DSA",
+    "question": "Compare BFS and DFS for shortest paths.",
+    "guide": "BFS yields shortest distances in unweighted graphs; neither alone solves general weighted shortest paths."
+  },
+  {
+    "id": "interview-8-8",
+    "topic": "DSA",
+    "question": "What is the complexity of prefix-sum range queries?",
+    "guide": "O(n) construction and O(1) per query, with O(n) space."
+  },
+  {
+    "id": "interview-8-9",
+    "topic": "DSA",
+    "question": "Compare sorting and hashing for duplicate detection.",
+    "guide": "O(n log n) sorting versus expected O(n) hashing with extra space."
+  },
+  {
+    "id": "interview-9-0",
+    "topic": "AI/RAG",
+    "question": "Explain RAG to a teammate building a policy assistant.",
+    "guide": "Retrieve relevant authorized policy chunks, add them to context and generate a grounded answer."
+  },
+  {
+    "id": "interview-9-1",
+    "topic": "AI/RAG",
+    "question": "When would you use RAG rather than fine-tuning?",
+    "guide": "Fresh factual evidence and citations versus adapting model behaviour or style."
+  },
+  {
+    "id": "interview-9-2",
+    "topic": "AI/RAG",
+    "question": "How does chunk size affect retrieval?",
+    "guide": "Balance focused relevance, surrounding context, index size and prompt budget."
+  },
+  {
+    "id": "interview-9-3",
+    "topic": "AI/RAG",
+    "question": "Why must query and document embeddings be compatible?",
+    "guide": "Similarity is meaningful only within a compatible vector space."
+  },
+  {
+    "id": "interview-9-4",
+    "topic": "AI/RAG",
+    "question": "What is top-K retrieval and how would you tune K?",
+    "guide": "Measure retrieval recall, relevance, latency and context noise on representative queries."
+  },
+  {
+    "id": "interview-9-5",
+    "topic": "AI/RAG",
+    "question": "What does reranking add after vector search?",
+    "guide": "A more precise query-document relevance assessment over candidates."
+  },
+  {
+    "id": "interview-9-6",
+    "topic": "AI/RAG",
+    "question": "When is hybrid search helpful?",
+    "guide": "Combine exact keyword/entity matching with semantic intent matching."
+  },
+  {
+    "id": "interview-9-7",
+    "topic": "AI/RAG",
+    "question": "How would you evaluate hallucination reduction?",
+    "guide": "Measure evidence support and faithfulness separately from fluent writing."
+  },
+  {
+    "id": "interview-9-8",
+    "topic": "AI/RAG",
+    "question": "How can a retrieved document perform prompt injection?",
+    "guide": "Untrusted text may try to replace trusted rules; separate content from instructions and validate actions."
+  },
+  {
+    "id": "interview-9-9",
+    "topic": "AI/RAG",
+    "question": "How do you enforce document access control in RAG?",
+    "guide": "Authorize retrieval before context construction; citation hiding is insufficient."
+  },
+  {
+    "id": "interview-10-0",
+    "topic": "HR",
+    "question": "Why do you want to join Capgemini?",
+    "guide": "Connect your motivation to technology services, learning and collaborative delivery. Verify specific company facts before relying on them."
+  },
+  {
+    "id": "interview-10-1",
+    "topic": "HR",
+    "question": "Tell me about a disagreement in a team.",
+    "guide": "Use a specific situation and show listening, evidence and resolution."
+  },
+  {
+    "id": "interview-10-2",
+    "topic": "HR",
+    "question": "How would you respond to a deadline you cannot meet?",
+    "guide": "Raise the risk early, explain impact and propose a recovery plan."
+  },
+  {
+    "id": "interview-10-3",
+    "topic": "HR",
+    "question": "Are you comfortable learning an unfamiliar technology?",
+    "guide": "Support your response with a learning example and a practical plan."
+  },
+  {
+    "id": "interview-10-4",
+    "topic": "HR",
+    "question": "How do you prioritize two urgent requests?",
+    "guide": "Clarify impact, dependencies and expectations with stakeholders."
+  },
+  {
+    "id": "interview-10-5",
+    "topic": "HR",
+    "question": "Tell me about feedback that changed your work.",
+    "guide": "Show how you applied it and what improved."
+  },
+  {
+    "id": "interview-10-6",
+    "topic": "HR",
+    "question": "What would you do if you noticed a colleague’s mistake?",
+    "guide": "Discuss private, constructive clarification and appropriate escalation for impact."
+  },
+  {
+    "id": "interview-10-7",
+    "topic": "HR",
+    "question": "How do you handle an ambiguous task?",
+    "guide": "Ask targeted questions, state assumptions and produce a small reviewable result."
+  },
+  {
+    "id": "interview-10-8",
+    "topic": "HR",
+    "question": "What does professional integrity mean when using AI tools?",
+    "guide": "Verify output, protect confidential data and own the work you submit."
+  },
+  {
+    "id": "interview-10-9",
+    "topic": "HR",
+    "question": "What would you ask your interviewer?",
+    "guide": "Ask about team practices, onboarding, learning and expectations for a fresher."
+  }
+]

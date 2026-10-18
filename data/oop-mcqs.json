@@ -1,0 +1,652 @@
+[
+  {
+    "id": "oop-001",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Classes and objects in this situation?",
+    "options": [
+      "A class defines structure and behaviour while an object is an instance.",
+      "All instances always share every field value.",
+      "The scenario's correct answer would be: Every instance must have the same balance.",
+      "The scenario's correct answer would be: An object is the class definition itself."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A class defines structure and behaviour while an object is an instance. A class defines structure and behaviour; each instance can own separate state.",
+    "tags": [
+      "classes-and-objects"
+    ],
+    "context": "A class Account defines deposit() and balance. Two Account instances start with different balances and use ordinary instance fields.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A class defines structure and behaviour while an object is an instance. A class defines structure and behaviour; each instance can own separate state.",
+      "That claim conflicts with the principle: A class defines structure and behaviour while an object is an instance. A class defines structure and behaviour; each instance can own separate state.",
+      "Ordinary instance fields are not forced to have identical values.",
+      "An object is an instance, not the blueprint."
+    ],
+    "takeAway": "Classes and objects: A class defines structure and behaviour while an object is an instance."
+  },
+  {
+    "id": "oop-002",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement is accurate?",
+    "options": [
+      "They share a class definition but can hold different instance state",
+      "Every instance must have the same balance",
+      "An object is the class definition itself",
+      "Defining a class removes the need to create instances"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A class defines structure and behaviour; each instance can own separate state.",
+    "tags": [
+      "classes-and-objects"
+    ],
+    "context": "A class Account defines deposit() and balance. Two Account instances start with different balances and use ordinary instance fields.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A class defines structure and behaviour; each instance can own separate state.",
+      "Ordinary instance fields are not forced to have identical values.",
+      "An object is an instance, not the blueprint.",
+      "The scenario requires actual account instances."
+    ],
+    "takeAway": "Classes and objects: A class defines structure and behaviour while an object is an instance."
+  },
+  {
+    "id": "oop-003",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Encapsulation in this situation?",
+    "options": [
+      "Controls access to state through defined interfaces.",
+      "Public access to every mutable field guarantees encapsulation.",
+      "The scenario's correct answer would be: Public mutation of all fields.",
+      "The scenario's correct answer would be: Inheritance without a superclass."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Controls access to state through defined interfaces. Encapsulation controls how clients interact with state and helps preserve class invariants.",
+    "tags": [
+      "encapsulation"
+    ],
+    "context": "Account.balance is private, and withdraw(amount) checks that the operation will not violate the account’s allowed balance rules.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Controls access to state through defined interfaces. Encapsulation controls how clients interact with state and helps preserve class invariants.",
+      "That claim conflicts with the principle: Controls access to state through defined interfaces. Encapsulation controls how clients interact with state and helps preserve class invariants.",
+      "Unrestricted field changes would bypass the validation.",
+      "No parent–child type relationship is described."
+    ],
+    "takeAway": "Encapsulation: Controls access to state through defined interfaces."
+  },
+  {
+    "id": "oop-004",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "What design principle is most directly supported?",
+    "options": [
+      "Encapsulation of state behind validated operations",
+      "Public mutation of all fields",
+      "Inheritance without a superclass",
+      "Elimination of all methods"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Encapsulation controls how clients interact with state and helps preserve class invariants.",
+    "tags": [
+      "encapsulation"
+    ],
+    "context": "Account.balance is private, and withdraw(amount) checks that the operation will not violate the account’s allowed balance rules.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Encapsulation controls how clients interact with state and helps preserve class invariants.",
+      "Unrestricted field changes would bypass the validation.",
+      "No parent–child type relationship is described.",
+      "The validated method is central to this design."
+    ],
+    "takeAway": "Encapsulation: Controls access to state through defined interfaces."
+  },
+  {
+    "id": "oop-005",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Inheritance in this situation?",
+    "options": [
+      "A subtype derives behaviour from a parent type.",
+      "Inheritance always makes composition unnecessary.",
+      "The scenario's correct answer would be: Account has a SavingsAccount as its engine component.",
+      "The scenario's correct answer would be: Every subclass must remove the parent’s methods."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A subtype derives behaviour from a parent type. Inheritance models a subtype relationship; preserving the base behavioural contract remains a design obligation.",
+    "tags": [
+      "inheritance"
+    ],
+    "context": "SavingsAccount extends Account and adds interest-related behaviour while retaining the base account contract.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A subtype derives behaviour from a parent type. Inheritance models a subtype relationship; preserving the base behavioural contract remains a design obligation.",
+      "That claim conflicts with the principle: A subtype derives behaviour from a parent type. Inheritance models a subtype relationship; preserving the base behavioural contract remains a design obligation.",
+      "That describes containment, not the given extends relationship.",
+      "Subclasses can inherit and specialize existing behaviour."
+    ],
+    "takeAway": "Inheritance: A subtype derives behaviour from a parent type."
+  },
+  {
+    "id": "oop-006",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which relationship is intended?",
+    "options": [
+      "SavingsAccount is a specialized Account",
+      "Account has a SavingsAccount as its engine component",
+      "Every subclass must remove the parent’s methods",
+      "Inheritance guarantees that every base contract is preserved automatically"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Inheritance models a subtype relationship; preserving the base behavioural contract remains a design obligation.",
+    "tags": [
+      "inheritance"
+    ],
+    "context": "SavingsAccount extends Account and adds interest-related behaviour while retaining the base account contract.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Inheritance models a subtype relationship; preserving the base behavioural contract remains a design obligation.",
+      "That describes containment, not the given extends relationship.",
+      "Subclasses can inherit and specialize existing behaviour.",
+      "The programmer must still ensure substitutability and invariant preservation."
+    ],
+    "takeAway": "Inheritance: A subtype derives behaviour from a parent type."
+  },
+  {
+    "id": "oop-007",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Polymorphism in this situation?",
+    "options": [
+      "A common interface supports different implementations.",
+      "Polymorphism requires all methods to have identical bodies.",
+      "The scenario's correct answer would be: A requirement that both shapes have identical method bodies.",
+      "The scenario's correct answer would be: Manual database normalization."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A common interface supports different implementations. A common interface allows the actual object type to determine the implementation used.",
+    "tags": [
+      "polymorphism"
+    ],
+    "context": "Circle and Rectangle both implement Shape.draw(). Code calls draw() through Shape references, and each object performs its own implementation.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A common interface supports different implementations. A common interface allows the actual object type to determine the implementation used.",
+      "That claim conflicts with the principle: A common interface supports different implementations. A common interface allows the actual object type to determine the implementation used.",
+      "Different implementations are the point of this example.",
+      "The mechanism concerns objects and dispatch, not relational schemas."
+    ],
+    "takeAway": "Polymorphism: A common interface supports different implementations."
+  },
+  {
+    "id": "oop-008",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "What behaviour is this?",
+    "options": [
+      "Runtime polymorphism",
+      "A requirement that both shapes have identical method bodies",
+      "Manual database normalization",
+      "A ban on method overriding"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A common interface allows the actual object type to determine the implementation used.",
+    "tags": [
+      "polymorphism"
+    ],
+    "context": "Circle and Rectangle both implement Shape.draw(). Code calls draw() through Shape references, and each object performs its own implementation.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A common interface allows the actual object type to determine the implementation used.",
+      "Different implementations are the point of this example.",
+      "The mechanism concerns objects and dispatch, not relational schemas.",
+      "Overriding or interface implementation enables this behaviour."
+    ],
+    "takeAway": "Polymorphism: A common interface supports different implementations."
+  },
+  {
+    "id": "oop-009",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Abstraction in this situation?",
+    "options": [
+      "Exposes relevant operations while hiding implementation details.",
+      "Abstraction means every detail must be publicly visible.",
+      "The scenario's correct answer would be: Exposure of every internal request detail to all callers.",
+      "The scenario's correct answer would be: A guarantee that all providers use the same algorithm."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Exposes relevant operations while hiding implementation details. Abstraction presents the necessary operation while hiding implementation-specific detail.",
+    "tags": [
+      "abstraction"
+    ],
+    "context": "An application calls PaymentGateway.pay(amount) without needing to know how each provider authenticates its HTTP requests.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Exposes relevant operations while hiding implementation details. Abstraction presents the necessary operation while hiding implementation-specific detail.",
+      "That claim conflicts with the principle: Exposes relevant operations while hiding implementation details. Abstraction presents the necessary operation while hiding implementation-specific detail.",
+      "That would defeat the stated hiding of provider internals.",
+      "Different implementations can satisfy the same interface contract."
+    ],
+    "takeAway": "Abstraction: Exposes relevant operations while hiding implementation details."
+  },
+  {
+    "id": "oop-010",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "What does the interface provide here?",
+    "options": [
+      "Abstraction of relevant operations from provider details",
+      "Exposure of every internal request detail to all callers",
+      "A guarantee that all providers use the same algorithm",
+      "Removal of the responsibility to handle errors"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Abstraction presents the necessary operation while hiding implementation-specific detail.",
+    "tags": [
+      "abstraction"
+    ],
+    "context": "An application calls PaymentGateway.pay(amount) without needing to know how each provider authenticates its HTTP requests.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Abstraction presents the necessary operation while hiding implementation-specific detail.",
+      "That would defeat the stated hiding of provider internals.",
+      "Different implementations can satisfy the same interface contract.",
+      "Error handling is still required when the operation fails."
+    ],
+    "takeAway": "Abstraction: Exposes relevant operations while hiding implementation details."
+  },
+  {
+    "id": "oop-011",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Overriding in this situation?",
+    "options": [
+      "A subtype supplies an implementation of an inherited method.",
+      "Overriding is adding an unrelated method name.",
+      "The scenario's correct answer would be: Overloading by changing only the return type.",
+      "The scenario's correct answer would be: Creating an unrelated field."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A subtype supplies an implementation of an inherited method. Overriding replaces inherited instance-method behaviour for the subtype subject to language and contract rules.",
+    "tags": [
+      "overriding"
+    ],
+    "context": "A Java subclass supplies its own implementation of an inherited instance method with a compatible signature.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A subtype supplies an implementation of an inherited method. Overriding replaces inherited instance-method behaviour for the subtype subject to language and contract rules.",
+      "That claim conflicts with the principle: A subtype supplies an implementation of an inherited method. Overriding replaces inherited instance-method behaviour for the subtype subject to language and contract rules.",
+      "Overloading uses a distinct parameter signature, not simply a new return type.",
+      "A method implementation is not a field."
+    ],
+    "takeAway": "Overriding: A subtype supplies an implementation of an inherited method."
+  },
+  {
+    "id": "oop-012",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "What is this called?",
+    "options": [
+      "Method overriding",
+      "Overloading by changing only the return type",
+      "Creating an unrelated field",
+      "Deleting the superclass contract"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Overriding replaces inherited instance-method behaviour for the subtype subject to language and contract rules.",
+    "tags": [
+      "overriding"
+    ],
+    "context": "A Java subclass supplies its own implementation of an inherited instance method with a compatible signature.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Overriding replaces inherited instance-method behaviour for the subtype subject to language and contract rules.",
+      "Overloading uses a distinct parameter signature, not simply a new return type.",
+      "A method implementation is not a field.",
+      "A subtype should preserve the contract rather than delete its expectations."
+    ],
+    "takeAway": "Overriding: A subtype supplies an implementation of an inherited method."
+  },
+  {
+    "id": "oop-013",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Overloading in this situation?",
+    "options": [
+      "Methods share a name but have distinguishable signatures in supporting languages.",
+      "Changing only the return type permits Java overloads.",
+      "The scenario's correct answer would be: Only the return types distinguish these methods.",
+      "The scenario's correct answer would be: All Java methods must have unique names regardless of parameters."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Methods share a name but have distinguishable signatures in supporting languages. Java overloads share a name but have distinguishable parameter signatures; overload selection depends on the call’s types.",
+    "tags": [
+      "overloading"
+    ],
+    "context": "A Java class defines print(int x) and print(String x). The two parameter types differ.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Methods share a name but have distinguishable signatures in supporting languages. Java overloads share a name but have distinguishable parameter signatures; overload selection depends on the call’s types.",
+      "That claim conflicts with the principle: Methods share a name but have distinguishable signatures in supporting languages. Java overloads share a name but have distinguishable parameter signatures; overload selection depends on the call’s types.",
+      "The provided distinction is in parameters, not returns.",
+      "Java permits overloads with different parameter signatures."
+    ],
+    "takeAway": "Overloading: Methods share a name but have distinguishable signatures in supporting languages."
+  },
+  {
+    "id": "oop-014",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement is correct?",
+    "options": [
+      "This is valid method overloading",
+      "Only the return types distinguish these methods",
+      "All Java methods must have unique names regardless of parameters",
+      "This is necessarily runtime overriding"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Java overloads share a name but have distinguishable parameter signatures; overload selection depends on the call’s types.",
+    "tags": [
+      "overloading"
+    ],
+    "context": "A Java class defines print(int x) and print(String x). The two parameter types differ.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Java overloads share a name but have distinguishable parameter signatures; overload selection depends on the call’s types.",
+      "The provided distinction is in parameters, not returns.",
+      "Java permits overloads with different parameter signatures.",
+      "Overriding requires an inherited method and subtype implementation, which are not specified."
+    ],
+    "takeAway": "Overloading: Methods share a name but have distinguishable signatures in supporting languages."
+  },
+  {
+    "id": "oop-015",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Constructors in this situation?",
+    "options": [
+      "Initialize a new instance according to language rules.",
+      "A constructor is an ordinary Java method with a return type.",
+      "The scenario's correct answer would be: Behave as an ordinary int-returning method.",
+      "The scenario's correct answer would be: Run only when an existing account is sorted."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Initialize a new instance according to language rules. A constructor participates in object initialization and is not declared with a method return type in Java.",
+    "tags": [
+      "constructors"
+    ],
+    "context": "A Java Account constructor receives an initial balance and initializes required fields when a new Account is created.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Initialize a new instance according to language rules. A constructor participates in object initialization and is not declared with a method return type in Java.",
+      "That claim conflicts with the principle: Initialize a new instance according to language rules. A constructor participates in object initialization and is not declared with a method return type in Java.",
+      "Declaring a return type would make it an ordinary method, not this constructor.",
+      "Sorting an existing object does not normally invoke its constructor."
+    ],
+    "takeAway": "Constructors: Initialize a new instance according to language rules."
+  },
+  {
+    "id": "oop-016",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "What is the constructor’s role?",
+    "options": [
+      "Initialize the new instance; it has no declared return type",
+      "Behave as an ordinary int-returning method",
+      "Run only when an existing account is sorted",
+      "Automatically create every possible account instance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A constructor participates in object initialization and is not declared with a method return type in Java.",
+    "tags": [
+      "constructors"
+    ],
+    "context": "A Java Account constructor receives an initial balance and initializes required fields when a new Account is created.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A constructor participates in object initialization and is not declared with a method return type in Java.",
+      "Declaring a return type would make it an ordinary method, not this constructor.",
+      "Sorting an existing object does not normally invoke its constructor.",
+      "It initializes instances that are actually created, not every possible instance."
+    ],
+    "takeAway": "Constructors: Initialize a new instance according to language rules."
+  },
+  {
+    "id": "oop-017",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Interfaces in this situation?",
+    "options": [
+      "Specify a contract implemented by compatible types.",
+      "An interface forces every implementation to use the same algorithm.",
+      "The scenario's correct answer would be: Identical internal storage algorithms.",
+      "The scenario's correct answer would be: Permission to ignore the method’s promised behaviour."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Specify a contract implemented by compatible types. An interface exposes a common contract while allowing different underlying implementations.",
+    "tags": [
+      "interfaces"
+    ],
+    "context": "LocalStorage and CloudStorage implement a Storage interface with save(record). Callers need the same operation from both.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Specify a contract implemented by compatible types. An interface exposes a common contract while allowing different underlying implementations.",
+      "That claim conflicts with the principle: Specify a contract implemented by compatible types. An interface exposes a common contract while allowing different underlying implementations.",
+      "The local and cloud mechanisms can differ.",
+      "Implementations must honour the agreed behaviour."
+    ],
+    "takeAway": "Interfaces: Specify a contract implemented by compatible types."
+  },
+  {
+    "id": "oop-018",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "What does the interface establish?",
+    "options": [
+      "A shared contract that different implementations can satisfy",
+      "Identical internal storage algorithms",
+      "Permission to ignore the method’s promised behaviour",
+      "A requirement that both types inherit all state from one concrete class"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An interface exposes a common contract while allowing different underlying implementations.",
+    "tags": [
+      "interfaces"
+    ],
+    "context": "LocalStorage and CloudStorage implement a Storage interface with save(record). Callers need the same operation from both.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An interface exposes a common contract while allowing different underlying implementations.",
+      "The local and cloud mechanisms can differ.",
+      "Implementations must honour the agreed behaviour.",
+      "A shared interface does not require inheritance of concrete instance state."
+    ],
+    "takeAway": "Interfaces: Specify a contract implemented by compatible types."
+  },
+  {
+    "id": "oop-019",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Abstract classes in this situation?",
+    "options": [
+      "Can define shared implementation and abstract operations.",
+      "An abstract class is directly instantiable in Java.",
+      "The scenario's correct answer would be: The abstract base must contain no implemented methods.",
+      "The scenario's correct answer would be: Every subclass may ignore its unimplemented abstract methods while remaining concrete."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Can define shared implementation and abstract operations. An abstract class can share code and define required operations, but cannot itself be directly instantiated.",
+    "tags": [
+      "abstract-classes"
+    ],
+    "context": "An abstract Report class implements common formatting but leaves loadData() abstract. A concrete report must supply loadData().",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Can define shared implementation and abstract operations. An abstract class can share code and define required operations, but cannot itself be directly instantiated.",
+      "That claim conflicts with the principle: Can define shared implementation and abstract operations. An abstract class can share code and define required operations, but cannot itself be directly instantiated.",
+      "Abstract classes may contain concrete methods.",
+      "A concrete subclass must satisfy inherited abstract requirements."
+    ],
+    "takeAway": "Abstract classes: Can define shared implementation and abstract operations."
+  },
+  {
+    "id": "oop-020",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement is correct in Java?",
+    "options": [
+      "The abstract base cannot be directly instantiated",
+      "The abstract base must contain no implemented methods",
+      "Every subclass may ignore its unimplemented abstract methods while remaining concrete",
+      "An abstract class is the same as a static method"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An abstract class can share code and define required operations, but cannot itself be directly instantiated.",
+    "tags": [
+      "abstract-classes"
+    ],
+    "context": "An abstract Report class implements common formatting but leaves loadData() abstract. A concrete report must supply loadData().",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An abstract class can share code and define required operations, but cannot itself be directly instantiated.",
+      "Abstract classes may contain concrete methods.",
+      "A concrete subclass must satisfy inherited abstract requirements.",
+      "A class abstraction and a class-level method are different language features."
+    ],
+    "takeAway": "Abstract classes: Can define shared implementation and abstract operations."
+  },
+  {
+    "id": "oop-021",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Static members in this situation?",
+    "options": [
+      "Belong to a class rather than a particular instance.",
+      "A static Java method can directly use this.",
+      "The scenario's correct answer would be: It has an implicit this referring to whichever object was created last.",
+      "The scenario's correct answer would be: All class instances receive a separate static method definition."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Belong to a class rather than a particular instance. A static method belongs to the class context and lacks an implicit instance receiver.",
+    "tags": [
+      "static-members"
+    ],
+    "context": "A Java utility method is declared static. It is called without an instance.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Belong to a class rather than a particular instance. A static method belongs to the class context and lacks an implicit instance receiver.",
+      "That claim conflicts with the principle: Belong to a class rather than a particular instance. A static method belongs to the class context and lacks an implicit instance receiver.",
+      "There is no automatically selected most-recent instance.",
+      "The method belongs to the class, not a separate copy per instance."
+    ],
+    "takeAway": "Static members: Belong to a class rather than a particular instance."
+  },
+  {
+    "id": "oop-022",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which access rule applies?",
+    "options": [
+      "It cannot directly use this or ordinary instance fields without an object reference",
+      "It has an implicit this referring to whichever object was created last",
+      "All class instances receive a separate static method definition",
+      "Declaring static makes every field immutable"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A static method belongs to the class context and lacks an implicit instance receiver.",
+    "tags": [
+      "static-members"
+    ],
+    "context": "A Java utility method is declared static. It is called without an instance.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A static method belongs to the class context and lacks an implicit instance receiver.",
+      "There is no automatically selected most-recent instance.",
+      "The method belongs to the class, not a separate copy per instance.",
+      "Static ownership does not imply immutability."
+    ],
+    "takeAway": "Static members: Belong to a class rather than a particular instance."
+  },
+  {
+    "id": "oop-023",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Composition in this situation?",
+    "options": [
+      "Builds behaviour by containing or delegating to components.",
+      "Has-a relationships always require inheritance.",
+      "The scenario's correct answer would be: Inheritance: Car is an Engine.",
+      "The scenario's correct answer would be: A foreign-key database constraint."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Builds behaviour by containing or delegating to components. Containment and delegation implement a has-a relationship without claiming subtype identity.",
+    "tags": [
+      "composition"
+    ],
+    "context": "A Car contains an Engine object and delegates start() to it. A car is not conceptually a type of engine.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Builds behaviour by containing or delegating to components. Containment and delegation implement a has-a relationship without claiming subtype identity.",
+      "That claim conflicts with the principle: Builds behaviour by containing or delegating to components. Containment and delegation implement a has-a relationship without claiming subtype identity.",
+      "A car does not satisfy the conceptual is-an-engine relation.",
+      "The example concerns object composition, not database keys."
+    ],
+    "takeAway": "Composition: Builds behaviour by containing or delegating to components."
+  },
+  {
+    "id": "oop-024",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which relationship best fits the design?",
+    "options": [
+      "Composition: Car has an Engine",
+      "Inheritance: Car is an Engine",
+      "A foreign-key database constraint",
+      "Runtime modification of every engine class"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Containment and delegation implement a has-a relationship without claiming subtype identity.",
+    "tags": [
+      "composition"
+    ],
+    "context": "A Car contains an Engine object and delegates start() to it. A car is not conceptually a type of engine.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Containment and delegation implement a has-a relationship without claiming subtype identity.",
+      "A car does not satisfy the conceptual is-an-engine relation.",
+      "The example concerns object composition, not database keys.",
+      "Delegation does not require changing all classes."
+    ],
+    "takeAway": "Composition: Builds behaviour by containing or delegating to components."
+  },
+  {
+    "id": "oop-025",
+    "topic": "OOP",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Liskov substitution in this situation?",
+    "options": [
+      "Subtypes should preserve behavioural expectations of their base type.",
+      "A subtype may freely strengthen every precondition.",
+      "The scenario's correct answer would be: A requirement that subtypes never have any methods.",
+      "The scenario's correct answer would be: A rule that every method must be static."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Subtypes should preserve behavioural expectations of their base type. Clients of the base type should be able to use a subtype without its unexpectedly strengthening valid-call preconditions.",
+    "tags": [
+      "liskov-substitution"
+    ],
+    "context": "A function accepts a base Account contract that permits withdrawal of available funds. A subtype adds an unexpected restriction that rejects such valid calls.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Subtypes should preserve behavioural expectations of their base type. Clients of the base type should be able to use a subtype without its unexpectedly strengthening valid-call preconditions.",
+      "That claim conflicts with the principle: Subtypes should preserve behavioural expectations of their base type. Clients of the base type should be able to use a subtype without its unexpectedly strengthening valid-call preconditions.",
+      "Subtypes may have methods; behavioural compatibility is the issue.",
+      "Static methods do not resolve the contract mismatch."
+    ],
+    "takeAway": "Liskov substitution: Subtypes should preserve behavioural expectations of their base type."
+  }
+]

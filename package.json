@@ -1,0 +1,47 @@
+{
+  "name": "exceller-prep",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/setup-editor.cjs",
+    "dev": "next dev --hostname 127.0.0.1",
+    "prebuild": "node scripts/setup-editor.cjs",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "test": "tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "format": "prettier --write app components features hooks lib services types config tests data/index.ts",
+    "seed": "node scripts/seed.cjs && node scripts/coding-seed.cjs && node scripts/enrich.cjs && node scripts/debug-diversity.cjs && node scripts/finalize-data.cjs && node scripts/improve-mcqs.cjs"
+  },
+  "overrides": {
+    "dompurify": "^3.4.16"
+  },
+  "dependencies": {
+    "@google/genai": "^2.27.0",
+    "@monaco-editor/react": "^4.7.0",
+    "@radix-ui/react-slot": "^1.4.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.52.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^3.10.1",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.0",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,1550 @@
+[
+  {
+    "id": "ai-literacy",
+    "title": "AI Literacy",
+    "summary": "Build assessment-ready understanding of AI Literacy. Study the concept, trace the example, and explain the trap before practicing.",
+    "concepts": [
+      {
+        "name": "Artificial intelligence",
+        "explanation": "Systems performing tasks that require reasoning, perception or decision making",
+        "example": "A route planner chooses a path under constraints",
+        "trap": "AI always requires neural networks"
+      },
+      {
+        "name": "Machine learning",
+        "explanation": "Learning patterns from data instead of explicitly coding every decision",
+        "example": "A spam classifier learns from labelled emails",
+        "trap": "Every decision is a manually written rule"
+      },
+      {
+        "name": "Deep learning",
+        "explanation": "Machine learning with multilayer neural networks",
+        "example": "A convolutional network identifies defects in images",
+        "trap": "Deep learning cannot process images"
+      },
+      {
+        "name": "Generative AI",
+        "explanation": "Models creating new content from learned distributions",
+        "example": "A model drafts a summary of a document",
+        "trap": "Generative models only classify existing labels"
+      },
+      {
+        "name": "Large language models",
+        "explanation": "Models predicting and generating sequences of tokens",
+        "example": "A model completes a partially written paragraph",
+        "trap": "LLMs are guaranteed factual databases"
+      },
+      {
+        "name": "Tokens",
+        "explanation": "Units of text processed by a language model",
+        "example": "One word can be split into several subword tokens",
+        "trap": "Every word is always exactly one token"
+      },
+      {
+        "name": "Embeddings",
+        "explanation": "Numeric vectors representing semantic features",
+        "example": "Similar sentences can have nearby vectors",
+        "trap": "Embeddings are encrypted original text"
+      },
+      {
+        "name": "Transformers",
+        "explanation": "Neural architectures using attention to relate sequence elements",
+        "example": "A model relates a pronoun to an earlier noun",
+        "trap": "Transformers require recurrence for every token"
+      },
+      {
+        "name": "Attention",
+        "explanation": "A mechanism weighting relevant parts of an input",
+        "example": "A translation model focuses on relevant source words",
+        "trap": "Attention assigns equal weight to every input"
+      },
+      {
+        "name": "Prompt engineering",
+        "explanation": "Designing instructions, context and output requirements",
+        "example": "Specify audience, constraints and JSON output",
+        "trap": "A longer prompt is always a better prompt"
+      },
+      {
+        "name": "Hallucination",
+        "explanation": "A plausible generated claim unsupported by evidence",
+        "example": "A model invents a journal citation",
+        "trap": "Fluent writing guarantees truth"
+      },
+      {
+        "name": "Fine-tuning",
+        "explanation": "Updating model parameters with additional training examples",
+        "example": "Adapt a model to a domain-specific classification task",
+        "trap": "Fine-tuning is simply adding text to a prompt"
+      },
+      {
+        "name": "Inference",
+        "explanation": "Using a trained model to produce predictions",
+        "example": "Classify a newly received email",
+        "trap": "Inference always updates model weights"
+      },
+      {
+        "name": "Context window",
+        "explanation": "The bounded token capacity available for a request",
+        "example": "Long conversation history may need truncation",
+        "trap": "A model remembers unlimited prior text"
+      },
+      {
+        "name": "Vector databases",
+        "explanation": "Stores supporting similarity retrieval over embeddings",
+        "example": "Retrieve product documents closest to a query vector",
+        "trap": "Vector retrieval is always exact keyword matching"
+      },
+      {
+        "name": "RAG",
+        "explanation": "Retrieval augmented generation supplies retrieved evidence to a model",
+        "example": "Retrieve policy paragraphs before answering a policy question",
+        "trap": "RAG requires retraining model weights"
+      },
+      {
+        "name": "Agents",
+        "explanation": "Systems that choose actions and tools toward a goal",
+        "example": "An assistant searches documents then checks a calendar",
+        "trap": "An agent needs unrestricted permissions"
+      },
+      {
+        "name": "AI safety",
+        "explanation": "Controls reducing harmful or unintended model behaviour",
+        "example": "Require approval before a tool deletes a record",
+        "trap": "Safety can be guaranteed by a single prompt"
+      },
+      {
+        "name": "AI ethics",
+        "explanation": "Responsible handling of fairness, transparency and accountability",
+        "example": "Audit unequal error rates across groups",
+        "trap": "Accuracy alone resolves all ethical concerns"
+      },
+      {
+        "name": "Supervised learning",
+        "explanation": "Learning from examples paired with target labels",
+        "example": "Train on transactions marked fraudulent or legitimate",
+        "trap": "Supervised learning has no labels"
+      },
+      {
+        "name": "Unsupervised learning",
+        "explanation": "Finding structure in data without target labels",
+        "example": "Cluster customers by purchasing patterns",
+        "trap": "Clustering needs a correct class for each sample"
+      },
+      {
+        "name": "Classification",
+        "explanation": "Predicting a discrete category",
+        "example": "Predict whether an email is spam",
+        "trap": "Classification always outputs a continuous price"
+      },
+      {
+        "name": "Regression",
+        "explanation": "Predicting a numeric target",
+        "example": "Estimate a house price",
+        "trap": "Regression only returns categories"
+      },
+      {
+        "name": "Training and validation",
+        "explanation": "Validation estimates performance outside training examples",
+        "example": "Tune a model on validation data then evaluate on held-out tests",
+        "trap": "Test data should be used repeatedly for tuning"
+      },
+      {
+        "name": "Overfitting",
+        "explanation": "Learning training-specific noise that fails to generalize",
+        "example": "Training accuracy is high but validation accuracy falls",
+        "trap": "Perfect training accuracy guarantees deployment quality"
+      },
+      {
+        "name": "Data leakage",
+        "explanation": "Training uses information unavailable at prediction time",
+        "example": "A future payment status leaks into a credit-risk feature",
+        "trap": "Leakage makes real-world evaluation more reliable"
+      },
+      {
+        "name": "Precision",
+        "explanation": "The fraction of predicted positives that are actually positive",
+        "example": "Reduce false fraud alerts when review capacity is limited",
+        "trap": "Precision is the fraction of all positives recovered"
+      },
+      {
+        "name": "Recall",
+        "explanation": "The fraction of actual positives successfully detected",
+        "example": "Prioritize detecting diseases even with extra follow-up tests",
+        "trap": "High recall implies there are no false positives"
+      },
+      {
+        "name": "Temperature",
+        "explanation": "A sampling control affecting output variability",
+        "example": "Use a lower temperature for more consistent extraction",
+        "trap": "Temperature guarantees factual correctness"
+      },
+      {
+        "name": "Few-shot prompting",
+        "explanation": "Showing examples of the desired task and format",
+        "example": "Provide two labelled extraction examples in the prompt",
+        "trap": "Few-shot examples permanently train the model"
+      },
+      {
+        "name": "System instructions",
+        "explanation": "Application-level instructions for model behaviour",
+        "example": "Set a tutoring policy before candidate input",
+        "trap": "User text should be allowed to override all safety rules"
+      },
+      {
+        "name": "Prompt injection",
+        "explanation": "Untrusted content tries to override trusted instructions",
+        "example": "A retrieved page says to ignore the developer instructions",
+        "trap": "Retrieved documents are always trusted instructions"
+      },
+      {
+        "name": "Retrieval loaders",
+        "explanation": "Components reading source data into document records",
+        "example": "Load a PDF with page metadata",
+        "trap": "A loader automatically verifies every source claim"
+      },
+      {
+        "name": "Chunking",
+        "explanation": "Splitting documents into retrieval units",
+        "example": "Split a handbook into overlapping sections",
+        "trap": "One entire corpus should always be a single chunk"
+      },
+      {
+        "name": "Recursive splitting",
+        "explanation": "Splitting progressively by section, paragraph and smaller boundaries",
+        "example": "Try paragraph breaks before splitting individual sentences",
+        "trap": "Recursive splitting is identical to random splitting"
+      },
+      {
+        "name": "Semantic splitting",
+        "explanation": "Grouping text based on meaning changes",
+        "example": "Start a new chunk when the discussion changes topic",
+        "trap": "Semantic splitting always uses a fixed character count"
+      },
+      {
+        "name": "Chunk overlap",
+        "explanation": "Repeating some boundary content to preserve context",
+        "example": "Repeat a preceding sentence in the next chunk",
+        "trap": "Overlap has no storage or token cost"
+      },
+      {
+        "name": "Cosine similarity",
+        "explanation": "Measures alignment of two vectors independent of magnitude",
+        "example": "Compare normalized query and document directions",
+        "trap": "A higher cosine score proves a source is factually true"
+      },
+      {
+        "name": "Top-K retrieval",
+        "explanation": "Returning a limited number of nearest candidates",
+        "example": "Fetch five relevant chunks for an answer",
+        "trap": "Larger K always improves quality without cost"
+      },
+      {
+        "name": "Retriever",
+        "explanation": "Selects evidence for a query from an indexed corpus",
+        "example": "Apply a policy-year filter before vector search",
+        "trap": "The retriever must write the final natural-language answer"
+      },
+      {
+        "name": "Prompt construction",
+        "explanation": "Combining instructions, query and clearly delimited evidence",
+        "example": "Tell the model to cite supplied passages and admit missing evidence",
+        "trap": "Retrieved content should be treated as new system instructions"
+      },
+      {
+        "name": "Reranking",
+        "explanation": "Reordering initial candidates using a more precise relevance model",
+        "example": "Score query-document pairs after broad vector retrieval",
+        "trap": "Reranking must happen before any candidates are retrieved"
+      },
+      {
+        "name": "Metadata filtering",
+        "explanation": "Restricting search using structured document attributes",
+        "example": "Only retrieve records accessible to the current department",
+        "trap": "Similarity search automatically enforces access control"
+      },
+      {
+        "name": "Hybrid search",
+        "explanation": "Combining lexical and semantic retrieval",
+        "example": "Use keywords for an exact product code and vectors for intent",
+        "trap": "Hybrid search excludes keyword search"
+      },
+      {
+        "name": "RAG evaluation",
+        "explanation": "Assessing retrieval relevance and grounded answer quality",
+        "example": "Measure retrieval recall and answer faithfulness separately",
+        "trap": "Only grammar quality matters for a RAG system"
+      },
+      {
+        "name": "Grounded generation",
+        "explanation": "Supporting generated claims with supplied evidence",
+        "example": "Answer with a cited policy section or abstain",
+        "trap": "RAG completely eliminates hallucinations"
+      },
+      {
+        "name": "Embedding consistency",
+        "explanation": "Index and query vectors must use compatible embedding spaces",
+        "example": "Re-embed documents when switching embedding models",
+        "trap": "Vectors from unrelated embedding models are interchangeable"
+      },
+      {
+        "name": "Index freshness",
+        "explanation": "An index needs updates when source documents change",
+        "example": "Refresh a handbook index after a policy revision",
+        "trap": "RAG indexes stay current without an update process"
+      },
+      {
+        "name": "Retrieval access control",
+        "explanation": "Authorization must constrain evidence retrieval",
+        "example": "Filter restricted records before constructing model context",
+        "trap": "Hiding a final citation is sufficient protection"
+      },
+      {
+        "name": "Tool calling",
+        "explanation": "Models request structured actions which the application validates",
+        "example": "Validate arguments before invoking a database lookup",
+        "trap": "A model tool call is automatically safe to execute"
+      }
+    ],
+    "interview": [
+      "Explain Artificial intelligence with a project example and discuss its limitations.",
+      "Explain Machine learning with a project example and discuss its limitations.",
+      "Explain Deep learning with a project example and discuss its limitations.",
+      "Explain Generative AI with a project example and discuss its limitations.",
+      "Explain Large language models with a project example and discuss its limitations."
+    ],
+    "cheatSheet": [
+      "Artificial intelligence: Systems performing tasks that require reasoning, perception or decision making",
+      "Machine learning: Learning patterns from data instead of explicitly coding every decision",
+      "Deep learning: Machine learning with multilayer neural networks",
+      "Generative AI: Models creating new content from learned distributions",
+      "Large language models: Models predicting and generating sequences of tokens",
+      "Tokens: Units of text processed by a language model",
+      "Embeddings: Numeric vectors representing semantic features",
+      "Transformers: Neural architectures using attention to relate sequence elements",
+      "Attention: A mechanism weighting relevant parts of an input",
+      "Prompt engineering: Designing instructions, context and output requirements",
+      "Hallucination: A plausible generated claim unsupported by evidence",
+      "Fine-tuning: Updating model parameters with additional training examples",
+      "Inference: Using a trained model to produce predictions",
+      "Context window: The bounded token capacity available for a request",
+      "Vector databases: Stores supporting similarity retrieval over embeddings",
+      "RAG: Retrieval augmented generation supplies retrieved evidence to a model",
+      "Agents: Systems that choose actions and tools toward a goal",
+      "AI safety: Controls reducing harmful or unintended model behaviour",
+      "AI ethics: Responsible handling of fairness, transparency and accountability",
+      "Supervised learning: Learning from examples paired with target labels",
+      "Unsupervised learning: Finding structure in data without target labels",
+      "Classification: Predicting a discrete category",
+      "Regression: Predicting a numeric target",
+      "Training and validation: Validation estimates performance outside training examples",
+      "Overfitting: Learning training-specific noise that fails to generalize",
+      "Data leakage: Training uses information unavailable at prediction time",
+      "Precision: The fraction of predicted positives that are actually positive",
+      "Recall: The fraction of actual positives successfully detected",
+      "Temperature: A sampling control affecting output variability",
+      "Few-shot prompting: Showing examples of the desired task and format",
+      "System instructions: Application-level instructions for model behaviour",
+      "Prompt injection: Untrusted content tries to override trusted instructions",
+      "Retrieval loaders: Components reading source data into document records",
+      "Chunking: Splitting documents into retrieval units",
+      "Recursive splitting: Splitting progressively by section, paragraph and smaller boundaries",
+      "Semantic splitting: Grouping text based on meaning changes",
+      "Chunk overlap: Repeating some boundary content to preserve context",
+      "Cosine similarity: Measures alignment of two vectors independent of magnitude",
+      "Top-K retrieval: Returning a limited number of nearest candidates",
+      "Retriever: Selects evidence for a query from an indexed corpus",
+      "Prompt construction: Combining instructions, query and clearly delimited evidence",
+      "Reranking: Reordering initial candidates using a more precise relevance model",
+      "Metadata filtering: Restricting search using structured document attributes",
+      "Hybrid search: Combining lexical and semantic retrieval",
+      "RAG evaluation: Assessing retrieval relevance and grounded answer quality",
+      "Grounded generation: Supporting generated claims with supplied evidence",
+      "Embedding consistency: Index and query vectors must use compatible embedding spaces",
+      "Index freshness: An index needs updates when source documents change",
+      "Retrieval access control: Authorization must constrain evidence retrieval",
+      "Tool calling: Models request structured actions which the application validates"
+    ]
+  },
+  {
+    "id": "dbms",
+    "title": "DBMS",
+    "summary": "Build assessment-ready understanding of DBMS. Study the concept, trace the example, and explain the trap before practicing.",
+    "concepts": [
+      {
+        "name": "DBMS vs RDBMS",
+        "explanation": "An RDBMS organizes relations with relational constraints",
+        "example": "Represent customers and orders in linked tables",
+        "trap": "Every DBMS must store only relational tables"
+      },
+      {
+        "name": "Primary key",
+        "explanation": "Uniquely identifies each row and cannot be null",
+        "example": "A customer_id identifies a customer record",
+        "trap": "A primary key may contain duplicate values"
+      },
+      {
+        "name": "Foreign key",
+        "explanation": "References a candidate key to maintain referential integrity",
+        "example": "An order customer_id references a customer",
+        "trap": "A foreign key must be unique in the child table"
+      },
+      {
+        "name": "Candidate key",
+        "explanation": "A minimal set of attributes uniquely identifying a row",
+        "example": "Both employee_id and a unique email can be candidates",
+        "trap": "A candidate key may include redundant attributes"
+      },
+      {
+        "name": "First normal form",
+        "explanation": "Each attribute holds an atomic value relative to its domain",
+        "example": "Store each phone number in a separate related row",
+        "trap": "Comma-separated repeating phone fields always satisfy 1NF"
+      },
+      {
+        "name": "Second normal form",
+        "explanation": "1NF with no partial dependency on a candidate key",
+        "example": "Move a product name out of a composite order-item key table",
+        "trap": "2NF allows dependency on only part of a composite key"
+      },
+      {
+        "name": "Third normal form",
+        "explanation": "For every dependency X to A, X is a superkey or A is prime",
+        "example": "Separate department details from employee details",
+        "trap": "3NF always permits transitive dependencies on non-key attributes"
+      },
+      {
+        "name": "BCNF",
+        "explanation": "Every determinant in a nontrivial dependency is a superkey",
+        "example": "Decompose a relation whose non-key tutor determines a subject",
+        "trap": "BCNF is weaker than third normal form"
+      },
+      {
+        "name": "Atomicity",
+        "explanation": "A transaction completes entirely or rolls back",
+        "example": "Both debit and credit succeed in a transfer",
+        "trap": "Atomicity permits a partially committed transfer"
+      },
+      {
+        "name": "Consistency",
+        "explanation": "A transaction preserves defined integrity constraints",
+        "example": "A balance check prevents invalid negative balances",
+        "trap": "Consistency means all replicas are instantly identical"
+      },
+      {
+        "name": "Isolation",
+        "explanation": "Concurrent transactions follow an isolation contract",
+        "example": "A serializable schedule behaves like a serial order",
+        "trap": "Isolation means no transactions can ever run concurrently"
+      },
+      {
+        "name": "Durability",
+        "explanation": "Committed changes survive supported failures",
+        "example": "Recover committed orders after a restart",
+        "trap": "Committed data exists only in volatile memory"
+      },
+      {
+        "name": "Clustered index",
+        "explanation": "Defines row storage ordering or clustering in an engine-specific way",
+        "example": "Range scans can benefit from clustered key locality",
+        "trap": "A table can have unlimited independent physical row orders"
+      },
+      {
+        "name": "Non-clustered index",
+        "explanation": "Separate search structure pointing to underlying rows",
+        "example": "Look up an employee by an indexed email",
+        "trap": "An index makes every write operation cheaper"
+      },
+      {
+        "name": "Joins",
+        "explanation": "Combine related rows based on a condition",
+        "example": "Join invoices to customers using customer_id",
+        "trap": "A join always removes unmatched rows"
+      },
+      {
+        "name": "Views",
+        "explanation": "Named queries exposing a derived representation",
+        "example": "Expose selected columns to reporting users",
+        "trap": "Every ordinary view stores a separate physical copy"
+      },
+      {
+        "name": "Stored procedures",
+        "explanation": "Named server-side routines containing database logic",
+        "example": "A routine applies a sequence of validated updates",
+        "trap": "Stored procedures inherently prevent all injection"
+      },
+      {
+        "name": "Triggers",
+        "explanation": "Routines invoked by configured database events",
+        "example": "Write an audit row after an update",
+        "trap": "Triggers execute only when manually called by name"
+      },
+      {
+        "name": "Deadlocks",
+        "explanation": "Transactions form a cycle of mutually waiting locks",
+        "example": "Transaction A holds X while B holds Y and both request the other",
+        "trap": "A deadlock is the same as a single long query"
+      },
+      {
+        "name": "Isolation levels",
+        "explanation": "Trade-offs controlling allowed concurrent-read anomalies",
+        "example": "Read committed avoids dirty reads but may allow nonrepeatable reads",
+        "trap": "Read committed prevents every phantom under every engine"
+      },
+      {
+        "name": "Transactions and concurrency",
+        "explanation": "A transaction groups work while concurrency coordinates interleaved operations",
+        "example": "Transfer funds with a consistent lock ordering and rollback on failure",
+        "trap": "Every transaction must execute entirely alone"
+      }
+    ],
+    "interview": [
+      "Explain DBMS vs RDBMS with a project example and discuss its limitations.",
+      "Explain Primary key with a project example and discuss its limitations.",
+      "Explain Foreign key with a project example and discuss its limitations.",
+      "Explain Candidate key with a project example and discuss its limitations.",
+      "Explain First normal form with a project example and discuss its limitations."
+    ],
+    "cheatSheet": [
+      "DBMS vs RDBMS: An RDBMS organizes relations with relational constraints",
+      "Primary key: Uniquely identifies each row and cannot be null",
+      "Foreign key: References a candidate key to maintain referential integrity",
+      "Candidate key: A minimal set of attributes uniquely identifying a row",
+      "First normal form: Each attribute holds an atomic value relative to its domain",
+      "Second normal form: 1NF with no partial dependency on a candidate key",
+      "Third normal form: For every dependency X to A, X is a superkey or A is prime",
+      "BCNF: Every determinant in a nontrivial dependency is a superkey",
+      "Atomicity: A transaction completes entirely or rolls back",
+      "Consistency: A transaction preserves defined integrity constraints",
+      "Isolation: Concurrent transactions follow an isolation contract",
+      "Durability: Committed changes survive supported failures",
+      "Clustered index: Defines row storage ordering or clustering in an engine-specific way",
+      "Non-clustered index: Separate search structure pointing to underlying rows",
+      "Joins: Combine related rows based on a condition",
+      "Views: Named queries exposing a derived representation",
+      "Stored procedures: Named server-side routines containing database logic",
+      "Triggers: Routines invoked by configured database events",
+      "Deadlocks: Transactions form a cycle of mutually waiting locks",
+      "Isolation levels: Trade-offs controlling allowed concurrent-read anomalies",
+      "Transactions and concurrency: A transaction groups work while concurrency coordinates interleaved operations"
+    ]
+  },
+  {
+    "id": "sql",
+    "title": "SQL",
+    "summary": "Build assessment-ready understanding of SQL. Study the concept, trace the example, and explain the trap before practicing.",
+    "concepts": [
+      {
+        "name": "SELECT",
+        "explanation": "Projects expressions or columns from matching rows",
+        "example": "SELECT name FROM employees",
+        "trap": "SELECT always changes stored rows"
+      },
+      {
+        "name": "WHERE",
+        "explanation": "Filters individual rows before grouping",
+        "example": "WHERE salary > 50000",
+        "trap": "WHERE filters aggregate groups after GROUP BY"
+      },
+      {
+        "name": "GROUP BY",
+        "explanation": "Forms groups sharing grouping expressions",
+        "example": "GROUP BY department",
+        "trap": "GROUP BY guarantees sorted output"
+      },
+      {
+        "name": "HAVING",
+        "explanation": "Filters aggregate groups",
+        "example": "HAVING COUNT(*) > 3",
+        "trap": "HAVING must always execute before WHERE"
+      },
+      {
+        "name": "ORDER BY",
+        "explanation": "Defines result ordering",
+        "example": "ORDER BY salary DESC, id ASC",
+        "trap": "Rows have guaranteed order without ORDER BY"
+      },
+      {
+        "name": "INNER JOIN",
+        "explanation": "Returns rows matching the join condition on both sides",
+        "example": "Join orders to existing customers",
+        "trap": "An inner join always preserves every left row"
+      },
+      {
+        "name": "LEFT JOIN",
+        "explanation": "Preserves left rows and null-extends unmatched right columns",
+        "example": "List all customers even those without orders",
+        "trap": "Filtering right columns in WHERE always preserves unmatched left rows"
+      },
+      {
+        "name": "RIGHT JOIN",
+        "explanation": "Preserves right rows and null-extends unmatched left columns",
+        "example": "Keep all right-table departments",
+        "trap": "RIGHT JOIN is identical to INNER JOIN for unmatched rows"
+      },
+      {
+        "name": "SELF JOIN",
+        "explanation": "Joins two aliases of the same relation",
+        "example": "Link employees to managers in the employees table",
+        "trap": "A self join requires two different physical tables"
+      },
+      {
+        "name": "Subqueries",
+        "explanation": "Queries nested within another SQL expression",
+        "example": "Filter salaries above SELECT AVG(salary)",
+        "trap": "A scalar subquery may return arbitrary multiple rows"
+      },
+      {
+        "name": "CTE",
+        "explanation": "A named query expression scoped to a statement",
+        "example": "WITH totals AS (...) SELECT * FROM totals",
+        "trap": "Every CTE is automatically a permanent table"
+      },
+      {
+        "name": "Window functions",
+        "explanation": "Calculate across related rows without collapsing each output row",
+        "example": "SUM(amount) OVER (PARTITION BY customer_id)",
+        "trap": "Window functions always reduce each partition to one row"
+      },
+      {
+        "name": "COUNT",
+        "explanation": "COUNT(*) counts rows while COUNT(column) excludes nulls",
+        "example": "COUNT(email) ignores missing emails",
+        "trap": "COUNT(column) always includes null values"
+      },
+      {
+        "name": "SUM and AVG",
+        "explanation": "Aggregate numeric values while ignoring null inputs",
+        "example": "AVG(score) ignores absent scores",
+        "trap": "AVG treats every null as zero"
+      },
+      {
+        "name": "MAX and MIN",
+        "explanation": "Return extreme non-null values",
+        "example": "MAX(salary) returns the largest known salary",
+        "trap": "MAX always returns the row containing all associated columns"
+      },
+      {
+        "name": "DISTINCT",
+        "explanation": "Removes duplicate result tuples",
+        "example": "SELECT DISTINCT city FROM customers",
+        "trap": "DISTINCT applies only to the first selected column"
+      },
+      {
+        "name": "NULL comparisons",
+        "explanation": "Use IS NULL instead of equality to detect nulls",
+        "example": "WHERE manager_id IS NULL",
+        "trap": "NULL = NULL evaluates to true in ordinary SQL"
+      },
+      {
+        "name": "UNION",
+        "explanation": "Combines result sets removing duplicates unless UNION ALL is used",
+        "example": "Combine active and archived customer IDs",
+        "trap": "UNION ALL removes duplicates"
+      },
+      {
+        "name": "Ranking functions",
+        "explanation": "ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties",
+        "example": "Scores 90,90,80 receive RANK values 1,1,3",
+        "trap": "RANK and DENSE_RANK always produce identical ranks"
+      },
+      {
+        "name": "Index-aware predicates",
+        "explanation": "Search-friendly predicates can permit useful index access",
+        "example": "A direct timestamp range can use a timestamp index",
+        "trap": "Wrapping an indexed column in a function always preserves index seeks"
+      },
+      {
+        "name": "Aggregate functions",
+        "explanation": "COUNT, SUM, MIN, MAX and AVG summarize selected values",
+        "example": "SELECT team,SUM(amount) FROM sales GROUP BY team HAVING SUM(amount)>100",
+        "trap": "HAVING and WHERE always filter at the same stage"
+      }
+    ],
+    "interview": [
+      "Explain SELECT with a project example and discuss its limitations.",
+      "Explain WHERE with a project example and discuss its limitations.",
+      "Explain GROUP BY with a project example and discuss its limitations.",
+      "Explain HAVING with a project example and discuss its limitations.",
+      "Explain ORDER BY with a project example and discuss its limitations."
+    ],
+    "cheatSheet": [
+      "SELECT: Projects expressions or columns from matching rows",
+      "WHERE: Filters individual rows before grouping",
+      "GROUP BY: Forms groups sharing grouping expressions",
+      "HAVING: Filters aggregate groups",
+      "ORDER BY: Defines result ordering",
+      "INNER JOIN: Returns rows matching the join condition on both sides",
+      "LEFT JOIN: Preserves left rows and null-extends unmatched right columns",
+      "RIGHT JOIN: Preserves right rows and null-extends unmatched left columns",
+      "SELF JOIN: Joins two aliases of the same relation",
+      "Subqueries: Queries nested within another SQL expression",
+      "CTE: A named query expression scoped to a statement",
+      "Window functions: Calculate across related rows without collapsing each output row",
+      "COUNT: COUNT(*) counts rows while COUNT(column) excludes nulls",
+      "SUM and AVG: Aggregate numeric values while ignoring null inputs",
+      "MAX and MIN: Return extreme non-null values",
+      "DISTINCT: Removes duplicate result tuples",
+      "NULL comparisons: Use IS NULL instead of equality to detect nulls",
+      "UNION: Combines result sets removing duplicates unless UNION ALL is used",
+      "Ranking functions: ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties",
+      "Index-aware predicates: Search-friendly predicates can permit useful index access",
+      "Aggregate functions: COUNT, SUM, MIN, MAX and AVG summarize selected values"
+    ]
+  },
+  {
+    "id": "oop",
+    "title": "OOP",
+    "summary": "Build assessment-ready understanding of OOP. Study the concept, trace the example, and explain the trap before practicing.",
+    "concepts": [
+      {
+        "name": "Classes and objects",
+        "explanation": "A class defines structure and behaviour while an object is an instance",
+        "example": "Two account objects share a class but have separate balances",
+        "trap": "All instances always share every field value"
+      },
+      {
+        "name": "Encapsulation",
+        "explanation": "Controls access to state through defined interfaces",
+        "example": "Validate balance changes in a deposit method",
+        "trap": "Public access to every mutable field guarantees encapsulation"
+      },
+      {
+        "name": "Inheritance",
+        "explanation": "A subtype derives behaviour from a parent type",
+        "example": "A specialized account inherits account operations",
+        "trap": "Inheritance always makes composition unnecessary"
+      },
+      {
+        "name": "Polymorphism",
+        "explanation": "A common interface supports different implementations",
+        "example": "Call draw on different shape objects",
+        "trap": "Polymorphism requires all methods to have identical bodies"
+      },
+      {
+        "name": "Abstraction",
+        "explanation": "Exposes relevant operations while hiding implementation details",
+        "example": "A payment interface hides provider-specific request logic",
+        "trap": "Abstraction means every detail must be publicly visible"
+      },
+      {
+        "name": "Overriding",
+        "explanation": "A subtype supplies an implementation of an inherited method",
+        "example": "A savings account overrides interest calculation",
+        "trap": "Overriding is adding an unrelated method name"
+      },
+      {
+        "name": "Overloading",
+        "explanation": "Methods share a name but have distinguishable signatures in supporting languages",
+        "example": "Java methods accept either an int or a String",
+        "trap": "Changing only the return type permits Java overloads"
+      },
+      {
+        "name": "Constructors",
+        "explanation": "Initialize a new instance according to language rules",
+        "example": "Set required fields when creating an account",
+        "trap": "A constructor is an ordinary Java method with a return type"
+      },
+      {
+        "name": "Interfaces",
+        "explanation": "Specify a contract implemented by compatible types",
+        "example": "Different storage providers implement a save contract",
+        "trap": "An interface forces every implementation to use the same algorithm"
+      },
+      {
+        "name": "Abstract classes",
+        "explanation": "Can define shared implementation and abstract operations",
+        "example": "A base report defines common formatting and abstract data loading",
+        "trap": "An abstract class is directly instantiable in Java"
+      },
+      {
+        "name": "Static members",
+        "explanation": "Belong to a class rather than a particular instance",
+        "example": "A shared factory method creates instances",
+        "trap": "A static Java method can directly use this"
+      },
+      {
+        "name": "Composition",
+        "explanation": "Builds behaviour by containing or delegating to components",
+        "example": "A car has an engine rather than being an engine",
+        "trap": "Has-a relationships always require inheritance"
+      },
+      {
+        "name": "Liskov substitution",
+        "explanation": "Subtypes should preserve behavioural expectations of their base type",
+        "example": "A subtype accepts calls valid for the base contract",
+        "trap": "A subtype may freely strengthen every precondition"
+      }
+    ],
+    "interview": [
+      "Explain Classes and objects with a project example and discuss its limitations.",
+      "Explain Encapsulation with a project example and discuss its limitations.",
+      "Explain Inheritance with a project example and discuss its limitations.",
+      "Explain Polymorphism with a project example and discuss its limitations.",
+      "Explain Abstraction with a project example and discuss its limitations."
+    ],
+    "cheatSheet": [
+      "Classes and objects: A class defines structure and behaviour while an object is an instance",
+      "Encapsulation: Controls access to state through defined interfaces",
+      "Inheritance: A subtype derives behaviour from a parent type",
+      "Polymorphism: A common interface supports different implementations",
+      "Abstraction: Exposes relevant operations while hiding implementation details",
+      "Overriding: A subtype supplies an implementation of an inherited method",
+      "Overloading: Methods share a name but have distinguishable signatures in supporting languages",
+      "Constructors: Initialize a new instance according to language rules",
+      "Interfaces: Specify a contract implemented by compatible types",
+      "Abstract classes: Can define shared implementation and abstract operations",
+      "Static members: Belong to a class rather than a particular instance",
+      "Composition: Builds behaviour by containing or delegating to components",
+      "Liskov substitution: Subtypes should preserve behavioural expectations of their base type"
+    ]
+  },
+  {
+    "id": "os",
+    "title": "Operating Systems",
+    "summary": "Build assessment-ready understanding of OS. Study the concept, trace the example, and explain the trap before practicing.",
+    "concepts": [
+      {
+        "name": "Processes and threads",
+        "explanation": "Threads share a process address space while processes have isolated address spaces",
+        "example": "Two worker threads access the same heap",
+        "trap": "Each thread always owns a separate process address space"
+      },
+      {
+        "name": "FCFS scheduling",
+        "explanation": "Runs ready work in arrival order without preemption in its basic form",
+        "example": "A short job waits behind a long arriving job",
+        "trap": "FCFS always minimizes average waiting time"
+      },
+      {
+        "name": "SJF scheduling",
+        "explanation": "Chooses the shortest estimated next CPU burst",
+        "example": "A short ready job runs before a longer one",
+        "trap": "SJF cannot starve long jobs"
+      },
+      {
+        "name": "Round Robin",
+        "explanation": "Cycles ready processes with a time quantum",
+        "example": "A process is preempted when its quantum expires",
+        "trap": "A smaller quantum has no context-switch overhead"
+      },
+      {
+        "name": "Priority scheduling",
+        "explanation": "Chooses work by priority and can use aging to reduce starvation",
+        "example": "Raise priority gradually for a long-waiting job",
+        "trap": "Priority scheduling inherently prevents starvation"
+      },
+      {
+        "name": "Context switching",
+        "explanation": "Saving and restoring execution state between scheduled tasks",
+        "example": "The scheduler switches register state to another thread",
+        "trap": "Context switching always performs useful application computation"
+      },
+      {
+        "name": "Deadlock conditions",
+        "explanation": "Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary",
+        "example": "A lock acquisition cycle can trap waiting threads",
+        "trap": "Removing a necessary condition cannot prevent deadlock"
+      },
+      {
+        "name": "Mutex and semaphore",
+        "explanation": "A mutex protects ownership-based exclusion; a semaphore counts permits",
+        "example": "A semaphore limits simultaneous workers to three",
+        "trap": "A counting semaphore can only ever have value one"
+      },
+      {
+        "name": "Producer consumer",
+        "explanation": "Coordinates bounded-buffer production and consumption",
+        "example": "Use empty/full counts with exclusion around buffer updates",
+        "trap": "Only a mutex guarantees consumers never read an empty buffer"
+      },
+      {
+        "name": "Readers writers",
+        "explanation": "Allows concurrent readers while synchronizing writes",
+        "example": "Protect a cache with a reader-writer policy",
+        "trap": "All readers must always exclude one another"
+      },
+      {
+        "name": "Paging",
+        "explanation": "Maps fixed-size virtual pages to physical frames",
+        "example": "A page table maps virtual addresses",
+        "trap": "Paging requires every process to occupy contiguous physical memory"
+      },
+      {
+        "name": "Virtual memory",
+        "explanation": "Provides virtual address spaces backed by memory and possibly storage",
+        "example": "A page fault loads a nonresident page",
+        "trap": "A page fault always means an invalid address"
+      },
+      {
+        "name": "Thrashing and replacement",
+        "explanation": "Excessive page faults can dominate execution when working sets do not fit",
+        "example": "Reduce multiprogramming when paging activity overwhelms useful work",
+        "trap": "More active processes always reduce thrashing"
+      },
+      {
+        "name": "Segmentation",
+        "explanation": "Divides address spaces into variable-size logical regions",
+        "example": "Separate code, stack and data segments",
+        "trap": "Segmentation has only fixed-size frames"
+      },
+      {
+        "name": "FIFO and LRU replacement",
+        "explanation": "FIFO evicts by arrival; LRU evicts by recent use",
+        "example": "Track last access to estimate recency",
+        "trap": "FIFO and LRU always evict the same page"
+      },
+      {
+        "name": "Dining philosophers",
+        "explanation": "A synchronization model exposing circular-wait and resource-allocation problems",
+        "example": "Acquire forks in a global order to break a cycle",
+        "trap": "Each philosopher acquiring one fork guarantees progress"
+      }
+    ],
+    "interview": [
+      "Explain Processes and threads with a project example and discuss its limitations.",
+      "Explain FCFS scheduling with a project example and discuss its limitations.",
+      "Explain SJF scheduling with a project example and discuss its limitations.",
+      "Explain Round Robin with a project example and discuss its limitations.",
+      "Explain Priority scheduling with a project example and discuss its limitations."
+    ],
+    "cheatSheet": [
+      "Processes and threads: Threads share a process address space while processes have isolated address spaces",
+      "FCFS scheduling: Runs ready work in arrival order without preemption in its basic form",
+      "SJF scheduling: Chooses the shortest estimated next CPU burst",
+      "Round Robin: Cycles ready processes with a time quantum",
+      "Priority scheduling: Chooses work by priority and can use aging to reduce starvation",
+      "Context switching: Saving and restoring execution state between scheduled tasks",
+      "Deadlock conditions: Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary",
+      "Mutex and semaphore: A mutex protects ownership-based exclusion; a semaphore counts permits",
+      "Producer consumer: Coordinates bounded-buffer production and consumption",
+      "Readers writers: Allows concurrent readers while synchronizing writes",
+      "Paging: Maps fixed-size virtual pages to physical frames",
+      "Virtual memory: Provides virtual address spaces backed by memory and possibly storage",
+      "Thrashing and replacement: Excessive page faults can dominate execution when working sets do not fit",
+      "Segmentation: Divides address spaces into variable-size logical regions",
+      "FIFO and LRU replacement: FIFO evicts by arrival; LRU evicts by recent use",
+      "Dining philosophers: A synchronization model exposing circular-wait and resource-allocation problems"
+    ]
+  },
+  {
+    "id": "cn",
+    "title": "Computer Networks",
+    "summary": "Build assessment-ready understanding of CN. Study the concept, trace the example, and explain the trap before practicing.",
+    "concepts": [
+      {
+        "name": "OSI layers",
+        "explanation": "A seven-layer reference model separates networking responsibilities",
+        "example": "Routing is associated with the network layer",
+        "trap": "Routing is exclusively a presentation-layer function"
+      },
+      {
+        "name": "TCP/IP",
+        "explanation": "An Internet protocol suite spanning link, internet, transport and application functions",
+        "example": "IP routes packets while TCP provides a reliable stream",
+        "trap": "TCP/IP and OSI require identical layer counts"
+      },
+      {
+        "name": "TCP vs UDP",
+        "explanation": "TCP provides ordered reliable streams; UDP provides datagrams without that guarantee",
+        "example": "Use UDP where low-latency application-managed delivery is preferred",
+        "trap": "UDP guarantees retransmission and ordered delivery"
+      },
+      {
+        "name": "HTTP and HTTPS",
+        "explanation": "HTTPS carries HTTP over authenticated encrypted TLS connections",
+        "example": "A browser verifies a server certificate during TLS",
+        "trap": "HTTPS proves every webpage statement is trustworthy"
+      },
+      {
+        "name": "DNS",
+        "explanation": "Resolves names and other records using distributed DNS infrastructure",
+        "example": "Resolve a hostname to an address before connecting",
+        "trap": "DNS assigns a device its network lease"
+      },
+      {
+        "name": "DHCP",
+        "explanation": "Automatically supplies network configuration leases",
+        "example": "A new laptop receives an IP address and gateway",
+        "trap": "DHCP is the same as resolving a hostname"
+      },
+      {
+        "name": "ARP",
+        "explanation": "Resolves IPv4 neighbours to link-layer addresses on a local network",
+        "example": "Find the MAC address for the local next hop",
+        "trap": "ARP directly resolves an arbitrary remote host across the Internet"
+      },
+      {
+        "name": "Subnetting",
+        "explanation": "An address prefix identifies a network portion",
+        "example": "A conventional IPv4 /24 subnet has 256 addresses",
+        "trap": "Every /24 has 256 usable host addresses in conventional allocation"
+      },
+      {
+        "name": "Routers and switches",
+        "explanation": "Routers forward between networks while switches typically forward local Ethernet frames",
+        "example": "A switch learns MAC-to-port mappings",
+        "trap": "An Ethernet hub learns destination MAC routes"
+      },
+      {
+        "name": "TCP handshake and ports",
+        "explanation": "SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints",
+        "example": "HTTPS commonly uses TCP port 443",
+        "trap": "TCP establishes a connection using only one SYN packet"
+      }
+    ],
+    "interview": [
+      "Explain OSI layers with a project example and discuss its limitations.",
+      "Explain TCP/IP with a project example and discuss its limitations.",
+      "Explain TCP vs UDP with a project example and discuss its limitations.",
+      "Explain HTTP and HTTPS with a project example and discuss its limitations.",
+      "Explain DNS with a project example and discuss its limitations."
+    ],
+    "cheatSheet": [
+      "OSI layers: A seven-layer reference model separates networking responsibilities",
+      "TCP/IP: An Internet protocol suite spanning link, internet, transport and application functions",
+      "TCP vs UDP: TCP provides ordered reliable streams; UDP provides datagrams without that guarantee",
+      "HTTP and HTTPS: HTTPS carries HTTP over authenticated encrypted TLS connections",
+      "DNS: Resolves names and other records using distributed DNS infrastructure",
+      "DHCP: Automatically supplies network configuration leases",
+      "ARP: Resolves IPv4 neighbours to link-layer addresses on a local network",
+      "Subnetting: An address prefix identifies a network portion",
+      "Routers and switches: Routers forward between networks while switches typically forward local Ethernet frames",
+      "TCP handshake and ports: SYN, SYN-ACK, ACK establish a TCP connection; ports identify endpoints"
+    ]
+  },
+  {
+    "id": "rag",
+    "title": "RAG",
+    "summary": "Understand RAG through mechanisms, examples, and assessment traps.",
+    "concepts": [
+      {
+        "name": "Retrieval loaders",
+        "explanation": "Components reading source data into document records",
+        "example": "Load a PDF with page metadata",
+        "trap": "A loader automatically verifies every source claim"
+      },
+      {
+        "name": "Chunking",
+        "explanation": "Splitting documents into retrieval units",
+        "example": "Split a handbook into overlapping sections",
+        "trap": "One entire corpus should always be a single chunk"
+      },
+      {
+        "name": "Recursive splitting",
+        "explanation": "Splitting progressively by section, paragraph and smaller boundaries",
+        "example": "Try paragraph breaks before splitting individual sentences",
+        "trap": "Recursive splitting is identical to random splitting"
+      },
+      {
+        "name": "Semantic splitting",
+        "explanation": "Grouping text based on meaning changes",
+        "example": "Start a new chunk when the discussion changes topic",
+        "trap": "Semantic splitting always uses a fixed character count"
+      },
+      {
+        "name": "Chunk overlap",
+        "explanation": "Repeating some boundary content to preserve context",
+        "example": "Repeat a preceding sentence in the next chunk",
+        "trap": "Overlap has no storage or token cost"
+      },
+      {
+        "name": "Cosine similarity",
+        "explanation": "Measures alignment of two vectors independent of magnitude",
+        "example": "Compare normalized query and document directions",
+        "trap": "A higher cosine score proves a source is factually true"
+      },
+      {
+        "name": "Top-K retrieval",
+        "explanation": "Returning a limited number of nearest candidates",
+        "example": "Fetch five relevant chunks for an answer",
+        "trap": "Larger K always improves quality without cost"
+      },
+      {
+        "name": "Retriever",
+        "explanation": "Selects evidence for a query from an indexed corpus",
+        "example": "Apply a policy-year filter before vector search",
+        "trap": "The retriever must write the final natural-language answer"
+      },
+      {
+        "name": "Prompt construction",
+        "explanation": "Combining instructions, query and clearly delimited evidence",
+        "example": "Tell the model to cite supplied passages and admit missing evidence",
+        "trap": "Retrieved content should be treated as new system instructions"
+      },
+      {
+        "name": "Reranking",
+        "explanation": "Reordering initial candidates using a more precise relevance model",
+        "example": "Score query-document pairs after broad vector retrieval",
+        "trap": "Reranking must happen before any candidates are retrieved"
+      },
+      {
+        "name": "Metadata filtering",
+        "explanation": "Restricting search using structured document attributes",
+        "example": "Only retrieve records accessible to the current department",
+        "trap": "Similarity search automatically enforces access control"
+      },
+      {
+        "name": "Hybrid search",
+        "explanation": "Combining lexical and semantic retrieval",
+        "example": "Use keywords for an exact product code and vectors for intent",
+        "trap": "Hybrid search excludes keyword search"
+      },
+      {
+        "name": "RAG evaluation",
+        "explanation": "Assessing retrieval relevance and grounded answer quality",
+        "example": "Measure retrieval recall and answer faithfulness separately",
+        "trap": "Only grammar quality matters for a RAG system"
+      },
+      {
+        "name": "Grounded generation",
+        "explanation": "Supporting generated claims with supplied evidence",
+        "example": "Answer with a cited policy section or abstain",
+        "trap": "RAG completely eliminates hallucinations"
+      },
+      {
+        "name": "Embedding consistency",
+        "explanation": "Index and query vectors must use compatible embedding spaces",
+        "example": "Re-embed documents when switching embedding models",
+        "trap": "Vectors from unrelated embedding models are interchangeable"
+      },
+      {
+        "name": "Index freshness",
+        "explanation": "An index needs updates when source documents change",
+        "example": "Refresh a handbook index after a policy revision",
+        "trap": "RAG indexes stay current without an update process"
+      },
+      {
+        "name": "Retrieval access control",
+        "explanation": "Authorization must constrain evidence retrieval",
+        "example": "Filter restricted records before constructing model context",
+        "trap": "Hiding a final citation is sufficient protection"
+      },
+      {
+        "name": "Tool calling",
+        "explanation": "Models request structured actions which the application validates",
+        "example": "Validate arguments before invoking a database lookup",
+        "trap": "A model tool call is automatically safe to execute"
+      }
+    ],
+    "interview": [
+      "When would you use Retrieval loaders and what trade-offs would you explain?",
+      "When would you use Chunking and what trade-offs would you explain?",
+      "When would you use Recursive splitting and what trade-offs would you explain?",
+      "When would you use Semantic splitting and what trade-offs would you explain?",
+      "When would you use Chunk overlap and what trade-offs would you explain?"
+    ],
+    "cheatSheet": [
+      "Retrieval loaders: Components reading source data into document records",
+      "Chunking: Splitting documents into retrieval units",
+      "Recursive splitting: Splitting progressively by section, paragraph and smaller boundaries",
+      "Semantic splitting: Grouping text based on meaning changes",
+      "Chunk overlap: Repeating some boundary content to preserve context",
+      "Cosine similarity: Measures alignment of two vectors independent of magnitude",
+      "Top-K retrieval: Returning a limited number of nearest candidates",
+      "Retriever: Selects evidence for a query from an indexed corpus",
+      "Prompt construction: Combining instructions, query and clearly delimited evidence",
+      "Reranking: Reordering initial candidates using a more precise relevance model",
+      "Metadata filtering: Restricting search using structured document attributes",
+      "Hybrid search: Combining lexical and semantic retrieval",
+      "RAG evaluation: Assessing retrieval relevance and grounded answer quality",
+      "Grounded generation: Supporting generated claims with supplied evidence",
+      "Embedding consistency: Index and query vectors must use compatible embedding spaces",
+      "Index freshness: An index needs updates when source documents change",
+      "Retrieval access control: Authorization must constrain evidence retrieval",
+      "Tool calling: Models request structured actions which the application validates"
+    ]
+  },
+  {
+    "id": "generative-ai",
+    "title": "Generative AI",
+    "summary": "Understand Generative AI through mechanisms, examples, and assessment traps.",
+    "concepts": [
+      {
+        "name": "Generative AI",
+        "explanation": "Models creating new content from learned distributions",
+        "example": "A model drafts a summary of a document",
+        "trap": "Generative models only classify existing labels"
+      },
+      {
+        "name": "Large language models",
+        "explanation": "Models predicting and generating sequences of tokens",
+        "example": "A model completes a partially written paragraph",
+        "trap": "LLMs are guaranteed factual databases"
+      },
+      {
+        "name": "Tokens",
+        "explanation": "Units of text processed by a language model",
+        "example": "One word can be split into several subword tokens",
+        "trap": "Every word is always exactly one token"
+      },
+      {
+        "name": "Embeddings",
+        "explanation": "Numeric vectors representing semantic features",
+        "example": "Similar sentences can have nearby vectors",
+        "trap": "Embeddings are encrypted original text"
+      },
+      {
+        "name": "Transformers",
+        "explanation": "Neural architectures using attention to relate sequence elements",
+        "example": "A model relates a pronoun to an earlier noun",
+        "trap": "Transformers require recurrence for every token"
+      },
+      {
+        "name": "Attention",
+        "explanation": "A mechanism weighting relevant parts of an input",
+        "example": "A translation model focuses on relevant source words",
+        "trap": "Attention assigns equal weight to every input"
+      },
+      {
+        "name": "Prompt engineering",
+        "explanation": "Designing instructions, context and output requirements",
+        "example": "Specify audience, constraints and JSON output",
+        "trap": "A longer prompt is always a better prompt"
+      },
+      {
+        "name": "Hallucination",
+        "explanation": "A plausible generated claim unsupported by evidence",
+        "example": "A model invents a journal citation",
+        "trap": "Fluent writing guarantees truth"
+      },
+      {
+        "name": "Fine-tuning",
+        "explanation": "Updating model parameters with additional training examples",
+        "example": "Adapt a model to a domain-specific classification task",
+        "trap": "Fine-tuning is simply adding text to a prompt"
+      },
+      {
+        "name": "Inference",
+        "explanation": "Using a trained model to produce predictions",
+        "example": "Classify a newly received email",
+        "trap": "Inference always updates model weights"
+      },
+      {
+        "name": "Context window",
+        "explanation": "The bounded token capacity available for a request",
+        "example": "Long conversation history may need truncation",
+        "trap": "A model remembers unlimited prior text"
+      },
+      {
+        "name": "Vector databases",
+        "explanation": "Stores supporting similarity retrieval over embeddings",
+        "example": "Retrieve product documents closest to a query vector",
+        "trap": "Vector retrieval is always exact keyword matching"
+      },
+      {
+        "name": "RAG",
+        "explanation": "Retrieval augmented generation supplies retrieved evidence to a model",
+        "example": "Retrieve policy paragraphs before answering a policy question",
+        "trap": "RAG requires retraining model weights"
+      },
+      {
+        "name": "Agents",
+        "explanation": "Systems that choose actions and tools toward a goal",
+        "example": "An assistant searches documents then checks a calendar",
+        "trap": "An agent needs unrestricted permissions"
+      },
+      {
+        "name": "AI safety",
+        "explanation": "Controls reducing harmful or unintended model behaviour",
+        "example": "Require approval before a tool deletes a record",
+        "trap": "Safety can be guaranteed by a single prompt"
+      },
+      {
+        "name": "AI ethics",
+        "explanation": "Responsible handling of fairness, transparency and accountability",
+        "example": "Audit unequal error rates across groups",
+        "trap": "Accuracy alone resolves all ethical concerns"
+      }
+    ],
+    "interview": [
+      "When would you use Generative AI and what trade-offs would you explain?",
+      "When would you use Large language models and what trade-offs would you explain?",
+      "When would you use Tokens and what trade-offs would you explain?",
+      "When would you use Embeddings and what trade-offs would you explain?",
+      "When would you use Transformers and what trade-offs would you explain?"
+    ],
+    "cheatSheet": [
+      "Generative AI: Models creating new content from learned distributions",
+      "Large language models: Models predicting and generating sequences of tokens",
+      "Tokens: Units of text processed by a language model",
+      "Embeddings: Numeric vectors representing semantic features",
+      "Transformers: Neural architectures using attention to relate sequence elements",
+      "Attention: A mechanism weighting relevant parts of an input",
+      "Prompt engineering: Designing instructions, context and output requirements",
+      "Hallucination: A plausible generated claim unsupported by evidence",
+      "Fine-tuning: Updating model parameters with additional training examples",
+      "Inference: Using a trained model to produce predictions",
+      "Context window: The bounded token capacity available for a request",
+      "Vector databases: Stores supporting similarity retrieval over embeddings",
+      "RAG: Retrieval augmented generation supplies retrieved evidence to a model",
+      "Agents: Systems that choose actions and tools toward a goal",
+      "AI safety: Controls reducing harmful or unintended model behaviour",
+      "AI ethics: Responsible handling of fairness, transparency and accountability"
+    ]
+  },
+  {
+    "id": "prompt-engineering",
+    "title": "Prompt Engineering",
+    "summary": "Understand Prompt Engineering through mechanisms, examples, and assessment traps.",
+    "concepts": [
+      {
+        "name": "Prompt engineering",
+        "explanation": "Designing instructions, context and output requirements",
+        "example": "Specify audience, constraints and JSON output",
+        "trap": "A longer prompt is always a better prompt"
+      },
+      {
+        "name": "Precision",
+        "explanation": "The fraction of predicted positives that are actually positive",
+        "example": "Reduce false fraud alerts when review capacity is limited",
+        "trap": "Precision is the fraction of all positives recovered"
+      },
+      {
+        "name": "Temperature",
+        "explanation": "A sampling control affecting output variability",
+        "example": "Use a lower temperature for more consistent extraction",
+        "trap": "Temperature guarantees factual correctness"
+      },
+      {
+        "name": "Few-shot prompting",
+        "explanation": "Showing examples of the desired task and format",
+        "example": "Provide two labelled extraction examples in the prompt",
+        "trap": "Few-shot examples permanently train the model"
+      },
+      {
+        "name": "System instructions",
+        "explanation": "Application-level instructions for model behaviour",
+        "example": "Set a tutoring policy before candidate input",
+        "trap": "User text should be allowed to override all safety rules"
+      },
+      {
+        "name": "Prompt injection",
+        "explanation": "Untrusted content tries to override trusted instructions",
+        "example": "A retrieved page says to ignore the developer instructions",
+        "trap": "Retrieved documents are always trusted instructions"
+      },
+      {
+        "name": "Prompt construction",
+        "explanation": "Combining instructions, query and clearly delimited evidence",
+        "example": "Tell the model to cite supplied passages and admit missing evidence",
+        "trap": "Retrieved content should be treated as new system instructions"
+      },
+      {
+        "name": "Grounded generation",
+        "explanation": "Supporting generated claims with supplied evidence",
+        "example": "Answer with a cited policy section or abstain",
+        "trap": "RAG completely eliminates hallucinations"
+      },
+      {
+        "name": "Tool calling",
+        "explanation": "Models request structured actions which the application validates",
+        "example": "Validate arguments before invoking a database lookup",
+        "trap": "A model tool call is automatically safe to execute"
+      }
+    ],
+    "interview": [
+      "When would you use Prompt engineering and what trade-offs would you explain?",
+      "When would you use Precision and what trade-offs would you explain?",
+      "When would you use Temperature and what trade-offs would you explain?",
+      "When would you use Few-shot prompting and what trade-offs would you explain?",
+      "When would you use System instructions and what trade-offs would you explain?"
+    ],
+    "cheatSheet": [
+      "Prompt engineering: Designing instructions, context and output requirements",
+      "Precision: The fraction of predicted positives that are actually positive",
+      "Temperature: A sampling control affecting output variability",
+      "Few-shot prompting: Showing examples of the desired task and format",
+      "System instructions: Application-level instructions for model behaviour",
+      "Prompt injection: Untrusted content tries to override trusted instructions",
+      "Prompt construction: Combining instructions, query and clearly delimited evidence",
+      "Grounded generation: Supporting generated claims with supplied evidence",
+      "Tool calling: Models request structured actions which the application validates"
+    ]
+  },
+  {
+    "id": "technical-fundamentals",
+    "title": "Technical Fundamentals",
+    "summary": "Understand Technical Fundamentals through mechanisms, examples, and assessment traps.",
+    "concepts": [
+      {
+        "name": "DBMS vs RDBMS",
+        "explanation": "An RDBMS organizes relations with relational constraints",
+        "example": "Represent customers and orders in linked tables",
+        "trap": "Every DBMS must store only relational tables"
+      },
+      {
+        "name": "Primary key",
+        "explanation": "Uniquely identifies each row and cannot be null",
+        "example": "A customer_id identifies a customer record",
+        "trap": "A primary key may contain duplicate values"
+      },
+      {
+        "name": "Foreign key",
+        "explanation": "References a candidate key to maintain referential integrity",
+        "example": "An order customer_id references a customer",
+        "trap": "A foreign key must be unique in the child table"
+      },
+      {
+        "name": "Candidate key",
+        "explanation": "A minimal set of attributes uniquely identifying a row",
+        "example": "Both employee_id and a unique email can be candidates",
+        "trap": "A candidate key may include redundant attributes"
+      },
+      {
+        "name": "Classes and objects",
+        "explanation": "A class defines structure and behaviour while an object is an instance",
+        "example": "Two account objects share a class but have separate balances",
+        "trap": "All instances always share every field value"
+      },
+      {
+        "name": "Encapsulation",
+        "explanation": "Controls access to state through defined interfaces",
+        "example": "Validate balance changes in a deposit method",
+        "trap": "Public access to every mutable field guarantees encapsulation"
+      },
+      {
+        "name": "Inheritance",
+        "explanation": "A subtype derives behaviour from a parent type",
+        "example": "A specialized account inherits account operations",
+        "trap": "Inheritance always makes composition unnecessary"
+      },
+      {
+        "name": "Polymorphism",
+        "explanation": "A common interface supports different implementations",
+        "example": "Call draw on different shape objects",
+        "trap": "Polymorphism requires all methods to have identical bodies"
+      },
+      {
+        "name": "Processes and threads",
+        "explanation": "Threads share a process address space while processes have isolated address spaces",
+        "example": "Two worker threads access the same heap",
+        "trap": "Each thread always owns a separate process address space"
+      },
+      {
+        "name": "FCFS scheduling",
+        "explanation": "Runs ready work in arrival order without preemption in its basic form",
+        "example": "A short job waits behind a long arriving job",
+        "trap": "FCFS always minimizes average waiting time"
+      },
+      {
+        "name": "SJF scheduling",
+        "explanation": "Chooses the shortest estimated next CPU burst",
+        "example": "A short ready job runs before a longer one",
+        "trap": "SJF cannot starve long jobs"
+      },
+      {
+        "name": "OSI layers",
+        "explanation": "A seven-layer reference model separates networking responsibilities",
+        "example": "Routing is associated with the network layer",
+        "trap": "Routing is exclusively a presentation-layer function"
+      },
+      {
+        "name": "TCP/IP",
+        "explanation": "An Internet protocol suite spanning link, internet, transport and application functions",
+        "example": "IP routes packets while TCP provides a reliable stream",
+        "trap": "TCP/IP and OSI require identical layer counts"
+      },
+      {
+        "name": "TCP vs UDP",
+        "explanation": "TCP provides ordered reliable streams; UDP provides datagrams without that guarantee",
+        "example": "Use UDP where low-latency application-managed delivery is preferred",
+        "trap": "UDP guarantees retransmission and ordered delivery"
+      }
+    ],
+    "interview": [
+      "When would you use DBMS vs RDBMS and what trade-offs would you explain?",
+      "When would you use Primary key and what trade-offs would you explain?",
+      "When would you use Foreign key and what trade-offs would you explain?",
+      "When would you use Candidate key and what trade-offs would you explain?",
+      "When would you use Classes and objects and what trade-offs would you explain?"
+    ],
+    "cheatSheet": [
+      "DBMS vs RDBMS: An RDBMS organizes relations with relational constraints",
+      "Primary key: Uniquely identifies each row and cannot be null",
+      "Foreign key: References a candidate key to maintain referential integrity",
+      "Candidate key: A minimal set of attributes uniquely identifying a row",
+      "Classes and objects: A class defines structure and behaviour while an object is an instance",
+      "Encapsulation: Controls access to state through defined interfaces",
+      "Inheritance: A subtype derives behaviour from a parent type",
+      "Polymorphism: A common interface supports different implementations",
+      "Processes and threads: Threads share a process address space while processes have isolated address spaces",
+      "FCFS scheduling: Runs ready work in arrival order without preemption in its basic form",
+      "SJF scheduling: Chooses the shortest estimated next CPU burst",
+      "OSI layers: A seven-layer reference model separates networking responsibilities",
+      "TCP/IP: An Internet protocol suite spanning link, internet, transport and application functions",
+      "TCP vs UDP: TCP provides ordered reliable streams; UDP provides datagrams without that guarantee"
+    ]
+  },
+  {
+    "id": "dsa",
+    "title": "DSA",
+    "summary": "Understand DSA through mechanisms, examples, and assessment traps.",
+    "concepts": [
+      {
+        "name": "Arrays",
+        "explanation": "Indexed contiguous logical sequences provide O(1) access",
+        "example": "Scan once to find a maximum",
+        "trap": "Repeated insertion at the start is constant time"
+      },
+      {
+        "name": "Hashing",
+        "explanation": "Maps provide expected O(1) lookup with collision handling",
+        "example": "Store complements for a two-sum search",
+        "trap": "Hash maps guarantee O(1) worst-case lookup"
+      },
+      {
+        "name": "Two pointers",
+        "explanation": "Move two indices according to an invariant",
+        "example": "Compare sorted values at opposite ends",
+        "trap": "Pointers may move without preserving the invariant"
+      },
+      {
+        "name": "Sliding window",
+        "explanation": "Maintain state over a moving contiguous range",
+        "example": "Update a fixed-window sum by one addition and subtraction",
+        "trap": "Negative values never affect variable-window reasoning"
+      },
+      {
+        "name": "Binary search",
+        "explanation": "Halve a monotone search space",
+        "example": "Find the first true predicate in a sorted domain",
+        "trap": "Binary search works on every unsorted input"
+      },
+      {
+        "name": "Stacks and queues",
+        "explanation": "Stacks are LIFO and queues are FIFO",
+        "example": "Use a stack to match brackets",
+        "trap": "A queue removes the newest element first"
+      },
+      {
+        "name": "Trees and graphs",
+        "explanation": "Model hierarchical and arbitrary relationships",
+        "example": "Use BFS for unweighted shortest paths",
+        "trap": "DFS always finds the shortest unweighted path"
+      },
+      {
+        "name": "Complexity",
+        "explanation": "Describe resource growth relative to input size",
+        "example": "A single scan with a set takes expected O(n) time and O(n) space",
+        "trap": "O(n) time means exactly n milliseconds"
+      }
+    ],
+    "interview": [
+      "When would you use Arrays and what trade-offs would you explain?",
+      "When would you use Hashing and what trade-offs would you explain?",
+      "When would you use Two pointers and what trade-offs would you explain?",
+      "When would you use Sliding window and what trade-offs would you explain?",
+      "When would you use Binary search and what trade-offs would you explain?"
+    ],
+    "cheatSheet": [
+      "Arrays: Indexed contiguous logical sequences provide O(1) access",
+      "Hashing: Maps provide expected O(1) lookup with collision handling",
+      "Two pointers: Move two indices according to an invariant",
+      "Sliding window: Maintain state over a moving contiguous range",
+      "Binary search: Halve a monotone search space",
+      "Stacks and queues: Stacks are LIFO and queues are FIFO",
+      "Trees and graphs: Model hierarchical and arbitrary relationships",
+      "Complexity: Describe resource growth relative to input size"
+    ]
+  }
+]

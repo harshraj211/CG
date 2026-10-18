@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "dbms-001",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains DBMS vs RDBMS in this situation?",
+    "options": [
+      "An RDBMS organizes relations with relational constraints.",
+      "Every DBMS must store only relational tables.",
+      "The scenario's correct answer would be: Any DBMS automatically enforces the same relational constraints.",
+      "The scenario's correct answer would be: The data cannot contain more than one table."
+    ],
+    "correctAnswer": 0,
+    "explanation": "An RDBMS organizes relations with relational constraints. An RDBMS supports relational tables and schema constraints such as keys and references.",
+    "tags": [
+      "dbms-vs-rdbms"
+    ],
+    "context": "A company needs linked Customers and Orders tables, unique customer IDs and enforced references from orders to existing customers.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An RDBMS organizes relations with relational constraints. An RDBMS supports relational tables and schema constraints such as keys and references.",
+      "That claim conflicts with the principle: An RDBMS organizes relations with relational constraints. An RDBMS supports relational tables and schema constraints such as keys and references.",
+      "DBMS is a broader category; not every system uses a relational schema.",
+      "Multiple related tables are a normal relational design."
+    ],
+    "takeAway": "DBMS vs RDBMS: An RDBMS organizes relations with relational constraints."
+  },
+  {
+    "id": "dbms-002",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement explains why a relational DBMS fits this requirement?",
+    "options": [
+      "It supports relations and integrity constraints across linked data",
+      "Any DBMS automatically enforces the same relational constraints",
+      "The data cannot contain more than one table",
+      "Relational storage removes every need for validation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An RDBMS supports relational tables and schema constraints such as keys and references.",
+    "tags": [
+      "dbms-vs-rdbms"
+    ],
+    "context": "A company needs linked Customers and Orders tables, unique customer IDs and enforced references from orders to existing customers.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An RDBMS supports relational tables and schema constraints such as keys and references.",
+      "DBMS is a broader category; not every system uses a relational schema.",
+      "Multiple related tables are a normal relational design.",
+      "Application and domain validation still matter."
+    ],
+    "takeAway": "DBMS vs RDBMS: An RDBMS organizes relations with relational constraints."
+  },
+  {
+    "id": "dbms-003",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Primary key in this situation?",
+    "options": [
+      "Uniquely identifies each row and cannot be null.",
+      "A primary key may contain duplicate values.",
+      "The scenario's correct answer would be: Accept both rows because primary keys need not be unique.",
+      "The scenario's correct answer would be: Treat both rows as the same physical row automatically."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Uniquely identifies each row and cannot be null. A primary key is the selected non-null unique identifier; duplicate values violate uniqueness.",
+    "tags": [
+      "primary-key"
+    ],
+    "context": "The Customers table declares customer_id as its PRIMARY KEY. Two inserted rows use customer_id=42. No other constraint is relevant to this question.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Uniquely identifies each row and cannot be null. A primary key is the selected non-null unique identifier; duplicate values violate uniqueness.",
+      "That claim conflicts with the principle: Uniquely identifies each row and cannot be null. A primary key is the selected non-null unique identifier; duplicate values violate uniqueness.",
+      "Primary-key uniqueness is required.",
+      "Inserting a duplicate does not automatically merge records."
+    ],
+    "takeAway": "Primary key: Uniquely identifies each row and cannot be null."
+  },
+  {
+    "id": "dbms-004",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What should a DBMS enforcing this key do?",
+    "options": [
+      "Reject the duplicate primary-key value",
+      "Accept both rows because primary keys need not be unique",
+      "Treat both rows as the same physical row automatically",
+      "Allow the duplicate only if the names differ"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A primary key is the selected non-null unique identifier; duplicate values violate uniqueness.",
+    "tags": [
+      "primary-key"
+    ],
+    "context": "The Customers table declares customer_id as its PRIMARY KEY. Two inserted rows use customer_id=42. No other constraint is relevant to this question.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A primary key is the selected non-null unique identifier; duplicate values violate uniqueness.",
+      "Primary-key uniqueness is required.",
+      "Inserting a duplicate does not automatically merge records.",
+      "Other column values do not override the declared key constraint."
+    ],
+    "takeAway": "Primary key: Uniquely identifies each row and cannot be null."
+  },
+  {
+    "id": "dbms-005",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Foreign key in this situation?",
+    "options": [
+      "References a candidate key to maintain referential integrity.",
+      "A foreign key must be unique in the child table.",
+      "The scenario's correct answer would be: It automatically creates customer 99.",
+      "The scenario's correct answer would be: It is accepted because every foreign key must be unique."
+    ],
+    "correctAnswer": 0,
+    "explanation": "References a candidate key to maintain referential integrity. An enforced foreign key prevents an orphan reference to a missing parent key.",
+    "tags": [
+      "foreign-key"
+    ],
+    "context": "Orders.customer_id is a foreign key referencing Customers.customer_id. A new order uses customer_id=99, but customer 99 does not exist. The foreign key is enabled and checked immediately.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "References a candidate key to maintain referential integrity. An enforced foreign key prevents an orphan reference to a missing parent key.",
+      "That claim conflicts with the principle: References a candidate key to maintain referential integrity. An enforced foreign key prevents an orphan reference to a missing parent key.",
+      "Automatic parent creation is not implied by a foreign key.",
+      "Child foreign-key values can repeat across multiple orders."
+    ],
+    "takeAway": "Foreign key: References a candidate key to maintain referential integrity."
+  },
+  {
+    "id": "dbms-006",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What happens to the insert?",
+    "options": [
+      "It is rejected for violating referential integrity",
+      "It automatically creates customer 99",
+      "It is accepted because every foreign key must be unique",
+      "It is rejected only if another order has customer_id=99"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An enforced foreign key prevents an orphan reference to a missing parent key.",
+    "tags": [
+      "foreign-key"
+    ],
+    "context": "Orders.customer_id is a foreign key referencing Customers.customer_id. A new order uses customer_id=99, but customer 99 does not exist. The foreign key is enabled and checked immediately.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An enforced foreign key prevents an orphan reference to a missing parent key.",
+      "Automatic parent creation is not implied by a foreign key.",
+      "Child foreign-key values can repeat across multiple orders.",
+      "The parent’s existence, not duplicate child references, determines this violation."
+    ],
+    "takeAway": "Foreign key: References a candidate key to maintain referential integrity."
+  },
+  {
+    "id": "dbms-007",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Candidate key in this situation?",
+    "options": [
+      "A minimal set of attributes uniquely identifying a row.",
+      "A candidate key may include redundant attributes.",
+      "The scenario's correct answer would be: Necessarily the table’s primary key.",
+      "The scenario's correct answer would be: A foreign key without a referenced table."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A minimal set of attributes uniquely identifying a row. A candidate key is a minimal unique identifier; one is chosen as primary and the others remain alternate candidates.",
+    "tags": [
+      "candidate-key"
+    ],
+    "context": "For Employees, both employee_id and email are independently unique and non-null. The schema chooses employee_id as the primary key. Neither attribute set contains redundant attributes.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A minimal set of attributes uniquely identifying a row. A candidate key is a minimal unique identifier; one is chosen as primary and the others remain alternate candidates.",
+      "That claim conflicts with the principle: A minimal set of attributes uniquely identifying a row. A candidate key is a minimal unique identifier; one is chosen as primary and the others remain alternate candidates.",
+      "The schema explicitly selected employee_id as primary.",
+      "A foreign key needs a reference; uniqueness alone does not create one."
+    ],
+    "takeAway": "Candidate key: A minimal set of attributes uniquely identifying a row."
+  },
+  {
+    "id": "dbms-008",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "How should email be classified?",
+    "options": [
+      "An alternate candidate key",
+      "Necessarily the table’s primary key",
+      "A foreign key without a referenced table",
+      "A nonunique attribute because it was not chosen as primary"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A candidate key is a minimal unique identifier; one is chosen as primary and the others remain alternate candidates.",
+    "tags": [
+      "candidate-key"
+    ],
+    "context": "For Employees, both employee_id and email are independently unique and non-null. The schema chooses employee_id as the primary key. Neither attribute set contains redundant attributes.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A candidate key is a minimal unique identifier; one is chosen as primary and the others remain alternate candidates.",
+      "The schema explicitly selected employee_id as primary.",
+      "A foreign key needs a reference; uniqueness alone does not create one.",
+      "Not being primary does not remove the stated uniqueness."
+    ],
+    "takeAway": "Candidate key: A minimal set of attributes uniquely identifying a row."
+  },
+  {
+    "id": "dbms-009",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains First normal form in this situation?",
+    "options": [
+      "Each attribute holds an atomic value relative to its domain.",
+      "Comma-separated repeating phone fields always satisfy 1NF.",
+      "The scenario's correct answer would be: Add more comma-separated entries to the same field.",
+      "The scenario's correct answer would be: Duplicate the Student primary key for every field."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each attribute holds an atomic value relative to its domain. The repeating list should be represented as individual atomic values under the stated domain assumption.",
+    "tags": [
+      "first-normal-form"
+    ],
+    "context": "A Student row stores phone_numbers as a comma-separated repeating list. The application must query and constrain each phone number independently. Assume individual phone numbers are the atomic domain here.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Each attribute holds an atomic value relative to its domain. The repeating list should be represented as individual atomic values under the stated domain assumption.",
+      "That claim conflicts with the principle: Each attribute holds an atomic value relative to its domain. The repeating list should be represented as individual atomic values under the stated domain assumption.",
+      "Increasing a repeating list does not resolve atomicity for individual numbers.",
+      "Key duplication does not decompose the repeating attribute."
+    ],
+    "takeAway": "First normal form: Each attribute holds an atomic value relative to its domain."
+  },
+  {
+    "id": "dbms-010",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which redesign addresses the first-normal-form issue?",
+    "options": [
+      "Store one phone number per row in a related StudentPhone table",
+      "Add more comma-separated entries to the same field",
+      "Duplicate the Student primary key for every field",
+      "Remove all phone numbers because 1NF forbids relationships"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The repeating list should be represented as individual atomic values under the stated domain assumption.",
+    "tags": [
+      "first-normal-form"
+    ],
+    "context": "A Student row stores phone_numbers as a comma-separated repeating list. The application must query and constrain each phone number independently. Assume individual phone numbers are the atomic domain here.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "The repeating list should be represented as individual atomic values under the stated domain assumption.",
+      "Increasing a repeating list does not resolve atomicity for individual numbers.",
+      "Key duplication does not decompose the repeating attribute.",
+      "1NF permits related tables and individual phone-number rows."
+    ],
+    "takeAway": "First normal form: Each attribute holds an atomic value relative to its domain."
+  },
+  {
+    "id": "dbms-011",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Second normal form in this situation?",
+    "options": [
+      "1NF with no partial dependency on a candidate key.",
+      "2NF allows dependency on only part of a composite key.",
+      "The scenario's correct answer would be: Move quantity to a table keyed only by order_id.",
+      "The scenario's correct answer would be: Keep product_name because every composite-key design is automatically 2NF."
+    ],
+    "correctAnswer": 0,
+    "explanation": "1NF with no partial dependency on a candidate key. A non-key attribute depending on only part of a candidate key violates 2NF; product_name belongs with product_id.",
+    "tags": [
+      "second-normal-form"
+    ],
+    "context": "OrderLine has composite key (order_id, product_id). quantity depends on both key parts, while product_name depends only on product_id. Assume the relation is in 1NF.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "1NF with no partial dependency on a candidate key. A non-key attribute depending on only part of a candidate key violates 2NF; product_name belongs with product_id.",
+      "That claim conflicts with the principle: 1NF with no partial dependency on a candidate key. A non-key attribute depending on only part of a candidate key violates 2NF; product_name belongs with product_id.",
+      "The stated quantity dependency requires both order and product.",
+      "Composite keys can have partial dependencies."
+    ],
+    "takeAway": "Second normal form: 1NF with no partial dependency on a candidate key."
+  },
+  {
+    "id": "dbms-012",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which change removes the partial dependency relevant to 2NF?",
+    "options": [
+      "Move product_name to a Product relation keyed by product_id",
+      "Move quantity to a table keyed only by order_id",
+      "Keep product_name because every composite-key design is automatically 2NF",
+      "Make every product name the same"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A non-key attribute depending on only part of a candidate key violates 2NF; product_name belongs with product_id.",
+    "tags": [
+      "second-normal-form"
+    ],
+    "context": "OrderLine has composite key (order_id, product_id). quantity depends on both key parts, while product_name depends only on product_id. Assume the relation is in 1NF.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A non-key attribute depending on only part of a candidate key violates 2NF; product_name belongs with product_id.",
+      "The stated quantity dependency requires both order and product.",
+      "Composite keys can have partial dependencies.",
+      "Changing values arbitrarily does not repair the schema dependency."
+    ],
+    "takeAway": "Second normal form: 1NF with no partial dependency on a candidate key."
+  },
+  {
+    "id": "dbms-013",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Third normal form in this situation?",
+    "options": [
+      "For every dependency X to A, X is a superkey or A is prime.",
+      "3NF always permits transitive dependencies on non-key attributes.",
+      "The scenario's correct answer would be: Keep all attributes because employee_id is unique.",
+      "The scenario's correct answer would be: Delete employee_id and use department_name as the key."
+    ],
+    "correctAnswer": 0,
+    "explanation": "For every dependency X to A, X is a superkey or A is prime. department_name depends on the key through a non-key determinant. Separating department details removes that dependency from Employee.",
+    "tags": [
+      "third-normal-form"
+    ],
+    "context": "Employee(employee_id, department_id, department_name) has employee_id as its only candidate key. department_id determines department_name; department_name is non-prime.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "For every dependency X to A, X is a superkey or A is prime. department_name depends on the key through a non-key determinant. Separating department details removes that dependency from Employee.",
+      "That claim conflicts with the principle: For every dependency X to A, X is a superkey or A is prime. department_name depends on the key through a non-key determinant. Separating department details removes that dependency from Employee.",
+      "A unique key alone does not eliminate transitive dependencies.",
+      "The scenario does not establish department_name as an employee identifier."
+    ],
+    "takeAway": "Third normal form: For every dependency X to A, X is a superkey or A is prime."
+  },
+  {
+    "id": "dbms-014",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which change addresses the 3NF transitive dependency?",
+    "options": [
+      "Move department_name into Department(department_id, department_name)",
+      "Keep all attributes because employee_id is unique",
+      "Delete employee_id and use department_name as the key",
+      "Repeat department_name in more employee rows"
+    ],
+    "correctAnswer": 0,
+    "explanation": "department_name depends on the key through a non-key determinant. Separating department details removes that dependency from Employee.",
+    "tags": [
+      "third-normal-form"
+    ],
+    "context": "Employee(employee_id, department_id, department_name) has employee_id as its only candidate key. department_id determines department_name; department_name is non-prime.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "department_name depends on the key through a non-key determinant. Separating department details removes that dependency from Employee.",
+      "A unique key alone does not eliminate transitive dependencies.",
+      "The scenario does not establish department_name as an employee identifier.",
+      "More repetitions increase update anomalies rather than normalize the design."
+    ],
+    "takeAway": "Third normal form: For every dependency X to A, X is a superkey or A is prime."
+  },
+  {
+    "id": "dbms-015",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains BCNF in this situation?",
+    "options": [
+      "Every determinant in a nontrivial dependency is a superkey.",
+      "BCNF is weaker than third normal form.",
+      "The scenario's correct answer would be: It satisfies BCNF because the dependent value is text.",
+      "The scenario's correct answer would be: BCNF requires every attribute to be nullable."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Every determinant in a nontrivial dependency is a superkey. For every nontrivial dependency in BCNF, the determinant must be a superkey; this one is not.",
+    "tags": [
+      "bcnf"
+    ],
+    "context": "A relation has a nontrivial functional dependency tutor → subject, but tutor is not a superkey of that relation.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Every determinant in a nontrivial dependency is a superkey. For every nontrivial dependency in BCNF, the determinant must be a superkey; this one is not.",
+      "That claim conflicts with the principle: Every determinant in a nontrivial dependency is a superkey. For every nontrivial dependency in BCNF, the determinant must be a superkey; this one is not.",
+      "Data type does not change the determinant requirement.",
+      "Nullability is not the BCNF rule."
+    ],
+    "takeAway": "BCNF: Every determinant in a nontrivial dependency is a superkey."
+  },
+  {
+    "id": "dbms-016",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What does BCNF require regarding this dependency?",
+    "options": [
+      "The design violates BCNF because the determinant is not a superkey",
+      "It satisfies BCNF because the dependent value is text",
+      "BCNF requires every attribute to be nullable",
+      "BCNF only checks the number of rows"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For every nontrivial dependency in BCNF, the determinant must be a superkey; this one is not.",
+    "tags": [
+      "bcnf"
+    ],
+    "context": "A relation has a nontrivial functional dependency tutor → subject, but tutor is not a superkey of that relation.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "For every nontrivial dependency in BCNF, the determinant must be a superkey; this one is not.",
+      "Data type does not change the determinant requirement.",
+      "Nullability is not the BCNF rule.",
+      "BCNF concerns functional dependencies, not row counts."
+    ],
+    "takeAway": "BCNF: Every determinant in a nontrivial dependency is a superkey."
+  },
+  {
+    "id": "dbms-017",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Atomicity in this situation?",
+    "options": [
+      "A transaction completes entirely or rolls back.",
+      "Atomicity permits a partially committed transfer.",
+      "The scenario's correct answer would be: Commit only the debit because it ran first.",
+      "The scenario's correct answer would be: Allow the application to treat half a transfer as a full transfer."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A transaction completes entirely or rolls back. Atomicity groups the transfer into an all-or-nothing unit; failed work must not leave only a debit.",
+    "tags": [
+      "atomicity"
+    ],
+    "context": "A transfer transaction debits account A, but the credit to B fails before commit.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A transaction completes entirely or rolls back. Atomicity groups the transfer into an all-or-nothing unit; failed work must not leave only a debit.",
+      "That claim conflicts with the principle: A transaction completes entirely or rolls back. Atomicity groups the transfer into an all-or-nothing unit; failed work must not leave only a debit.",
+      "A partial commit violates atomicity.",
+      "The transaction contract requires both effects together."
+    ],
+    "takeAway": "Atomicity: A transaction completes entirely or rolls back."
+  },
+  {
+    "id": "dbms-018",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which atomicity behaviour is required?",
+    "options": [
+      "Roll back the debit so the transaction has no partial effect",
+      "Commit only the debit because it ran first",
+      "Allow the application to treat half a transfer as a full transfer",
+      "Delete both accounts to restore the total"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Atomicity groups the transfer into an all-or-nothing unit; failed work must not leave only a debit.",
+    "tags": [
+      "atomicity"
+    ],
+    "context": "A transfer transaction debits account A, but the credit to B fails before commit.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Atomicity groups the transfer into an all-or-nothing unit; failed work must not leave only a debit.",
+      "A partial commit violates atomicity.",
+      "The transaction contract requires both effects together.",
+      "Deleting unrelated records is not transaction rollback."
+    ],
+    "takeAway": "Atomicity: A transaction completes entirely or rolls back."
+  },
+  {
+    "id": "dbms-019",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Consistency in this situation?",
+    "options": [
+      "A transaction preserves defined integrity constraints.",
+      "Consistency means all replicas are instantly identical.",
+      "The scenario's correct answer would be: Durability alone.",
+      "The scenario's correct answer would be: Index clustering."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A transaction preserves defined integrity constraints. Consistency requires transitions to preserve defined integrity rules; the invalid final balance must be prevented.",
+    "tags": [
+      "consistency"
+    ],
+    "context": "A database constraint requires account balances to be nonnegative. A transaction attempts to commit a balance of -100.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A transaction preserves defined integrity constraints. Consistency requires transitions to preserve defined integrity rules; the invalid final balance must be prevented.",
+      "That claim conflicts with the principle: A transaction preserves defined integrity constraints. Consistency requires transitions to preserve defined integrity rules; the invalid final balance must be prevented.",
+      "Durability concerns survival of committed effects, not whether the invariant is valid.",
+      "Index storage layout does not define balance validity."
+    ],
+    "takeAway": "Consistency: A transaction preserves defined integrity constraints."
+  },
+  {
+    "id": "dbms-020",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which ACID property concerns preserving this defined invariant?",
+    "options": [
+      "Consistency",
+      "Durability alone",
+      "Index clustering",
+      "Automatic query ordering"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Consistency requires transitions to preserve defined integrity rules; the invalid final balance must be prevented.",
+    "tags": [
+      "consistency"
+    ],
+    "context": "A database constraint requires account balances to be nonnegative. A transaction attempts to commit a balance of -100.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Consistency requires transitions to preserve defined integrity rules; the invalid final balance must be prevented.",
+      "Durability concerns survival of committed effects, not whether the invariant is valid.",
+      "Index storage layout does not define balance validity.",
+      "Output ordering does not enforce the constraint."
+    ],
+    "takeAway": "Consistency: A transaction preserves defined integrity constraints."
+  },
+  {
+    "id": "dbms-021",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Isolation in this situation?",
+    "options": [
+      "Concurrent transactions follow an isolation contract.",
+      "Isolation means no transactions can ever run concurrently.",
+      "The scenario's correct answer would be: A requirement that the application never opens two connections.",
+      "The scenario's correct answer would be: Permission to read every uncommitted write."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Concurrent transactions follow an isolation contract. Serializable isolation constrains concurrent outcomes to those possible under a serial order, even if operations overlap internally.",
+    "tags": [
+      "isolation"
+    ],
+    "context": "Two transactions update shared records concurrently. The isolation level is SERIALIZABLE.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Concurrent transactions follow an isolation contract. Serializable isolation constrains concurrent outcomes to those possible under a serial order, even if operations overlap internally.",
+      "That claim conflicts with the principle: Concurrent transactions follow an isolation contract. Serializable isolation constrains concurrent outcomes to those possible under a serial order, even if operations overlap internally.",
+      "Connections may coexist while isolation is enforced.",
+      "Uncommitted reads are not the intended serializable guarantee."
+    ],
+    "takeAway": "Isolation: Concurrent transactions follow an isolation contract."
+  },
+  {
+    "id": "dbms-022",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What behaviour does this level aim to provide?",
+    "options": [
+      "An outcome equivalent to some serial execution of those transactions",
+      "A requirement that the application never opens two connections",
+      "Permission to read every uncommitted write",
+      "A guarantee that transactions never wait or abort"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Serializable isolation constrains concurrent outcomes to those possible under a serial order, even if operations overlap internally.",
+    "tags": [
+      "isolation"
+    ],
+    "context": "Two transactions update shared records concurrently. The isolation level is SERIALIZABLE.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Serializable isolation constrains concurrent outcomes to those possible under a serial order, even if operations overlap internally.",
+      "Connections may coexist while isolation is enforced.",
+      "Uncommitted reads are not the intended serializable guarantee.",
+      "Locking or validation may cause waits or retries."
+    ],
+    "takeAway": "Isolation: Concurrent transactions follow an isolation contract."
+  },
+  {
+    "id": "dbms-023",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Durability in this situation?",
+    "options": [
+      "Committed changes survive supported failures.",
+      "Committed data exists only in volatile memory.",
+      "The scenario's correct answer would be: A larger context window.",
+      "The scenario's correct answer would be: Normalization alone."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Committed changes survive supported failures. Durability preserves committed effects through supported failures, using mechanisms such as persistent logs.",
+    "tags": [
+      "durability"
+    ],
+    "context": "An order transaction has successfully committed. The server then restarts after a supported crash scenario.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Committed changes survive supported failures. Durability preserves committed effects through supported failures, using mechanisms such as persistent logs.",
+      "That claim conflicts with the principle: Committed changes survive supported failures. Durability preserves committed effects through supported failures, using mechanisms such as persistent logs.",
+      "Language-model context is unrelated to database recovery.",
+      "Normalization organizes dependencies but does not itself provide crash recovery."
+    ],
+    "takeAway": "Durability: Committed changes survive supported failures."
+  },
+  {
+    "id": "dbms-024",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which property requires the committed order to remain recoverable?",
+    "options": [
+      "Durability",
+      "A larger context window",
+      "Normalization alone",
+      "Alphabetical row order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Durability preserves committed effects through supported failures, using mechanisms such as persistent logs.",
+    "tags": [
+      "durability"
+    ],
+    "context": "An order transaction has successfully committed. The server then restarts after a supported crash scenario.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Durability preserves committed effects through supported failures, using mechanisms such as persistent logs.",
+      "Language-model context is unrelated to database recovery.",
+      "Normalization organizes dependencies but does not itself provide crash recovery.",
+      "Row order is not persistence."
+    ],
+    "takeAway": "Durability: Committed changes survive supported failures."
+  },
+  {
+    "id": "dbms-025",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Clustered index in this situation?",
+    "options": [
+      "Defines row storage ordering or clustering in an engine-specific way.",
+      "A table can have unlimited independent physical row orders.",
+      "The scenario's correct answer would be: It creates unlimited independent physical orders for the same rows.",
+      "The scenario's correct answer would be: It guarantees every query ignores disk access."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Defines row storage ordering or clustering in an engine-specific way. Clustering can place range-related rows near each other, reducing scattered row access under this engine’s storage model.",
+    "tags": [
+      "clustered-index"
+    ],
+    "context": "In the chosen database engine, a clustered index organizes base-row storage by its key. A report scans a contiguous date range.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Defines row storage ordering or clustering in an engine-specific way. Clustering can place range-related rows near each other, reducing scattered row access under this engine’s storage model.",
+      "That claim conflicts with the principle: Defines row storage ordering or clustering in an engine-specific way. Clustering can place range-related rows near each other, reducing scattered row access under this engine’s storage model.",
+      "A table cannot simultaneously follow unlimited independent base-row storage orders.",
+      "Storage locality does not eliminate all I/O."
+    ],
+    "takeAway": "Clustered index: Defines row storage ordering or clustering in an engine-specific way."
+  },
+  {
+    "id": "dbms-026",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Why can the clustered date key help this report?",
+    "options": [
+      "Related rows may have useful physical locality for the range scan",
+      "It creates unlimited independent physical orders for the same rows",
+      "It guarantees every query ignores disk access",
+      "It makes all write maintenance free"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Clustering can place range-related rows near each other, reducing scattered row access under this engine’s storage model.",
+    "tags": [
+      "clustered-index"
+    ],
+    "context": "In the chosen database engine, a clustered index organizes base-row storage by its key. A report scans a contiguous date range.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Clustering can place range-related rows near each other, reducing scattered row access under this engine’s storage model.",
+      "A table cannot simultaneously follow unlimited independent base-row storage orders.",
+      "Storage locality does not eliminate all I/O.",
+      "Maintaining organized storage can add write cost."
+    ],
+    "takeAway": "Clustered index: Defines row storage ordering or clustering in an engine-specific way."
+  },
+  {
+    "id": "dbms-027",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Non-clustered index in this situation?",
+    "options": [
+      "Separate search structure pointing to underlying rows.",
+      "An index makes every write operation cheaper.",
+      "The scenario's correct answer would be: Every insert becomes cheaper with no storage cost.",
+      "The scenario's correct answer would be: The index guarantees all queries will use it."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Separate search structure pointing to underlying rows. A secondary lookup structure can accelerate selective searches but occupies space and must be maintained.",
+    "tags": [
+      "non-clustered-index"
+    ],
+    "context": "A large employee table is searched frequently by email. A non-clustered email index is added; updates to email values must also update that index.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Separate search structure pointing to underlying rows. A secondary lookup structure can accelerate selective searches but occupies space and must be maintained.",
+      "That claim conflicts with the principle: Separate search structure pointing to underlying rows. A secondary lookup structure can accelerate selective searches but occupies space and must be maintained.",
+      "Extra structures are not free on writes.",
+      "The optimizer can choose another plan depending on the query and data."
+    ],
+    "takeAway": "Non-clustered index: Separate search structure pointing to underlying rows."
+  },
+  {
+    "id": "dbms-028",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What is the main trade-off?",
+    "options": [
+      "Faster eligible lookups in exchange for index storage and write maintenance",
+      "Every insert becomes cheaper with no storage cost",
+      "The index guarantees all queries will use it",
+      "The index changes all email values automatically"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A secondary lookup structure can accelerate selective searches but occupies space and must be maintained.",
+    "tags": [
+      "non-clustered-index"
+    ],
+    "context": "A large employee table is searched frequently by email. A non-clustered email index is added; updates to email values must also update that index.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A secondary lookup structure can accelerate selective searches but occupies space and must be maintained.",
+      "Extra structures are not free on writes.",
+      "The optimizer can choose another plan depending on the query and data.",
+      "An index organizes access, not business-value rewriting."
+    ],
+    "takeAway": "Non-clustered index: Separate search structure pointing to underlying rows."
+  },
+  {
+    "id": "dbms-029",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Joins in this situation?",
+    "options": [
+      "Combine related rows based on a condition.",
+      "A join always removes unmatched rows.",
+      "The scenario's correct answer would be: INNER JOIN.",
+      "The scenario's correct answer would be: A cross join that always gives the same result."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Combine related rows based on a condition. A left outer join retains every left row and supplies nulls for missing right-side matches.",
+    "tags": [
+      "joins"
+    ],
+    "context": "Customers have IDs 1 and 2. Orders contain one row for customer 1 and no row for customer 2. The report must include both customers.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Combine related rows based on a condition. A left outer join retains every left row and supplies nulls for missing right-side matches.",
+      "That claim conflicts with the principle: Combine related rows based on a condition. A left outer join retains every left row and supplies nulls for missing right-side matches.",
+      "An inner join removes customer 2 because no order matches.",
+      "A cross join forms combinations, not the requested preservation with matching."
+    ],
+    "takeAway": "Joins: Combine related rows based on a condition."
+  },
+  {
+    "id": "dbms-030",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which join type preserves the unmatched customer when Customers is on the left?",
+    "options": [
+      "LEFT JOIN",
+      "INNER JOIN",
+      "A cross join that always gives the same result",
+      "An inner join with no condition"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A left outer join retains every left row and supplies nulls for missing right-side matches.",
+    "tags": [
+      "joins"
+    ],
+    "context": "Customers have IDs 1 and 2. Orders contain one row for customer 1 and no row for customer 2. The report must include both customers.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A left outer join retains every left row and supplies nulls for missing right-side matches.",
+      "An inner join removes customer 2 because no order matches.",
+      "A cross join forms combinations, not the requested preservation with matching.",
+      "Removing the condition creates combinations rather than the intended relation."
+    ],
+    "takeAway": "Joins: Combine related rows based on a condition."
+  },
+  {
+    "id": "dbms-031",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Views in this situation?",
+    "options": [
+      "Named queries exposing a derived representation.",
+      "Every ordinary view stores a separate physical copy.",
+      "The scenario's correct answer would be: It must physically duplicate every source row.",
+      "The scenario's correct answer would be: It is always editable in every DBMS."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Named queries exposing a derived representation. An ordinary view is a named query abstraction; materialized storage and update support are separate questions.",
+    "tags": [
+      "views"
+    ],
+    "context": "A reporting user needs a named query exposing only public employee columns. The database uses an ordinary, non-materialized view.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Named queries exposing a derived representation. An ordinary view is a named query abstraction; materialized storage and update support are separate questions.",
+      "That claim conflicts with the principle: Named queries exposing a derived representation. An ordinary view is a named query abstraction; materialized storage and update support are separate questions.",
+      "Physical result storage is associated with materialized views, not every ordinary view.",
+      "View update rules vary by engine and query structure."
+    ],
+    "takeAway": "Views: Named queries exposing a derived representation."
+  },
+  {
+    "id": "dbms-032",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement about this view is correct?",
+    "options": [
+      "It exposes a query-defined representation without inherently storing a separate result copy",
+      "It must physically duplicate every source row",
+      "It is always editable in every DBMS",
+      "It automatically grants access to all hidden source columns"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An ordinary view is a named query abstraction; materialized storage and update support are separate questions.",
+    "tags": [
+      "views"
+    ],
+    "context": "A reporting user needs a named query exposing only public employee columns. The database uses an ordinary, non-materialized view.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "An ordinary view is a named query abstraction; materialized storage and update support are separate questions.",
+      "Physical result storage is associated with materialized views, not every ordinary view.",
+      "View update rules vary by engine and query structure.",
+      "Column exposure and access permissions remain explicit."
+    ],
+    "takeAway": "Views: Named queries exposing a derived representation."
+  },
+  {
+    "id": "dbms-033",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Stored procedures in this situation?",
+    "options": [
+      "Named server-side routines containing database logic.",
+      "Stored procedures inherently prevent all injection.",
+      "The scenario's correct answer would be: A required row-level trigger.",
+      "The scenario's correct answer would be: An embedding vector."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Named server-side routines containing database logic. A stored procedure encapsulates database-side procedural work; parameter handling and safe SQL practices still matter.",
+    "tags": [
+      "stored-procedures"
+    ],
+    "context": "A team packages several server-side SQL operations into a named database routine that callers can invoke with parameters.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Named server-side routines containing database logic. A stored procedure encapsulates database-side procedural work; parameter handling and safe SQL practices still matter.",
+      "That claim conflicts with the principle: Named server-side routines containing database logic. A stored procedure encapsulates database-side procedural work; parameter handling and safe SQL practices still matter.",
+      "Triggers run for configured events, not simply because a routine is named and callable.",
+      "Embeddings are numeric feature representations."
+    ],
+    "takeAway": "Stored procedures: Named server-side routines containing database logic."
+  },
+  {
+    "id": "dbms-034",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What is the routine?",
+    "options": [
+      "Stored procedure",
+      "A required row-level trigger",
+      "An embedding vector",
+      "An automatic guarantee against SQL injection"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A stored procedure encapsulates database-side procedural work; parameter handling and safe SQL practices still matter.",
+    "tags": [
+      "stored-procedures"
+    ],
+    "context": "A team packages several server-side SQL operations into a named database routine that callers can invoke with parameters.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A stored procedure encapsulates database-side procedural work; parameter handling and safe SQL practices still matter.",
+      "Triggers run for configured events, not simply because a routine is named and callable.",
+      "Embeddings are numeric feature representations.",
+      "Unsafe dynamic SQL can still exist in a stored procedure."
+    ],
+    "takeAway": "Stored procedures: Named server-side routines containing database logic."
+  },
+  {
+    "id": "dbms-035",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Triggers in this situation?",
+    "options": [
+      "Routines invoked by configured database events.",
+      "Triggers execute only when manually called by name.",
+      "The scenario's correct answer would be: A routine that can run only when manually called.",
+      "The scenario's correct answer would be: A SELECT projection."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Routines invoked by configured database events. A trigger executes in response to its configured database event, such as an update.",
+    "tags": [
+      "triggers"
+    ],
+    "context": "The database automatically writes an audit row whenever an Employees row is updated. A configured database event invokes the audit routine.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Routines invoked by configured database events. A trigger executes in response to its configured database event, such as an update.",
+      "That claim conflicts with the principle: Routines invoked by configured database events. A trigger executes in response to its configured database event, such as an update.",
+      "The scenario explicitly describes automatic event invocation.",
+      "A projection selects output columns and does not itself create an update audit."
+    ],
+    "takeAway": "Triggers: Routines invoked by configured database events."
+  },
+  {
+    "id": "dbms-036",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What mechanism is described?",
+    "options": [
+      "An UPDATE trigger",
+      "A routine that can run only when manually called",
+      "A SELECT projection",
+      "A candidate key"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A trigger executes in response to its configured database event, such as an update.",
+    "tags": [
+      "triggers"
+    ],
+    "context": "The database automatically writes an audit row whenever an Employees row is updated. A configured database event invokes the audit routine.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A trigger executes in response to its configured database event, such as an update.",
+      "The scenario explicitly describes automatic event invocation.",
+      "A projection selects output columns and does not itself create an update audit.",
+      "A key identifies rows rather than executing event logic."
+    ],
+    "takeAway": "Triggers: Routines invoked by configured database events."
+  },
+  {
+    "id": "dbms-037",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Deadlocks in this situation?",
+    "options": [
+      "Transactions form a cycle of mutually waiting locks.",
+      "A deadlock is the same as a single long query.",
+      "The scenario's correct answer would be: A single slow query with no waiting dependency.",
+      "The scenario's correct answer would be: Normal committed-read isolation without a cycle."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Transactions form a cycle of mutually waiting locks. Each transaction waits for a resource held by the other; this circular wait can prevent either from progressing.",
+    "tags": [
+      "deadlocks"
+    ],
+    "context": "Transaction A holds a lock on row X and waits for Y. Transaction B holds Y and waits for X. Neither releases its held lock while waiting.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Transactions form a cycle of mutually waiting locks. Each transaction waits for a resource held by the other; this circular wait can prevent either from progressing.",
+      "That claim conflicts with the principle: Transactions form a cycle of mutually waiting locks. Each transaction waits for a resource held by the other; this circular wait can prevent either from progressing.",
+      "A single slow query does not establish the mutual wait described.",
+      "The issue is the lock-wait cycle, regardless of a broad isolation label."
+    ],
+    "takeAway": "Deadlocks: Transactions form a cycle of mutually waiting locks."
+  },
+  {
+    "id": "dbms-038",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "What condition is illustrated?",
+    "options": [
+      "A deadlock cycle",
+      "A single slow query with no waiting dependency",
+      "Normal committed-read isolation without a cycle",
+      "A database view"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each transaction waits for a resource held by the other; this circular wait can prevent either from progressing.",
+    "tags": [
+      "deadlocks"
+    ],
+    "context": "Transaction A holds a lock on row X and waits for Y. Transaction B holds Y and waits for X. Neither releases its held lock while waiting.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Each transaction waits for a resource held by the other; this circular wait can prevent either from progressing.",
+      "A single slow query does not establish the mutual wait described.",
+      "The issue is the lock-wait cycle, regardless of a broad isolation label.",
+      "A view is a named query, not a waiting relationship."
+    ],
+    "takeAway": "Deadlocks: Transactions form a cycle of mutually waiting locks."
+  },
+  {
+    "id": "dbms-039",
+    "topic": "DBMS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Isolation levels in this situation?",
+    "options": [
+      "Trade-offs controlling allowed concurrent-read anomalies.",
+      "Read committed prevents every phantom under every engine.",
+      "The scenario's correct answer would be: The first read must see another transaction’s uncommitted value.",
+      "The scenario's correct answer would be: All phantom and nonrepeatable reads are forbidden in every engine."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Trade-offs controlling allowed concurrent-read anomalies. READ COMMITTED prevents dirty reads in this model but does not guarantee repeatability across statements.",
+    "tags": [
+      "isolation-levels"
+    ],
+    "context": "A transaction reads the same employee salary twice at READ COMMITTED. Another transaction commits a salary update between the two reads. Assume standard lock-based READ COMMITTED behaviour.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Trade-offs controlling allowed concurrent-read anomalies. READ COMMITTED prevents dirty reads in this model but does not guarantee repeatability across statements.",
+      "That claim conflicts with the principle: Trade-offs controlling allowed concurrent-read anomalies. READ COMMITTED prevents dirty reads in this model but does not guarantee repeatability across statements.",
+      "Reading uncommitted writes would be a dirty read.",
+      "Stronger guarantees are engine- and isolation-specific."
+    ],
+    "takeAway": "Isolation levels: Trade-offs controlling allowed concurrent-read anomalies."
+  },
+  {
+    "id": "dbms-040",
+    "topic": "DBMS",
+    "difficulty": "medium",
+    "question": "Which outcome may be permitted?",
+    "options": [
+      "The second read sees a different committed salary",
+      "The first read must see another transaction’s uncommitted value",
+      "All phantom and nonrepeatable reads are forbidden in every engine",
+      "READ COMMITTED forces both reads to use one permanent snapshot"
+    ],
+    "correctAnswer": 0,
+    "explanation": "READ COMMITTED prevents dirty reads in this model but does not guarantee repeatability across statements.",
+    "tags": [
+      "isolation-levels"
+    ],
+    "context": "A transaction reads the same employee salary twice at READ COMMITTED. Another transaction commits a salary update between the two reads. Assume standard lock-based READ COMMITTED behaviour.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "READ COMMITTED prevents dirty reads in this model but does not guarantee repeatability across statements.",
+      "Reading uncommitted writes would be a dirty read.",
+      "Stronger guarantees are engine- and isolation-specific.",
+      "The stated standard model does not promise a transaction-wide permanent snapshot."
+    ],
+    "takeAway": "Isolation levels: Trade-offs controlling allowed concurrent-read anomalies."
+  }
+]

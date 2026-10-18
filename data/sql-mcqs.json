@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "sql-001",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains SELECT in this situation?",
+    "options": [
+      "Projects expressions or columns from matching rows.",
+      "SELECT always changes stored rows.",
+      "The scenario's correct answer would be: A, then B, then C.",
+      "The scenario's correct answer would be: 70, then 90."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projects expressions or columns from matching rows. WHERE retains rows 2 and 3; SELECT projects their names and ORDER BY id determines B before C.",
+    "tags": [
+      "select"
+    ],
+    "context": "Employees(id,name,salary) contains (1,A,50),(2,B,70),(3,C,90). SQL: SELECT name FROM Employees WHERE salary >= 70 ORDER BY id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Projects expressions or columns from matching rows. WHERE retains rows 2 and 3; SELECT projects their names and ORDER BY id determines B before C.",
+      "That claim conflicts with the principle: Projects expressions or columns from matching rows. WHERE retains rows 2 and 3; SELECT projects their names and ORDER BY id determines B before C.",
+      "A has salary 50 and fails the filter.",
+      "The query selects name, not salary."
+    ],
+    "takeAway": "SELECT: Projects expressions or columns from matching rows."
+  },
+  {
+    "id": "sql-002",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What result is returned?",
+    "options": [
+      "B, then C",
+      "A, then B, then C",
+      "70, then 90",
+      "Only C"
+    ],
+    "correctAnswer": 0,
+    "explanation": "WHERE retains rows 2 and 3; SELECT projects their names and ORDER BY id determines B before C.",
+    "tags": [
+      "select"
+    ],
+    "context": "Employees(id,name,salary) contains (1,A,50),(2,B,70),(3,C,90). SQL: SELECT name FROM Employees WHERE salary >= 70 ORDER BY id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "WHERE retains rows 2 and 3; SELECT projects their names and ORDER BY id determines B before C.",
+      "A has salary 50 and fails the filter.",
+      "The query selects name, not salary.",
+      "The >= comparison includes salary 70 as well as 90."
+    ],
+    "takeAway": "SELECT: Projects expressions or columns from matching rows."
+  },
+  {
+    "id": "sql-003",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains WHERE in this situation?",
+    "options": [
+      "Filters individual rows before grouping.",
+      "WHERE filters aggregate groups after GROUP BY.",
+      "The scenario's correct answer would be: Every row because WHERE runs after grouping.",
+      "The scenario's correct answer would be: Only the group whose total exceeds 15."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Filters individual rows before grouping. WHERE filters individual source rows; the amount-10 row is removed before grouping.",
+    "tags": [
+      "where"
+    ],
+    "context": "Sales(team,amount) contains (A,10),(A,20),(B,15). A query applies WHERE amount >= 15 before GROUP BY team.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Filters individual rows before grouping. WHERE filters individual source rows; the amount-10 row is removed before grouping.",
+      "That claim conflicts with the principle: Filters individual rows before grouping. WHERE filters individual source rows; the amount-10 row is removed before grouping.",
+      "HAVING, not WHERE, is used for aggregate-group filtering.",
+      "No HAVING condition is supplied; group totals are not the row predicate."
+    ],
+    "takeAway": "WHERE: Filters individual rows before grouping."
+  },
+  {
+    "id": "sql-004",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which rows contribute to the grouped totals?",
+    "options": [
+      "(A,20) and (B,15)",
+      "Every row because WHERE runs after grouping",
+      "Only the group whose total exceeds 15",
+      "No rows because WHERE cannot filter numeric values"
+    ],
+    "correctAnswer": 0,
+    "explanation": "WHERE filters individual source rows; the amount-10 row is removed before grouping.",
+    "tags": [
+      "where"
+    ],
+    "context": "Sales(team,amount) contains (A,10),(A,20),(B,15). A query applies WHERE amount >= 15 before GROUP BY team.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "WHERE filters individual source rows; the amount-10 row is removed before grouping.",
+      "HAVING, not WHERE, is used for aggregate-group filtering.",
+      "No HAVING condition is supplied; group totals are not the row predicate.",
+      "Numeric comparisons are valid row filters."
+    ],
+    "takeAway": "WHERE: Filters individual rows before grouping."
+  },
+  {
+    "id": "sql-005",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains GROUP BY in this situation?",
+    "options": [
+      "Forms groups sharing grouping expressions.",
+      "GROUP BY guarantees sorted output.",
+      "The scenario's correct answer would be: (A,10),(A,20),(B,15).",
+      "The scenario's correct answer would be: (A,45)."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Forms groups sharing grouping expressions. GROUP BY forms one group per team; A totals 10+20=30 and B totals 15.",
+    "tags": [
+      "group-by"
+    ],
+    "context": "Sales(team,amount) contains (A,10),(A,20),(B,15). SQL: SELECT team,SUM(amount) FROM Sales GROUP BY team ORDER BY team.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Forms groups sharing grouping expressions. GROUP BY forms one group per team; A totals 10+20=30 and B totals 15.",
+      "That claim conflicts with the principle: Forms groups sharing grouping expressions. GROUP BY forms one group per team; A totals 10+20=30 and B totals 15.",
+      "An aggregate grouped query collapses the A rows into one group result.",
+      "The two different teams are not combined into one group."
+    ],
+    "takeAway": "GROUP BY: Forms groups sharing grouping expressions."
+  },
+  {
+    "id": "sql-006",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What are the output rows?",
+    "options": [
+      "(A,30),(B,15)",
+      "(A,10),(A,20),(B,15)",
+      "(A,45)",
+      "(A,15),(B,30)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "GROUP BY forms one group per team; A totals 10+20=30 and B totals 15.",
+    "tags": [
+      "group-by"
+    ],
+    "context": "Sales(team,amount) contains (A,10),(A,20),(B,15). SQL: SELECT team,SUM(amount) FROM Sales GROUP BY team ORDER BY team.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "GROUP BY forms one group per team; A totals 10+20=30 and B totals 15.",
+      "An aggregate grouped query collapses the A rows into one group result.",
+      "The two different teams are not combined into one group.",
+      "The amounts belong to the stated team labels, so totals cannot be swapped."
+    ],
+    "takeAway": "GROUP BY: Forms groups sharing grouping expressions."
+  },
+  {
+    "id": "sql-007",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains HAVING in this situation?",
+    "options": [
+      "Filters aggregate groups.",
+      "HAVING must always execute before WHERE.",
+      "The scenario's correct answer would be: B only.",
+      "The scenario's correct answer would be: Both A and B."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Filters aggregate groups. A totals 30 and satisfies the strict >20 condition; B totals 15 and does not.",
+    "tags": [
+      "having"
+    ],
+    "context": "Sales(team,amount) contains (A,10),(A,20),(B,15). SQL: SELECT team FROM Sales GROUP BY team HAVING SUM(amount) > 20.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Filters aggregate groups. A totals 30 and satisfies the strict >20 condition; B totals 15 and does not.",
+      "That claim conflicts with the principle: Filters aggregate groups. A totals 30 and satisfies the strict >20 condition; B totals 15 and does not.",
+      "B fails the group-total condition.",
+      "Only A exceeds 20: its total is 30, while B totals 15 and must be excluded."
+    ],
+    "takeAway": "HAVING: Filters aggregate groups."
+  },
+  {
+    "id": "sql-008",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which team is returned?",
+    "options": [
+      "A only",
+      "B only",
+      "Both A and B",
+      "Neither team"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A totals 30 and satisfies the strict >20 condition; B totals 15 and does not.",
+    "tags": [
+      "having"
+    ],
+    "context": "Sales(team,amount) contains (A,10),(A,20),(B,15). SQL: SELECT team FROM Sales GROUP BY team HAVING SUM(amount) > 20.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A totals 30 and satisfies the strict >20 condition; B totals 15 and does not.",
+      "B fails the group-total condition.",
+      "Only A exceeds 20: its total is 30, while B totals 15 and must be excluded.",
+      "A has a qualifying total, so the result is not empty."
+    ],
+    "takeAway": "HAVING: Filters aggregate groups."
+  },
+  {
+    "id": "sql-009",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains ORDER BY in this situation?",
+    "options": [
+      "Defines result ordering.",
+      "Rows have guaranteed order without ORDER BY.",
+      "The scenario's correct answer would be: 1,2,3.",
+      "The scenario's correct answer would be: 3,2,1."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Defines result ordering. Salary descends, putting 90 before 70; IDs ascend within the 90 tie, so 2 precedes 3.",
+    "tags": [
+      "order-by"
+    ],
+    "context": "Employees(id,salary) contains (1,70),(2,90),(3,90). SQL: SELECT id FROM Employees ORDER BY salary DESC,id ASC.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Defines result ordering. Salary descends, putting 90 before 70; IDs ascend within the 90 tie, so 2 precedes 3.",
+      "That claim conflicts with the principle: Defines result ordering. Salary descends, putting 90 before 70; IDs ascend within the 90 tie, so 2 precedes 3.",
+      "This is not ascending salary order.",
+      "The tie-breaker is ascending id, not descending id."
+    ],
+    "takeAway": "ORDER BY: Defines result ordering."
+  },
+  {
+    "id": "sql-010",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What is the ID order?",
+    "options": [
+      "2,3,1",
+      "1,2,3",
+      "3,2,1",
+      "The order is guaranteed to match insertion order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Salary descends, putting 90 before 70; IDs ascend within the 90 tie, so 2 precedes 3.",
+    "tags": [
+      "order-by"
+    ],
+    "context": "Employees(id,salary) contains (1,70),(2,90),(3,90). SQL: SELECT id FROM Employees ORDER BY salary DESC,id ASC.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Salary descends, putting 90 before 70; IDs ascend within the 90 tie, so 2 precedes 3.",
+      "This is not ascending salary order.",
+      "The tie-breaker is ascending id, not descending id.",
+      "Explicit ORDER BY replaces any assumption about insertion order."
+    ],
+    "takeAway": "ORDER BY: Defines result ordering."
+  },
+  {
+    "id": "sql-011",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains INNER JOIN in this situation?",
+    "options": [
+      "Returns rows matching the join condition on both sides.",
+      "An inner join always preserves every left row.",
+      "The scenario's correct answer would be: 3.",
+      "The scenario's correct answer would be: 1."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Returns rows matching the join condition on both sides. Customer 1 matches two orders, yielding two joined rows; customer 2 has no match.",
+    "tags": [
+      "inner-join"
+    ],
+    "context": "Customers(id) contains 1,2. Orders(id,customer_id) contains (10,1),(11,1). SQL joins Customers c INNER JOIN Orders o ON c.id=o.customer_id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Returns rows matching the join condition on both sides. Customer 1 matches two orders, yielding two joined rows; customer 2 has no match.",
+      "That claim conflicts with the principle: Returns rows matching the join condition on both sides. Customer 1 matches two orders, yielding two joined rows; customer 2 has no match.",
+      "An inner join does not preserve unmatched customer 2.",
+      "Multiple matching right rows produce multiple result rows, not one automatically."
+    ],
+    "takeAway": "INNER JOIN: Returns rows matching the join condition on both sides."
+  },
+  {
+    "id": "sql-012",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "How many joined rows are produced?",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Customer 1 matches two orders, yielding two joined rows; customer 2 has no match.",
+    "tags": [
+      "inner-join"
+    ],
+    "context": "Customers(id) contains 1,2. Orders(id,customer_id) contains (10,1),(11,1). SQL joins Customers c INNER JOIN Orders o ON c.id=o.customer_id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Customer 1 matches two orders, yielding two joined rows; customer 2 has no match.",
+      "An inner join does not preserve unmatched customer 2.",
+      "Multiple matching right rows produce multiple result rows, not one automatically.",
+      "There are matching customer/order pairs."
+    ],
+    "takeAway": "INNER JOIN: Returns rows matching the join condition on both sides."
+  },
+  {
+    "id": "sql-013",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains LEFT JOIN in this situation?",
+    "options": [
+      "Preserves left rows and null-extends unmatched right columns.",
+      "Filtering right columns in WHERE always preserves unmatched left rows.",
+      "The scenario's correct answer would be: (1,10) only.",
+      "The scenario's correct answer would be: (1,NULL),(2,10)."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Preserves left rows and null-extends unmatched right columns. LEFT JOIN preserves customer 2 and null-extends the missing right-side order fields.",
+    "tags": [
+      "left-join"
+    ],
+    "context": "Customers(id) contains 1,2. Orders(id,customer_id) contains (10,1). SQL: SELECT c.id,o.id FROM Customers c LEFT JOIN Orders o ON c.id=o.customer_id ORDER BY c.id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Preserves left rows and null-extends unmatched right columns. LEFT JOIN preserves customer 2 and null-extends the missing right-side order fields.",
+      "That claim conflicts with the principle: Preserves left rows and null-extends unmatched right columns. LEFT JOIN preserves customer 2 and null-extends the missing right-side order fields.",
+      "That result would discard the unmatched left row, like an inner join.",
+      "Order 10 references customer 1, not 2."
+    ],
+    "takeAway": "LEFT JOIN: Preserves left rows and null-extends unmatched right columns."
+  },
+  {
+    "id": "sql-014",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What are the rows?",
+    "options": [
+      "(1,10),(2,NULL)",
+      "(1,10) only",
+      "(1,NULL),(2,10)",
+      "(1,10),(2,0)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LEFT JOIN preserves customer 2 and null-extends the missing right-side order fields.",
+    "tags": [
+      "left-join"
+    ],
+    "context": "Customers(id) contains 1,2. Orders(id,customer_id) contains (10,1). SQL: SELECT c.id,o.id FROM Customers c LEFT JOIN Orders o ON c.id=o.customer_id ORDER BY c.id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "LEFT JOIN preserves customer 2 and null-extends the missing right-side order fields.",
+      "That result would discard the unmatched left row, like an inner join.",
+      "Order 10 references customer 1, not 2.",
+      "Missing outer-join values are NULL, not automatically zero."
+    ],
+    "takeAway": "LEFT JOIN: Preserves left rows and null-extends unmatched right columns."
+  },
+  {
+    "id": "sql-015",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains RIGHT JOIN in this situation?",
+    "options": [
+      "Preserves right rows and null-extends unmatched left columns.",
+      "RIGHT JOIN is identical to INNER JOIN for unmatched rows.",
+      "The scenario's correct answer would be: 10 only.",
+      "The scenario's correct answer would be: 20 only."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Preserves right rows and null-extends unmatched left columns. RIGHT JOIN retains all rows of the right relation, including department 20 with no employee.",
+    "tags": [
+      "right-join"
+    ],
+    "context": "Employees(id,dept_id) contains (1,10). Departments(id) contains 10,20. SQL preserves Departments using Employees e RIGHT JOIN Departments d ON e.dept_id=d.id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Preserves right rows and null-extends unmatched left columns. RIGHT JOIN retains all rows of the right relation, including department 20 with no employee.",
+      "That claim conflicts with the principle: Preserves right rows and null-extends unmatched left columns. RIGHT JOIN retains all rows of the right relation, including department 20 with no employee.",
+      "That would omit the unmatched right-side department.",
+      "The matched department 10 is also retained."
+    ],
+    "takeAway": "RIGHT JOIN: Preserves right rows and null-extends unmatched left columns."
+  },
+  {
+    "id": "sql-016",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which department IDs appear?",
+    "options": [
+      "10 and 20",
+      "10 only",
+      "20 only",
+      "Neither department"
+    ],
+    "correctAnswer": 0,
+    "explanation": "RIGHT JOIN retains all rows of the right relation, including department 20 with no employee.",
+    "tags": [
+      "right-join"
+    ],
+    "context": "Employees(id,dept_id) contains (1,10). Departments(id) contains 10,20. SQL preserves Departments using Employees e RIGHT JOIN Departments d ON e.dept_id=d.id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "RIGHT JOIN retains all rows of the right relation, including department 20 with no employee.",
+      "That would omit the unmatched right-side department.",
+      "The matched department 10 is also retained.",
+      "Both right-side rows must be preserved."
+    ],
+    "takeAway": "RIGHT JOIN: Preserves right rows and null-extends unmatched left columns."
+  },
+  {
+    "id": "sql-017",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains SELF JOIN in this situation?",
+    "options": [
+      "Joins two aliases of the same relation.",
+      "A self join requires two different physical tables.",
+      "The scenario's correct answer would be: Riya, Sam.",
+      "The scenario's correct answer would be: Riya, Riya."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Joins two aliases of the same relation. The employee alias e for Sam references manager ID 1, which the manager alias m resolves to Riya.",
+    "tags": [
+      "self-join"
+    ],
+    "context": "Employees(id,name,manager_id) contains (1,Riya,NULL),(2,Sam,1). SQL: SELECT e.name,m.name FROM Employees e JOIN Employees m ON e.manager_id=m.id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Joins two aliases of the same relation. The employee alias e for Sam references manager ID 1, which the manager alias m resolves to Riya.",
+      "That claim conflicts with the principle: Joins two aliases of the same relation. The employee alias e for Sam references manager ID 1, which the manager alias m resolves to Riya.",
+      "The direction of employee-to-manager reference is reversed in this option.",
+      "Riya has no matching manager_id."
+    ],
+    "takeAway": "SELF JOIN: Joins two aliases of the same relation."
+  },
+  {
+    "id": "sql-018",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which pair is returned?",
+    "options": [
+      "Sam, Riya",
+      "Riya, Sam",
+      "Riya, Riya",
+      "Sam, Sam"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The employee alias e for Sam references manager ID 1, which the manager alias m resolves to Riya.",
+    "tags": [
+      "self-join"
+    ],
+    "context": "Employees(id,name,manager_id) contains (1,Riya,NULL),(2,Sam,1). SQL: SELECT e.name,m.name FROM Employees e JOIN Employees m ON e.manager_id=m.id.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "The employee alias e for Sam references manager ID 1, which the manager alias m resolves to Riya.",
+      "The direction of employee-to-manager reference is reversed in this option.",
+      "Riya has no matching manager_id.",
+      "Sam’s manager_id is 1, not Sam’s own ID 2."
+    ],
+    "takeAway": "SELF JOIN: Joins two aliases of the same relation."
+  },
+  {
+    "id": "sql-019",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Subqueries in this situation?",
+    "options": [
+      "Queries nested within another SQL expression.",
+      "A scalar subquery may return arbitrary multiple rows.",
+      "The scenario's correct answer would be: 60 and 80.",
+      "The scenario's correct answer would be: 40,60,80."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Queries nested within another SQL expression. AVG is (40+60+80)/3=60; the strict greater-than predicate keeps only 80.",
+    "tags": [
+      "subqueries"
+    ],
+    "context": "Employees salaries are 40,60,80. SQL: SELECT salary FROM Employees WHERE salary > (SELECT AVG(salary) FROM Employees) ORDER BY salary.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Queries nested within another SQL expression. AVG is (40+60+80)/3=60; the strict greater-than predicate keeps only 80.",
+      "That claim conflicts with the principle: Queries nested within another SQL expression. AVG is (40+60+80)/3=60; the strict greater-than predicate keeps only 80.",
+      "A salary equal to 60 does not satisfy >60.",
+      "Values at or below the average fail the predicate."
+    ],
+    "takeAway": "Subqueries: Queries nested within another SQL expression."
+  },
+  {
+    "id": "sql-020",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which salaries are returned?",
+    "options": [
+      "80 only",
+      "60 and 80",
+      "40,60,80",
+      "No salaries"
+    ],
+    "correctAnswer": 0,
+    "explanation": "AVG is (40+60+80)/3=60; the strict greater-than predicate keeps only 80.",
+    "tags": [
+      "subqueries"
+    ],
+    "context": "Employees salaries are 40,60,80. SQL: SELECT salary FROM Employees WHERE salary > (SELECT AVG(salary) FROM Employees) ORDER BY salary.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "AVG is (40+60+80)/3=60; the strict greater-than predicate keeps only 80.",
+      "A salary equal to 60 does not satisfy >60.",
+      "Values at or below the average fail the predicate.",
+      "80 is above the computed average."
+    ],
+    "takeAway": "Subqueries: Queries nested within another SQL expression."
+  },
+  {
+    "id": "sql-021",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains CTE in this situation?",
+    "options": [
+      "A named query expression scoped to a statement.",
+      "Every CTE is automatically a permanent table.",
+      "The scenario's correct answer would be: A permanent table automatically created for all sessions.",
+      "The scenario's correct answer would be: A trigger on Employees."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A named query expression scoped to a statement. A common table expression supplies a named query expression for the containing statement.",
+    "tags": [
+      "cte"
+    ],
+    "context": "A statement begins WITH high_pay AS (SELECT id FROM Employees WHERE salary > 60) SELECT id FROM high_pay. No table named high_pay existed before it.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A named query expression scoped to a statement. A common table expression supplies a named query expression for the containing statement.",
+      "That claim conflicts with the principle: A named query expression scoped to a statement. A common table expression supplies a named query expression for the containing statement.",
+      "WITH does not inherently create a permanent table.",
+      "No event-trigger definition is present."
+    ],
+    "takeAway": "CTE: A named query expression scoped to a statement."
+  },
+  {
+    "id": "sql-022",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What is high_pay here?",
+    "options": [
+      "A CTE name scoped to this statement",
+      "A permanent table automatically created for all sessions",
+      "A trigger on Employees",
+      "A required index name"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A common table expression supplies a named query expression for the containing statement.",
+    "tags": [
+      "cte"
+    ],
+    "context": "A statement begins WITH high_pay AS (SELECT id FROM Employees WHERE salary > 60) SELECT id FROM high_pay. No table named high_pay existed before it.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A common table expression supplies a named query expression for the containing statement.",
+      "WITH does not inherently create a permanent table.",
+      "No event-trigger definition is present.",
+      "A CTE name identifies a query expression, not an index."
+    ],
+    "takeAway": "CTE: A named query expression scoped to a statement."
+  },
+  {
+    "id": "sql-023",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Window functions in this situation?",
+    "options": [
+      "Calculate across related rows without collapsing each output row.",
+      "Window functions always reduce each partition to one row.",
+      "The scenario's correct answer would be: 2 rows; customer 1 has one merged row.",
+      "The scenario's correct answer would be: 3 rows; customer-1 totals must be 10 and 20 separately."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Calculate across related rows without collapsing each output row. A window aggregate preserves the three order rows while calculating a per-customer partition total.",
+    "tags": [
+      "window-functions"
+    ],
+    "context": "Orders(customer_id,amount) contains (1,10),(1,20),(2,7). SQL: SELECT customer_id,amount,SUM(amount) OVER (PARTITION BY customer_id) AS total FROM Orders.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Calculate across related rows without collapsing each output row. A window aggregate preserves the three order rows while calculating a per-customer partition total.",
+      "That claim conflicts with the principle: Calculate across related rows without collapsing each output row. A window aggregate preserves the three order rows while calculating a per-customer partition total.",
+      "GROUP BY would collapse groups; this window expression does not.",
+      "Without an ORDER BY window frame, the partition sum is 30 for both customer-1 rows."
+    ],
+    "takeAway": "Window functions: Calculate across related rows without collapsing each output row."
+  },
+  {
+    "id": "sql-024",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "How many rows are returned, and what total accompanies customer 1’s orders?",
+    "options": [
+      "3 rows; each customer-1 row has total 30",
+      "2 rows; customer 1 has one merged row",
+      "3 rows; customer-1 totals must be 10 and 20 separately",
+      "1 row; all customers total 37"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A window aggregate preserves the three order rows while calculating a per-customer partition total.",
+    "tags": [
+      "window-functions"
+    ],
+    "context": "Orders(customer_id,amount) contains (1,10),(1,20),(2,7). SQL: SELECT customer_id,amount,SUM(amount) OVER (PARTITION BY customer_id) AS total FROM Orders.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A window aggregate preserves the three order rows while calculating a per-customer partition total.",
+      "GROUP BY would collapse groups; this window expression does not.",
+      "Without an ORDER BY window frame, the partition sum is 30 for both customer-1 rows.",
+      "The partition key separates customers, and rows are preserved."
+    ],
+    "takeAway": "Window functions: Calculate across related rows without collapsing each output row."
+  },
+  {
+    "id": "sql-025",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains COUNT in this situation?",
+    "options": [
+      "COUNT(*) counts rows while COUNT(column) excludes nulls.",
+      "COUNT(column) always includes null values.",
+      "The scenario's correct answer would be: 3,3.",
+      "The scenario's correct answer would be: 2,2."
+    ],
+    "correctAnswer": 0,
+    "explanation": "COUNT(*) counts rows while COUNT(column) excludes nulls. COUNT(*) counts all three rows; COUNT(value) counts only the two non-NULL values.",
+    "tags": [
+      "count"
+    ],
+    "context": "Scores(value) contains 10,NULL,20. SQL: SELECT COUNT(*),COUNT(value) FROM Scores.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "COUNT(*) counts rows while COUNT(column) excludes nulls. COUNT(*) counts all three rows; COUNT(value) counts only the two non-NULL values.",
+      "That claim conflicts with the principle: COUNT(*) counts rows while COUNT(column) excludes nulls. COUNT(*) counts all three rows; COUNT(value) counts only the two non-NULL values.",
+      "COUNT(column) excludes the NULL input.",
+      "The NULL row still counts for COUNT(*)."
+    ],
+    "takeAway": "COUNT: COUNT(*) counts rows while COUNT(column) excludes nulls."
+  },
+  {
+    "id": "sql-026",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What pair is returned?",
+    "options": [
+      "3,2",
+      "3,3",
+      "2,2",
+      "2,3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "COUNT(*) counts all three rows; COUNT(value) counts only the two non-NULL values.",
+    "tags": [
+      "count"
+    ],
+    "context": "Scores(value) contains 10,NULL,20. SQL: SELECT COUNT(*),COUNT(value) FROM Scores.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "COUNT(*) counts all three rows; COUNT(value) counts only the two non-NULL values.",
+      "COUNT(column) excludes the NULL input.",
+      "The NULL row still counts for COUNT(*).",
+      "The star count cannot be smaller than the non-NULL column count here."
+    ],
+    "takeAway": "COUNT: COUNT(*) counts rows while COUNT(column) excludes nulls."
+  },
+  {
+    "id": "sql-027",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains SUM and AVG in this situation?",
+    "options": [
+      "Aggregate numeric values while ignoring null inputs.",
+      "AVG treats every null as zero.",
+      "The scenario's correct answer would be: 30,10.",
+      "The scenario's correct answer would be: NULL,NULL."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Aggregate numeric values while ignoring null inputs. SUM is 10+20=30; AVG uses two non-NULL values, so 30/2=15.",
+    "tags": [
+      "sum-and-avg"
+    ],
+    "context": "Scores(value) contains 10,NULL,20. SQL: SELECT SUM(value),AVG(value) FROM Scores.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Aggregate numeric values while ignoring null inputs. SUM is 10+20=30; AVG uses two non-NULL values, so 30/2=15.",
+      "That claim conflicts with the principle: Aggregate numeric values while ignoring null inputs. SUM is 10+20=30; AVG uses two non-NULL values, so 30/2=15.",
+      "AVG does not automatically treat NULL as zero in its denominator.",
+      "Non-NULL values exist and are aggregated."
+    ],
+    "takeAway": "SUM and AVG: Aggregate numeric values while ignoring null inputs."
+  },
+  {
+    "id": "sql-028",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What pair is returned?",
+    "options": [
+      "30,15",
+      "30,10",
+      "NULL,NULL",
+      "20,20"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SUM is 10+20=30; AVG uses two non-NULL values, so 30/2=15.",
+    "tags": [
+      "sum-and-avg"
+    ],
+    "context": "Scores(value) contains 10,NULL,20. SQL: SELECT SUM(value),AVG(value) FROM Scores.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "SUM is 10+20=30; AVG uses two non-NULL values, so 30/2=15.",
+      "AVG does not automatically treat NULL as zero in its denominator.",
+      "Non-NULL values exist and are aggregated.",
+      "Neither aggregate discards the valid value 10."
+    ],
+    "takeAway": "SUM and AVG: Aggregate numeric values while ignoring null inputs."
+  },
+  {
+    "id": "sql-029",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains MAX and MIN in this situation?",
+    "options": [
+      "Return extreme non-null values.",
+      "MAX always returns the row containing all associated columns.",
+      "The scenario's correct answer would be: The entire row for employee 2.",
+      "The scenario's correct answer would be: 50,80."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Return extreme non-null values. MAX and MIN return the extreme selected scalar values; this query selects no employee ID or name.",
+    "tags": [
+      "max-and-min"
+    ],
+    "context": "Employees(id,salary) contains (1,50),(2,80),(3,60). SQL: SELECT MAX(salary),MIN(salary) FROM Employees.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Return extreme non-null values. MAX and MIN return the extreme selected scalar values; this query selects no employee ID or name.",
+      "That claim conflicts with the principle: Return extreme non-null values. MAX and MIN return the extreme selected scalar values; this query selects no employee ID or name.",
+      "An aggregate salary value does not automatically include the rest of its source row.",
+      "The requested order is maximum first, minimum second."
+    ],
+    "takeAway": "MAX and MIN: Return extreme non-null values."
+  },
+  {
+    "id": "sql-030",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "What does this query return?",
+    "options": [
+      "80,50",
+      "The entire row for employee 2",
+      "50,80",
+      "Employee IDs 2 and 1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "MAX and MIN return the extreme selected scalar values; this query selects no employee ID or name.",
+    "tags": [
+      "max-and-min"
+    ],
+    "context": "Employees(id,salary) contains (1,50),(2,80),(3,60). SQL: SELECT MAX(salary),MIN(salary) FROM Employees.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "MAX and MIN return the extreme selected scalar values; this query selects no employee ID or name.",
+      "An aggregate salary value does not automatically include the rest of its source row.",
+      "The requested order is maximum first, minimum second.",
+      "The selected expressions return salaries, not IDs."
+    ],
+    "takeAway": "MAX and MIN: Return extreme non-null values."
+  },
+  {
+    "id": "sql-031",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains DISTINCT in this situation?",
+    "options": [
+      "Removes duplicate result tuples.",
+      "DISTINCT applies only to the first selected column.",
+      "The scenario's correct answer would be: 2.",
+      "The scenario's correct answer would be: 4."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Removes duplicate result tuples. DISTINCT applies to the complete selected tuple; the duplicate (Pune,Mon) is removed once, leaving three combinations.",
+    "tags": [
+      "distinct"
+    ],
+    "context": "Visits(city,day) contains (Pune,Mon),(Pune,Tue),(Delhi,Mon),(Pune,Mon). SQL: SELECT DISTINCT city,day FROM Visits.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Removes duplicate result tuples. DISTINCT applies to the complete selected tuple; the duplicate (Pune,Mon) is removed once, leaving three combinations.",
+      "That claim conflicts with the principle: Removes duplicate result tuples. DISTINCT applies to the complete selected tuple; the duplicate (Pune,Mon) is removed once, leaving three combinations.",
+      "That would count distinct cities alone, not city/day pairs.",
+      "One tuple is repeated, so four occurrences are not four distinct tuples."
+    ],
+    "takeAway": "DISTINCT: Removes duplicate result tuples."
+  },
+  {
+    "id": "sql-032",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "How many distinct result tuples remain?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DISTINCT applies to the complete selected tuple; the duplicate (Pune,Mon) is removed once, leaving three combinations.",
+    "tags": [
+      "distinct"
+    ],
+    "context": "Visits(city,day) contains (Pune,Mon),(Pune,Tue),(Delhi,Mon),(Pune,Mon). SQL: SELECT DISTINCT city,day FROM Visits.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "DISTINCT applies to the complete selected tuple; the duplicate (Pune,Mon) is removed once, leaving three combinations.",
+      "That would count distinct cities alone, not city/day pairs.",
+      "One tuple is repeated, so four occurrences are not four distinct tuples.",
+      "More than one city/day combination exists."
+    ],
+    "takeAway": "DISTINCT: Removes duplicate result tuples."
+  },
+  {
+    "id": "sql-033",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains NULL comparisons in this situation?",
+    "options": [
+      "Use IS NULL instead of equality to detect nulls.",
+      "NULL = NULL evaluates to true in ordinary SQL.",
+      "The scenario's correct answer would be: It matches NULL because NULL equals itself.",
+      "The scenario's correct answer would be: It matches every non-NULL row."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Use IS NULL instead of equality to detect nulls. Ordinary equality involving NULL evaluates to unknown; WHERE retains true, not unknown. IS NULL tests nullness.",
+    "tags": [
+      "null-comparisons"
+    ],
+    "context": "Employees(manager_id) contains NULL,1,2. In standard SQL, the query uses WHERE manager_id = NULL.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Use IS NULL instead of equality to detect nulls. Ordinary equality involving NULL evaluates to unknown; WHERE retains true, not unknown. IS NULL tests nullness.",
+      "That claim conflicts with the principle: Use IS NULL instead of equality to detect nulls. Ordinary equality involving NULL evaluates to unknown; WHERE retains true, not unknown. IS NULL tests nullness.",
+      "SQL NULL is not an ordinary value that equals itself under =.",
+      "The comparison is unknown for non-NULL values too."
+    ],
+    "takeAway": "NULL comparisons: Use IS NULL instead of equality to detect nulls."
+  },
+  {
+    "id": "sql-034",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement describes this comparison?",
+    "options": [
+      "It does not identify the NULL row; use IS NULL instead",
+      "It matches NULL because NULL equals itself",
+      "It matches every non-NULL row",
+      "It is equivalent to manager_id IS NULL"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ordinary equality involving NULL evaluates to unknown; WHERE retains true, not unknown. IS NULL tests nullness.",
+    "tags": [
+      "null-comparisons"
+    ],
+    "context": "Employees(manager_id) contains NULL,1,2. In standard SQL, the query uses WHERE manager_id = NULL.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Ordinary equality involving NULL evaluates to unknown; WHERE retains true, not unknown. IS NULL tests nullness.",
+      "SQL NULL is not an ordinary value that equals itself under =.",
+      "The comparison is unknown for non-NULL values too.",
+      "IS NULL has explicit null-testing semantics that equality lacks."
+    ],
+    "takeAway": "NULL comparisons: Use IS NULL instead of equality to detect nulls."
+  },
+  {
+    "id": "sql-035",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains UNION in this situation?",
+    "options": [
+      "Combines result sets removing duplicates unless UNION ALL is used.",
+      "UNION ALL removes duplicates.",
+      "The scenario's correct answer would be: Both return 4 rows.",
+      "The scenario's correct answer would be: Both return 3 rows."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Combines result sets removing duplicates unless UNION ALL is used. UNION deduplicates combined results to 1,2,3; UNION ALL keeps both occurrences of 2.",
+    "tags": [
+      "union"
+    ],
+    "context": "Table A has IDs 1,2. Table B has IDs 2,3. Compare SELECT id FROM A UNION SELECT id FROM B with the UNION ALL version.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Combines result sets removing duplicates unless UNION ALL is used. UNION deduplicates combined results to 1,2,3; UNION ALL keeps both occurrences of 2.",
+      "That claim conflicts with the principle: Combines result sets removing duplicates unless UNION ALL is used. UNION deduplicates combined results to 1,2,3; UNION ALL keeps both occurrences of 2.",
+      "UNION removes the duplicate selected ID.",
+      "UNION ALL preserves duplicate occurrences."
+    ],
+    "takeAway": "UNION: Combines result sets removing duplicates unless UNION ALL is used."
+  },
+  {
+    "id": "sql-036",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which counts are correct?",
+    "options": [
+      "UNION returns 3 rows; UNION ALL returns 4",
+      "Both return 4 rows",
+      "Both return 3 rows",
+      "UNION returns only the shared ID 2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "UNION deduplicates combined results to 1,2,3; UNION ALL keeps both occurrences of 2.",
+    "tags": [
+      "union"
+    ],
+    "context": "Table A has IDs 1,2. Table B has IDs 2,3. Compare SELECT id FROM A UNION SELECT id FROM B with the UNION ALL version.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "UNION deduplicates combined results to 1,2,3; UNION ALL keeps both occurrences of 2.",
+      "UNION removes the duplicate selected ID.",
+      "UNION ALL preserves duplicate occurrences.",
+      "Returning only shared rows would be intersection, not union."
+    ],
+    "takeAway": "UNION: Combines result sets removing duplicates unless UNION ALL is used."
+  },
+  {
+    "id": "sql-037",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Ranking functions in this situation?",
+    "options": [
+      "ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties.",
+      "RANK and DENSE_RANK always produce identical ranks.",
+      "The scenario's correct answer would be: Both: 1,2,3.",
+      "The scenario's correct answer would be: Both: 1,1,2."
+    ],
+    "correctAnswer": 0,
+    "explanation": "ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties. RANK leaves a position gap after a tie; DENSE_RANK increments only for the next distinct score.",
+    "tags": [
+      "ranking-functions"
+    ],
+    "context": "Scores are 90,90,80. Rank them with RANK() OVER (ORDER BY score DESC) and DENSE_RANK() using the same ordering.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties. RANK leaves a position gap after a tie; DENSE_RANK increments only for the next distinct score.",
+      "That claim conflicts with the principle: ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties. RANK leaves a position gap after a tie; DENSE_RANK increments only for the next distinct score.",
+      "Distinct row numbering is ROW_NUMBER behaviour, not tied ranking.",
+      "Only DENSE_RANK avoids the gap."
+    ],
+    "takeAway": "Ranking functions: ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties."
+  },
+  {
+    "id": "sql-038",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which sequences are correct?",
+    "options": [
+      "RANK: 1,1,3; DENSE_RANK: 1,1,2",
+      "Both: 1,2,3",
+      "Both: 1,1,2",
+      "RANK: 1,1,2; DENSE_RANK: 1,1,3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "RANK leaves a position gap after a tie; DENSE_RANK increments only for the next distinct score.",
+    "tags": [
+      "ranking-functions"
+    ],
+    "context": "Scores are 90,90,80. Rank them with RANK() OVER (ORDER BY score DESC) and DENSE_RANK() using the same ordering.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "RANK leaves a position gap after a tie; DENSE_RANK increments only for the next distinct score.",
+      "Distinct row numbering is ROW_NUMBER behaviour, not tied ranking.",
+      "Only DENSE_RANK avoids the gap.",
+      "The two functions’ gap behaviours are reversed."
+    ],
+    "takeAway": "Ranking functions: ROW_NUMBER assigns distinct positions while RANK leaves gaps on ties."
+  },
+  {
+    "id": "sql-039",
+    "topic": "SQL",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Index-aware predicates in this situation?",
+    "options": [
+      "Search-friendly predicates can permit useful index access.",
+      "Wrapping an indexed column in a function always preserves index seeks.",
+      "The scenario's correct answer would be: MONTH(created_at)=1 without a year filter.",
+      "The scenario's correct answer would be: CAST(created_at AS TEXT) LIKE '%01%'."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Search-friendly predicates can permit useful index access. The half-open range includes January timestamps, excludes February, and exposes an index-friendly comparison on the original column.",
+    "tags": [
+      "index-aware-predicates"
+    ],
+    "context": "A B-tree index exists on created_at. A query needs records in January 2027. Assume the engine can seek directly on an untransformed indexed timestamp range.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Search-friendly predicates can permit useful index access. The half-open range includes January timestamps, excludes February, and exposes an index-friendly comparison on the original column.",
+      "That claim conflicts with the principle: Search-friendly predicates can permit useful index access. The half-open range includes January timestamps, excludes February, and exposes an index-friendly comparison on the original column.",
+      "Month alone includes January from other years and may require per-row transformation.",
+      "A text pattern is not a precise timestamp interval and transforms the indexed value."
+    ],
+    "takeAway": "Index-aware predicates: Search-friendly predicates can permit useful index access."
+  },
+  {
+    "id": "sql-040",
+    "topic": "SQL",
+    "difficulty": "medium",
+    "question": "Which predicate best expresses that range?",
+    "options": [
+      "created_at >= '2027-01-01' AND created_at < '2027-02-01'",
+      "MONTH(created_at)=1 without a year filter",
+      "CAST(created_at AS TEXT) LIKE '%01%'",
+      "created_at IS NOT NULL"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The half-open range includes January timestamps, excludes February, and exposes an index-friendly comparison on the original column.",
+    "tags": [
+      "index-aware-predicates"
+    ],
+    "context": "A B-tree index exists on created_at. A query needs records in January 2027. Assume the engine can seek directly on an untransformed indexed timestamp range.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "The half-open range includes January timestamps, excludes February, and exposes an index-friendly comparison on the original column.",
+      "Month alone includes January from other years and may require per-row transformation.",
+      "A text pattern is not a precise timestamp interval and transforms the indexed value.",
+      "Non-nullness includes every month and year."
+    ],
+    "takeAway": "Index-aware predicates: Search-friendly predicates can permit useful index access."
+  }
+]

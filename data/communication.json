@@ -1,0 +1,70 @@
+[
+  {
+    "id": "comm-grammar",
+    "topic": "Grammar",
+    "question": "Choose the correct sentence.",
+    "options": [
+      "Each of the candidates has submitted a résumé.",
+      "Each of the candidates have submitted a résumé.",
+      "Each candidates has submitted a résumé.",
+      "Each of candidates have submitted a résumé."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each is singular, so use has.",
+    "difficulty": "easy",
+    "tags": [
+      "agreement"
+    ]
+  },
+  {
+    "id": "comm-correction",
+    "topic": "Sentence correction",
+    "question": "Choose the clearest professional sentence.",
+    "options": [
+      "Please send the report by Friday.",
+      "Send me report fast.",
+      "You must sending report Friday.",
+      "Report should been send Friday."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Use a polite imperative and a concrete deadline.",
+    "difficulty": "easy",
+    "tags": [
+      "clarity"
+    ]
+  },
+  {
+    "id": "comm-reading",
+    "topic": "Reading comprehension",
+    "question": "Memo: The release is postponed until QA completes regression testing. Customer support must prepare the change notice today. Which task must happen today?",
+    "options": [
+      "Prepare the change notice",
+      "Release the software",
+      "Skip regression tests",
+      "Cancel customer support"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The memo explicitly sets today as the deadline for preparing the notice.",
+    "difficulty": "easy",
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "id": "comm-listening",
+    "topic": "Listening-style",
+    "question": "Listen to the briefing using the play button: The review is moved from Tuesday to Thursday at 3 PM. What is the new review time?",
+    "options": [
+      "Thursday, 3 PM",
+      "Tuesday, 3 PM",
+      "Thursday, 10 AM",
+      "Friday, 3 PM"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The briefing changes the review to Thursday at 3 PM.",
+    "difficulty": "easy",
+    "tags": [
+      "listening"
+    ]
+  }
+]

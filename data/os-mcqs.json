@@ -1,0 +1,652 @@
+[
+  {
+    "id": "os-001",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Processes and threads in this situation?",
+    "options": [
+      "Threads share a process address space while processes have isolated address spaces.",
+      "Each thread always owns a separate process address space.",
+      "The scenario's correct answer would be: Every thread necessarily has an isolated process address space.",
+      "The scenario's correct answer would be: Threads cannot run different instructions."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Threads share a process address space while processes have isolated address spaces. Threads within a process commonly share address-space resources but have individual execution state.",
+    "tags": [
+      "processes-and-threads"
+    ],
+    "context": "Two worker threads belong to one process. Each has its own execution stack and registers, while both can access the process heap.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Threads share a process address space while processes have isolated address spaces. Threads within a process commonly share address-space resources but have individual execution state.",
+      "That claim conflicts with the principle: Threads share a process address space while processes have isolated address spaces. Threads within a process commonly share address-space resources but have individual execution state.",
+      "Separate address spaces characterize separate processes, not every thread.",
+      "Separate instruction pointers permit different execution paths."
+    ],
+    "takeAway": "Processes and threads: Threads share a process address space while processes have isolated address spaces."
+  },
+  {
+    "id": "os-002",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "What distinction is illustrated?",
+    "options": [
+      "Threads can share a process address space while keeping separate execution state",
+      "Every thread necessarily has an isolated process address space",
+      "Threads cannot run different instructions",
+      "A process never owns memory"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Threads within a process commonly share address-space resources but have individual execution state.",
+    "tags": [
+      "processes-and-threads"
+    ],
+    "context": "Two worker threads belong to one process. Each has its own execution stack and registers, while both can access the process heap.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Threads within a process commonly share address-space resources but have individual execution state.",
+      "Separate address spaces characterize separate processes, not every thread.",
+      "Separate instruction pointers permit different execution paths.",
+      "A process has an address space and resources."
+    ],
+    "takeAway": "Processes and threads: Threads share a process address space while processes have isolated address spaces."
+  },
+  {
+    "id": "os-003",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains FCFS scheduling in this situation?",
+    "options": [
+      "Runs ready work in arrival order without preemption in its basic form.",
+      "FCFS always minimizes average waiting time.",
+      "The scenario's correct answer would be: B runs first because FCFS chooses the shortest burst.",
+      "The scenario's correct answer would be: C runs first because latest arrivals get priority."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Runs ready work in arrival order without preemption in its basic form. FCFS chooses arrival order; a long early job can cause the convoy effect for shorter jobs.",
+    "tags": [
+      "fcfs-scheduling"
+    ],
+    "context": "Three jobs arrive in order A,B,C with CPU bursts 20,2,2 units. Basic FCFS scheduling is non-preemptive.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Runs ready work in arrival order without preemption in its basic form. FCFS chooses arrival order; a long early job can cause the convoy effect for shorter jobs.",
+      "That claim conflicts with the principle: Runs ready work in arrival order without preemption in its basic form. FCFS chooses arrival order; a long early job can cause the convoy effect for shorter jobs.",
+      "Choosing the shortest available burst is SJF, not FCFS.",
+      "FCFS does not reverse arrival order."
+    ],
+    "takeAway": "FCFS scheduling: Runs ready work in arrival order without preemption in its basic form."
+  },
+  {
+    "id": "os-004",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which job runs first, and what issue can result?",
+    "options": [
+      "A runs first; short jobs wait behind it",
+      "B runs first because FCFS chooses the shortest burst",
+      "C runs first because latest arrivals get priority",
+      "All jobs must finish simultaneously"
+    ],
+    "correctAnswer": 0,
+    "explanation": "FCFS chooses arrival order; a long early job can cause the convoy effect for shorter jobs.",
+    "tags": [
+      "fcfs-scheduling"
+    ],
+    "context": "Three jobs arrive in order A,B,C with CPU bursts 20,2,2 units. Basic FCFS scheduling is non-preemptive.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "FCFS chooses arrival order; a long early job can cause the convoy effect for shorter jobs.",
+      "Choosing the shortest available burst is SJF, not FCFS.",
+      "FCFS does not reverse arrival order.",
+      "A single non-preemptive CPU executes these jobs sequentially."
+    ],
+    "takeAway": "FCFS scheduling: Runs ready work in arrival order without preemption in its basic form."
+  },
+  {
+    "id": "os-005",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains SJF scheduling in this situation?",
+    "options": [
+      "Chooses the shortest estimated next CPU burst.",
+      "SJF cannot starve long jobs.",
+      "The scenario's correct answer would be: A.",
+      "The scenario's correct answer would be: C."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Chooses the shortest estimated next CPU burst. B has the smallest estimated burst, 3 units.",
+    "tags": [
+      "sjf-scheduling"
+    ],
+    "context": "At scheduling time, ready jobs have estimated bursts A=8,B=3,C=5. Basic non-preemptive SJF selects the shortest next burst.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Chooses the shortest estimated next CPU burst. B has the smallest estimated burst, 3 units.",
+      "That claim conflicts with the principle: Chooses the shortest estimated next CPU burst. B has the smallest estimated burst, 3 units.",
+      "A has the longest burst of those supplied.",
+      "C is shorter than A but longer than B."
+    ],
+    "takeAway": "SJF scheduling: Chooses the shortest estimated next CPU burst."
+  },
+  {
+    "id": "os-006",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which job is chosen next?",
+    "options": [
+      "B",
+      "A",
+      "C",
+      "Always the one with the alphabetically first name"
+    ],
+    "correctAnswer": 0,
+    "explanation": "B has the smallest estimated burst, 3 units.",
+    "tags": [
+      "sjf-scheduling"
+    ],
+    "context": "At scheduling time, ready jobs have estimated bursts A=8,B=3,C=5. Basic non-preemptive SJF selects the shortest next burst.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "B has the smallest estimated burst, 3 units.",
+      "A has the longest burst of those supplied.",
+      "C is shorter than A but longer than B.",
+      "Job names do not determine the scheduling policy."
+    ],
+    "takeAway": "SJF scheduling: Chooses the shortest estimated next CPU burst."
+  },
+  {
+    "id": "os-007",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Round Robin in this situation?",
+    "options": [
+      "Cycles ready processes with a time quantum.",
+      "A smaller quantum has no context-switch overhead.",
+      "The scenario's correct answer would be: It keeps the CPU indefinitely until completion.",
+      "The scenario's correct answer would be: The task must be deleted."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cycles ready processes with a time quantum. Round Robin shares CPU time by moving unfinished tasks back into the ready rotation after a quantum.",
+    "tags": [
+      "round-robin"
+    ],
+    "context": "A round-robin scheduler uses a 2-ms quantum. A runnable task still has work after using its quantum.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Cycles ready processes with a time quantum. Round Robin shares CPU time by moving unfinished tasks back into the ready rotation after a quantum.",
+      "That claim conflicts with the principle: Cycles ready processes with a time quantum. Round Robin shares CPU time by moving unfinished tasks back into the ready rotation after a quantum.",
+      "Indefinite non-preemptive execution defeats the stated quantum policy.",
+      "Preemption is not deletion."
+    ],
+    "takeAway": "Round Robin: Cycles ready processes with a time quantum."
+  },
+  {
+    "id": "os-008",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "What normally happens?",
+    "options": [
+      "It is preempted and requeued so another ready task can run",
+      "It keeps the CPU indefinitely until completion",
+      "The task must be deleted",
+      "The scheduler permanently changes to FCFS"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Round Robin shares CPU time by moving unfinished tasks back into the ready rotation after a quantum.",
+    "tags": [
+      "round-robin"
+    ],
+    "context": "A round-robin scheduler uses a 2-ms quantum. A runnable task still has work after using its quantum.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Round Robin shares CPU time by moving unfinished tasks back into the ready rotation after a quantum.",
+      "Indefinite non-preemptive execution defeats the stated quantum policy.",
+      "Preemption is not deletion.",
+      "Quantum expiry does not inherently replace the scheduling algorithm."
+    ],
+    "takeAway": "Round Robin: Cycles ready processes with a time quantum."
+  },
+  {
+    "id": "os-009",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Priority scheduling in this situation?",
+    "options": [
+      "Chooses work by priority and can use aging to reduce starvation.",
+      "Priority scheduling inherently prevents starvation.",
+      "The scenario's correct answer would be: Paging out all priorities.",
+      "The scenario's correct answer would be: A guarantee that priority scheduling can never starve tasks."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Chooses work by priority and can use aging to reduce starvation. Aging increases the opportunity for long-waiting tasks to be scheduled.",
+    "tags": [
+      "priority-scheduling"
+    ],
+    "context": "Low-priority tasks wait for a long time while high-priority work repeatedly arrives. The scheduler gradually raises waiting tasks’ priorities.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Chooses work by priority and can use aging to reduce starvation. Aging increases the opportunity for long-waiting tasks to be scheduled.",
+      "That claim conflicts with the principle: Chooses work by priority and can use aging to reduce starvation. Aging increases the opportunity for long-waiting tasks to be scheduled.",
+      "Paging is a memory mechanism, not this priority adjustment.",
+      "Priority scheduling can starve tasks without suitable policy."
+    ],
+    "takeAway": "Priority scheduling: Chooses work by priority and can use aging to reduce starvation."
+  },
+  {
+    "id": "os-010",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "What technique is being used?",
+    "options": [
+      "Aging to reduce starvation",
+      "Paging out all priorities",
+      "A guarantee that priority scheduling can never starve tasks",
+      "Increasing the CPU quantum to infinity"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Aging increases the opportunity for long-waiting tasks to be scheduled.",
+    "tags": [
+      "priority-scheduling"
+    ],
+    "context": "Low-priority tasks wait for a long time while high-priority work repeatedly arrives. The scheduler gradually raises waiting tasks’ priorities.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Aging increases the opportunity for long-waiting tasks to be scheduled.",
+      "Paging is a memory mechanism, not this priority adjustment.",
+      "Priority scheduling can starve tasks without suitable policy.",
+      "An infinite quantum does not implement the stated aging behaviour."
+    ],
+    "takeAway": "Priority scheduling: Chooses work by priority and can use aging to reduce starvation."
+  },
+  {
+    "id": "os-011",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Context switching in this situation?",
+    "options": [
+      "Saving and restoring execution state between scheduled tasks.",
+      "Context switching always performs useful application computation.",
+      "The scenario's correct answer would be: Application-level sorting.",
+      "The scenario's correct answer would be: Database rollback."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Saving and restoring execution state between scheduled tasks. A context switch saves and restores execution state to transfer scheduled execution between tasks.",
+    "tags": [
+      "context-switching"
+    ],
+    "context": "The OS stops one thread, saves its register state and resumes another thread’s saved instruction position.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Saving and restoring execution state between scheduled tasks. A context switch saves and restores execution state to transfer scheduled execution between tasks.",
+      "That claim conflicts with the principle: Saving and restoring execution state between scheduled tasks. A context switch saves and restores execution state to transfer scheduled execution between tasks.",
+      "Sorting data is not switching thread state.",
+      "Database transaction effects are unrelated to the saved CPU context here."
+    ],
+    "takeAway": "Context switching: Saving and restoring execution state between scheduled tasks."
+  },
+  {
+    "id": "os-012",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "What operation is described?",
+    "options": [
+      "Context switching",
+      "Application-level sorting",
+      "Database rollback",
+      "Training a neural network"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A context switch saves and restores execution state to transfer scheduled execution between tasks.",
+    "tags": [
+      "context-switching"
+    ],
+    "context": "The OS stops one thread, saves its register state and resumes another thread’s saved instruction position.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A context switch saves and restores execution state to transfer scheduled execution between tasks.",
+      "Sorting data is not switching thread state.",
+      "Database transaction effects are unrelated to the saved CPU context here.",
+      "No learning operation is described."
+    ],
+    "takeAway": "Context switching: Saving and restoring execution state between scheduled tasks."
+  },
+  {
+    "id": "os-013",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Deadlock conditions in this situation?",
+    "options": [
+      "Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary.",
+      "Removing a necessary condition cannot prevent deadlock.",
+      "The scenario's correct answer would be: Only short CPU bursts and large caches.",
+      "The scenario's correct answer would be: Unlimited shared resources with no waiting."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary. The scenario states the four Coffman conditions together; breaking a necessary condition can prevent this form of deadlock.",
+    "tags": [
+      "deadlock-conditions"
+    ],
+    "context": "Tasks each hold an exclusive resource while waiting for another; resources cannot be forcibly taken away; the wait graph forms a cycle.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary. The scenario states the four Coffman conditions together; breaking a necessary condition can prevent this form of deadlock.",
+      "That claim conflicts with the principle: Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary. The scenario states the four Coffman conditions together; breaking a necessary condition can prevent this form of deadlock.",
+      "Those performance characteristics are not the four conditions.",
+      "Unlimited nonexclusive resources contradict the given locks and waiting."
+    ],
+    "takeAway": "Deadlock conditions: Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary."
+  },
+  {
+    "id": "os-014",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which set of necessary deadlock conditions is present?",
+    "options": [
+      "Mutual exclusion, hold-and-wait, no preemption and circular wait",
+      "Only short CPU bursts and large caches",
+      "Unlimited shared resources with no waiting",
+      "One task that holds no resource"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The scenario states the four Coffman conditions together; breaking a necessary condition can prevent this form of deadlock.",
+    "tags": [
+      "deadlock-conditions"
+    ],
+    "context": "Tasks each hold an exclusive resource while waiting for another; resources cannot be forcibly taken away; the wait graph forms a cycle.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "The scenario states the four Coffman conditions together; breaking a necessary condition can prevent this form of deadlock.",
+      "Those performance characteristics are not the four conditions.",
+      "Unlimited nonexclusive resources contradict the given locks and waiting.",
+      "The stated system has multiple holding-and-waiting tasks."
+    ],
+    "takeAway": "Deadlock conditions: Mutual exclusion, hold-and-wait, no preemption and circular wait are jointly necessary."
+  },
+  {
+    "id": "os-015",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Mutex and semaphore in this situation?",
+    "options": [
+      "A mutex protects ownership-based exclusion; a semaphore counts permits.",
+      "A counting semaphore can only ever have value one.",
+      "The scenario's correct answer would be: A mutex naturally counts three available connections without extra logic.",
+      "The scenario's correct answer would be: Every semaphore can represent only zero or one permit."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A mutex protects ownership-based exclusion; a semaphore counts permits. A counting semaphore represents available permits; a mutex provides ownership-based mutual exclusion for a critical section.",
+    "tags": [
+      "mutex-and-semaphore"
+    ],
+    "context": "A service permits at most three simultaneous connections. Separate code must protect a shared counter so only one thread updates it at a time.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A mutex protects ownership-based exclusion; a semaphore counts permits. A counting semaphore represents available permits; a mutex provides ownership-based mutual exclusion for a critical section.",
+      "That claim conflicts with the principle: A mutex protects ownership-based exclusion; a semaphore counts permits. A counting semaphore represents available permits; a mutex provides ownership-based mutual exclusion for a critical section.",
+      "A mutex is not itself a three-permit counter.",
+      "Counting semaphores can have values above one."
+    ],
+    "takeAway": "Mutex and semaphore: A mutex protects ownership-based exclusion; a semaphore counts permits."
+  },
+  {
+    "id": "os-016",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which distinction is useful?",
+    "options": [
+      "A counting semaphore can limit permits; a mutex can protect the counter update",
+      "A mutex naturally counts three available connections without extra logic",
+      "Every semaphore can represent only zero or one permit",
+      "Neither mechanism can coordinate threads"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A counting semaphore represents available permits; a mutex provides ownership-based mutual exclusion for a critical section.",
+    "tags": [
+      "mutex-and-semaphore"
+    ],
+    "context": "A service permits at most three simultaneous connections. Separate code must protect a shared counter so only one thread updates it at a time.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A counting semaphore represents available permits; a mutex provides ownership-based mutual exclusion for a critical section.",
+      "A mutex is not itself a three-permit counter.",
+      "Counting semaphores can have values above one.",
+      "Both are synchronization primitives, with different roles."
+    ],
+    "takeAway": "Mutex and semaphore: A mutex protects ownership-based exclusion; a semaphore counts permits."
+  },
+  {
+    "id": "os-017",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Producer consumer in this situation?",
+    "options": [
+      "Coordinates bounded-buffer production and consumption.",
+      "Only a mutex guarantees consumers never read an empty buffer.",
+      "The scenario's correct answer would be: Allow consumers to read even when the buffer is empty.",
+      "The scenario's correct answer would be: Let producers overwrite unconsumed items whenever the mutex is free."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Coordinates bounded-buffer production and consumption. A mutex protects a modification, while empty/full counts or condition waits coordinate when an operation is valid.",
+    "tags": [
+      "producer-consumer"
+    ],
+    "context": "A bounded buffer has capacity 4. Producers must wait when it is full; consumers must wait when it is empty; buffer modifications must be mutually exclusive.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Coordinates bounded-buffer production and consumption. A mutex protects a modification, while empty/full counts or condition waits coordinate when an operation is valid.",
+      "That claim conflicts with the principle: Coordinates bounded-buffer production and consumption. A mutex protects a modification, while empty/full counts or condition waits coordinate when an operation is valid.",
+      "An empty buffer has no valid item to consume.",
+      "A free mutex does not mean a buffer has spare capacity."
+    ],
+    "takeAway": "Producer consumer: Coordinates bounded-buffer production and consumption."
+  },
+  {
+    "id": "os-018",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "What is required beyond a mutex alone?",
+    "options": [
+      "Availability coordination for empty and full slots",
+      "Allow consumers to read even when the buffer is empty",
+      "Let producers overwrite unconsumed items whenever the mutex is free",
+      "Remove the capacity limit without changing the specification"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A mutex protects a modification, while empty/full counts or condition waits coordinate when an operation is valid.",
+    "tags": [
+      "producer-consumer"
+    ],
+    "context": "A bounded buffer has capacity 4. Producers must wait when it is full; consumers must wait when it is empty; buffer modifications must be mutually exclusive.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A mutex protects a modification, while empty/full counts or condition waits coordinate when an operation is valid.",
+      "An empty buffer has no valid item to consume.",
+      "A free mutex does not mean a buffer has spare capacity.",
+      "Changing the specification does not solve the bounded-buffer synchronization task."
+    ],
+    "takeAway": "Producer consumer: Coordinates bounded-buffer production and consumption."
+  },
+  {
+    "id": "os-019",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Readers writers in this situation?",
+    "options": [
+      "Allows concurrent readers while synchronizing writes.",
+      "All readers must always exclude one another.",
+      "The scenario's correct answer would be: Always allow writers to mutate during every read without coordination.",
+      "The scenario's correct answer would be: Require each reader to become a separate operating system."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Allows concurrent readers while synchronizing writes. Reader-writer coordination distinguishes compatible concurrent readers from conflicting writers; fairness policy also matters.",
+    "tags": [
+      "readers-writers"
+    ],
+    "context": "Several readers inspect a shared cache without changing it. Writers modify entries and must not overlap conflicting reads or writes.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Allows concurrent readers while synchronizing writes. Reader-writer coordination distinguishes compatible concurrent readers from conflicting writers; fairness policy also matters.",
+      "That claim conflicts with the principle: Allows concurrent readers while synchronizing writes. Reader-writer coordination distinguishes compatible concurrent readers from conflicting writers; fairness policy also matters.",
+      "Readers can observe inconsistent state if writes are uncoordinated.",
+      "Process creation is not the needed synchronization policy."
+    ],
+    "takeAway": "Readers writers: Allows concurrent readers while synchronizing writes."
+  },
+  {
+    "id": "os-020",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which synchronization approach is appropriate?",
+    "options": [
+      "A reader-writer policy allowing concurrent reads and coordinated exclusive writes",
+      "Always allow writers to mutate during every read without coordination",
+      "Require each reader to become a separate operating system",
+      "Assume read-only operations make all writes automatically safe"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Reader-writer coordination distinguishes compatible concurrent readers from conflicting writers; fairness policy also matters.",
+    "tags": [
+      "readers-writers"
+    ],
+    "context": "Several readers inspect a shared cache without changing it. Writers modify entries and must not overlap conflicting reads or writes.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Reader-writer coordination distinguishes compatible concurrent readers from conflicting writers; fairness policy also matters.",
+      "Readers can observe inconsistent state if writes are uncoordinated.",
+      "Process creation is not the needed synchronization policy.",
+      "Read-only readers do not remove write conflicts."
+    ],
+    "takeAway": "Readers writers: Allows concurrent readers while synchronizing writes."
+  },
+  {
+    "id": "os-021",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Paging in this situation?",
+    "options": [
+      "Maps fixed-size virtual pages to physical frames.",
+      "Paging requires every process to occupy contiguous physical memory.",
+      "The scenario's correct answer would be: A requirement for one contiguous physical block per process.",
+      "The scenario's correct answer would be: Variable-length segmentation only."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Maps fixed-size virtual pages to physical frames. Paging translates virtual pages to frames and permits noncontiguous physical placement.",
+    "tags": [
+      "paging"
+    ],
+    "context": "A process’s virtual address space is divided into fixed-size pages, mapped by page tables to physical frames that need not be contiguous.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Maps fixed-size virtual pages to physical frames. Paging translates virtual pages to frames and permits noncontiguous physical placement.",
+      "That claim conflicts with the principle: Maps fixed-size virtual pages to physical frames. Paging translates virtual pages to frames and permits noncontiguous physical placement.",
+      "That requirement contradicts the frame mapping described.",
+      "Segmentation uses variable-size logical regions, not the stated fixed-size units."
+    ],
+    "takeAway": "Paging: Maps fixed-size virtual pages to physical frames."
+  },
+  {
+    "id": "os-022",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which mechanism is described?",
+    "options": [
+      "Paging",
+      "A requirement for one contiguous physical block per process",
+      "Variable-length segmentation only",
+      "A fixed mapping from each thread to a different disk"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Paging translates virtual pages to frames and permits noncontiguous physical placement.",
+    "tags": [
+      "paging"
+    ],
+    "context": "A process’s virtual address space is divided into fixed-size pages, mapped by page tables to physical frames that need not be contiguous.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Paging translates virtual pages to frames and permits noncontiguous physical placement.",
+      "That requirement contradicts the frame mapping described.",
+      "Segmentation uses variable-size logical regions, not the stated fixed-size units.",
+      "The description concerns address translation, not per-thread disks."
+    ],
+    "takeAway": "Paging: Maps fixed-size virtual pages to physical frames."
+  },
+  {
+    "id": "os-023",
+    "topic": "OS",
+    "difficulty": "easy",
+    "question": "Which statement correctly explains Virtual memory in this situation?",
+    "options": [
+      "Provides virtual address spaces backed by memory and possibly storage.",
+      "A page fault always means an invalid address.",
+      "The scenario's correct answer would be: The virtual address must be outside the process address space.",
+      "The scenario's correct answer would be: The process must always be terminated."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Provides virtual address spaces backed by memory and possibly storage. A page fault can request demand loading of a valid page; invalid accesses are a separate possibility.",
+    "tags": [
+      "virtual-memory"
+    ],
+    "context": "A process accesses a valid virtual page that is currently not resident in RAM. The OS can load its contents from backing storage.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Provides virtual address spaces backed by memory and possibly storage. A page fault can request demand loading of a valid page; invalid accesses are a separate possibility.",
+      "That claim conflicts with the principle: Provides virtual address spaces backed by memory and possibly storage. A page fault can request demand loading of a valid page; invalid accesses are a separate possibility.",
+      "The scenario explicitly states a valid page.",
+      "The OS may resolve the fault by loading the page."
+    ],
+    "takeAway": "Virtual memory: Provides virtual address spaces backed by memory and possibly storage."
+  },
+  {
+    "id": "os-024",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "What does the resulting page fault indicate?",
+    "options": [
+      "A nonresident valid page needs handling; it is not automatically an invalid address",
+      "The virtual address must be outside the process address space",
+      "The process must always be terminated",
+      "The physical RAM capacity has become unlimited"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A page fault can request demand loading of a valid page; invalid accesses are a separate possibility.",
+    "tags": [
+      "virtual-memory"
+    ],
+    "context": "A process accesses a valid virtual page that is currently not resident in RAM. The OS can load its contents from backing storage.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "A page fault can request demand loading of a valid page; invalid accesses are a separate possibility.",
+      "The scenario explicitly states a valid page.",
+      "The OS may resolve the fault by loading the page.",
+      "Virtual memory does not create unlimited physical RAM."
+    ],
+    "takeAway": "Virtual memory: Provides virtual address spaces backed by memory and possibly storage."
+  },
+  {
+    "id": "os-025",
+    "topic": "OS",
+    "difficulty": "medium",
+    "question": "Which statement correctly explains Thrashing and replacement in this situation?",
+    "options": [
+      "Excessive page faults can dominate execution when working sets do not fit.",
+      "More active processes always reduce thrashing.",
+      "The scenario's correct answer would be: Perfect memory utilization; always add more active processes.",
+      "The scenario's correct answer would be: A guarantee that every page replacement policy fixes the issue for free."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Excessive page faults can dominate execution when working sets do not fit. Excess paging caused by inadequate resident working-set capacity is thrashing; reducing competing demand can help.",
+    "tags": [
+      "thrashing-and-replacement"
+    ],
+    "context": "Many active processes have working sets that exceed available memory. The machine spends most of its time servicing page faults instead of useful computation.",
+    "contentVersion": 2,
+    "optionExplanations": [
+      "Excessive page faults can dominate execution when working sets do not fit. Excess paging caused by inadequate resident working-set capacity is thrashing; reducing competing demand can help.",
+      "That claim conflicts with the principle: Excessive page faults can dominate execution when working sets do not fit. Excess paging caused by inadequate resident working-set capacity is thrashing; reducing competing demand can help.",
+      "More demand can worsen page-fault pressure.",
+      "Replacement alone cannot guarantee adequate memory capacity."
+    ],
+    "takeAway": "Thrashing and replacement: Excessive page faults can dominate execution when working sets do not fit."
+  }
+]

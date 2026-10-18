@@ -1,0 +1,1569 @@
+[
+  {
+    "id": "ai-code-001",
+    "title": "Pair with a target",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and target, return indices of the first pair found scanning left to right whose sum is target. Return [] if absent. Never reuse an index.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            3,
+            8,
+            4,
+            7
+          ],
+          "target": 11
+        },
+        "expected": [
+          0,
+          1
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            3
+          ],
+          "target": 6
+        },
+        "expected": [
+          0,
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Keep a map from previously seen value to its first index. Check the complement before inserting.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Keep a map from previously seen value to its first index. Check the complement before inserting. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    seen = {}\n    for i, x in enumerate(data[\"nums\"]):\n        y = data[\"target\"] - x\n        if y in seen: return [seen[y], i]\n        if x not in seen: seen[x] = i\n    return []",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-003",
+    "title": "Repeated attendance ID",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Return true if any integer appears more than once in the array, otherwise false.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          4,
+          2
+        ],
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": false,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Compare the number of unique IDs with the number of entries.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Compare the number of unique IDs with the number of entries. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    return len(set(data)) != len(data)",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-005",
+    "title": "Best contiguous revenue",
+    "topic": "Arrays",
+    "difficulty": "medium",
+    "statement": "For a nonempty integer array return the largest sum of a nonempty contiguous subarray.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          -2,
+          3,
+          -1,
+          4,
+          -5
+        ],
+        "expected": 6,
+        "hidden": false
+      },
+      {
+        "input": [
+          -5,
+          -2
+        ],
+        "expected": -2,
+        "hidden": true
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "At each position choose whether to extend the previous subarray or start a new one.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "At each position choose whether to extend the previous subarray or start a new one. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    best = current = data[0]\n    for x in data[1:]:\n        current = max(x, current+x)\n        best = max(best, current)\n    return best",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-007",
+    "title": "Merge score lists",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted arrays a and b, return one sorted array containing every value from both.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": [
+            1,
+            4
+          ],
+          "b": [
+            2,
+            3
+          ]
+        },
+        "expected": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": [],
+          "b": [
+            1
+          ]
+        },
+        "expected": [
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": [
+            2,
+            2
+          ],
+          "b": [
+            2
+          ]
+        },
+        "expected": [
+          2,
+          2,
+          2
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Advance the pointer at the smaller current value. Append remaining values afterward.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Advance the pointer at the smaller current value. Append remaining values afterward. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    a,b = data[\"a\"],data[\"b\"]\n    i=j=0\n    out=[]\n    while i<len(a) and j<len(b):\n        if a[i]<=b[j]: out.append(a[i]); i+=1\n        else: out.append(b[j]); j+=1\n    return out+a[i:]+b[j:]",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-009",
+    "title": "Distinct common values",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with arrays a and b, return their distinct common values in ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": [
+            3,
+            1,
+            3
+          ],
+          "b": [
+            3,
+            2
+          ]
+        },
+        "expected": [
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": [],
+          "b": [
+            1
+          ]
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": [
+            1,
+            2
+          ],
+          "b": [
+            2,
+            1
+          ]
+        },
+        "expected": [
+          1,
+          2
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Intersect two sets, then sort the resulting distinct values.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Intersect two sets, then sort the resulting distinct values. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    return sorted(set(data[\"a\"]) & set(data[\"b\"]))",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-011",
+    "title": "Prefix ledger",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Return an array whose ith entry is the sum of input values from index 0 through i.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          -1,
+          4
+        ],
+        "expected": [
+          2,
+          1,
+          5
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": [
+          0
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Keep a running total and append it after adding each value.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Keep a running total and append it after adding each value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    out=[]\n    total=0\n    for x in data:\n        total+=x\n        out.append(total)\n    return out",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-013",
+    "title": "Rotate duty roster",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and nonnegative k, rotate nums to the right by k places. Return [] for empty nums.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "k": 1
+        },
+        "expected": [
+          4,
+          1,
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "k": 5
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2
+          ],
+          "k": 4
+        },
+        "expected": [
+          1,
+          2
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Reduce the rotation modulo the length and split at the wrap position.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Reduce the rotation modulo the length and split at the wrap position. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    a=data[\"nums\"]\n    if not a: return []\n    k=data[\"k\"]%len(a)\n    return a[-k:]+a[:-k] if k else a[:]",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-015",
+    "title": "Product of other entries",
+    "topic": "Arrays",
+    "difficulty": "medium",
+    "statement": "Return an array where each entry equals the product of all other input values. Do not use division. For an input with one item return [1].",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          3,
+          4
+        ],
+        "expected": [
+          12,
+          8,
+          6
+        ],
+        "hidden": false
+      },
+      {
+        "input": [
+          0,
+          2,
+          3
+        ],
+        "expected": [
+          6,
+          0,
+          0
+        ],
+        "hidden": true
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": [
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Multiply prefix and suffix products for each index.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Multiply prefix and suffix products for each index. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) auxiliary space excluding output",
+    "solution": "def solve(data):\n    out=[1]*len(data)\n    p=1\n    for i,x in enumerate(data): out[i]=p; p*=x\n    p=1\n    for i in range(len(data)-1,-1,-1): out[i]*=p; p*=data[i]\n    return out",
+    "tags": [
+      "arrays"
+    ]
+  },
+  {
+    "id": "ai-code-017",
+    "title": "Anagram check",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Given an object with lowercase strings a and b, return whether their character counts match exactly.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": "listen",
+          "b": "silent"
+        },
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": "a",
+          "b": "aa"
+        },
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": "",
+          "b": ""
+        },
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Order does not matter, but multiplicity does.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Order does not matter, but multiplicity does. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    return Counter(data[\"a\"])==Counter(data[\"b\"])",
+    "tags": [
+      "strings"
+    ]
+  },
+  {
+    "id": "ai-code-019",
+    "title": "Reverse message words",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Return the words of a string in reverse order, separated by single spaces. Ignore leading, trailing and repeated whitespace.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "  we build software  ",
+        "expected": "software build we",
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "hello",
+        "expected": "hello",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Split on whitespace, reverse tokens, join with one space.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Split on whitespace, reverse tokens, join with one space. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    return \" \".join(data.split()[::-1])",
+    "tags": [
+      "strings"
+    ]
+  },
+  {
+    "id": "ai-code-021",
+    "title": "Run-length message",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Encode each run as character followed by its count. For example aaabb becomes a3b2. Empty input returns an empty string.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "aaabb",
+        "expected": "a3b2",
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "x",
+        "expected": "x1",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Flush the previous run when the character changes, and flush once after the loop.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Flush the previous run when the character changes, and flush once after the loop. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    if not data: return \"\"\n    out=[]\n    previous=data[0]\n    count=0\n    for c in data:\n        if c!=previous: out.append(previous+str(count)); previous=c; count=0\n        count+=1\n    out.append(previous+str(count))\n    return \"\".join(out)",
+    "tags": [
+      "strings"
+    ]
+  },
+  {
+    "id": "ai-code-023",
+    "title": "Cyclic text shift",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Given an object with strings a and b, return whether b is a cyclic rotation of a. Empty strings count as rotations.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": "abcd",
+          "b": "cdab"
+        },
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": "abc",
+          "b": "acb"
+        },
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": "",
+          "b": ""
+        },
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "A rotation of a appears inside a+a, provided lengths match.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "A rotation of a appears inside a+a, provided lengths match. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n²) worst-case naive search; O(n) space",
+    "solution": "def solve(data):\n    a,b=data[\"a\"],data[\"b\"]\n    return len(a)==len(b) and b in a+a",
+    "tags": [
+      "strings"
+    ]
+  },
+  {
+    "id": "ai-code-025",
+    "title": "Stable text deduplication",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Keep only the first occurrence of each character and preserve their original order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "banana",
+        "expected": "ban",
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "aabBc",
+        "expected": "abBc",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Use insertion-ordered membership tracking.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Use insertion-ordered membership tracking. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    return \"\".join(dict.fromkeys(data))",
+    "tags": [
+      "strings"
+    ]
+  },
+  {
+    "id": "ai-code-027",
+    "title": "Common word counts",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Given a space-delimited string, return an object mapping each lowercased word to its occurrence count.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "AI helps AI",
+        "expected": {
+          "ai": 2,
+          "helps": 1
+        },
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": {},
+        "hidden": true
+      },
+      {
+        "input": "One one ONE",
+        "expected": {
+          "one": 3
+        },
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Lowercase before tokenizing and counting.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Lowercase before tokenizing and counting. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    return dict(Counter(data.lower().split()))",
+    "tags": [
+      "strings"
+    ]
+  },
+  {
+    "id": "ai-code-029",
+    "title": "Count target-sum segments",
+    "topic": "Hashing",
+    "difficulty": "medium",
+    "statement": "Given an object with nums and target, return the number of nonempty contiguous subarrays summing to target. Negative values are allowed.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            1,
+            1
+          ],
+          "target": 2
+        },
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            0
+          ],
+          "target": 0
+        },
+        "expected": 3,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            1
+          ],
+          "target": 0
+        },
+        "expected": 1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Count earlier prefix sums equal to current prefix minus the target.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Count earlier prefix sums equal to current prefix minus the target. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) expected time; O(n) space",
+    "solution": "def solve(data):\n    counts={0:1}\n    total=answer=0\n    for x in data[\"nums\"]:\n        total+=x\n        answer+=counts.get(total-data[\"target\"],0)\n        counts[total]=counts.get(total,0)+1\n    return answer",
+    "tags": [
+      "hashing"
+    ]
+  },
+  {
+    "id": "ai-code-031",
+    "title": "First repeated ID",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Scan an array left to right and return the first value whose second occurrence is encountered, or null if none repeats.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          2,
+          1
+        ],
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": null,
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": null,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Return as soon as membership reveals a value already seen.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Return as soon as membership reveals a value already seen. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    seen=set()\n    for x in data:\n        if x in seen: return x\n        seen.add(x)\n    return None",
+    "tags": [
+      "hashing"
+    ]
+  },
+  {
+    "id": "ai-code-033",
+    "title": "Most frequent ID",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Return the most frequent integer in a nonempty array, breaking ties by choosing the smallest value.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": [
+          9
+        ],
+        "expected": 9,
+        "hidden": true
+      },
+      {
+        "input": [
+          -1,
+          2,
+          -1
+        ],
+        "expected": -1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Choose by descending frequency and then ascending value.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Choose by descending frequency and then ascending value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    c=Counter(data)\n    return min(c,key=lambda x:(-c[x],x))",
+    "tags": [
+      "hashing"
+    ]
+  },
+  {
+    "id": "ai-code-035",
+    "title": "Equal pair count",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Return the number of index pairs i < j with equal array values.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          1,
+          1
+        ],
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Each new occurrence pairs with all earlier occurrences of that value.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Each new occurrence pairs with all earlier occurrences of that value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    counts={}\n    answer=0\n    for x in data:\n        answer+=counts.get(x,0)\n        counts[x]=counts.get(x,0)+1\n    return answer",
+    "tags": [
+      "hashing"
+    ]
+  },
+  {
+    "id": "ai-code-037",
+    "title": "Compact sorted values",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given a sorted array, return one copy of each distinct value, preserving ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          4,
+          4
+        ],
+        "expected": [
+          4
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Compare each value to the last emitted value.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Compare each value to the last emitted value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    out=[]\n    for x in data:\n        if not out or x!=out[-1]: out.append(x)\n    return out",
+    "tags": [
+      "two-pointers"
+    ]
+  },
+  {
+    "id": "ai-code-039",
+    "title": "Square a sorted list",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given a sorted array of integers, return their squares in ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          -4,
+          -1,
+          0,
+          3
+        ],
+        "expected": [
+          0,
+          1,
+          9,
+          16
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          -2
+        ],
+        "expected": [
+          4
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "The largest remaining square comes from an endpoint; fill the result backward.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "The largest remaining square comes from an endpoint; fill the result backward. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    out=[0]*len(data)\n    l,r=0,len(data)-1\n    for k in range(len(data)-1,-1,-1):\n        if abs(data[l])>abs(data[r]): out[k]=data[l]**2; l+=1\n        else: out[k]=data[r]**2; r-=1\n    return out",
+    "tags": [
+      "two-pointers"
+    ]
+  },
+  {
+    "id": "ai-code-041",
+    "title": "Water container",
+    "topic": "Two Pointers",
+    "difficulty": "medium",
+    "statement": "A nonnegative height array represents vertical lines. Return the maximum container area between two lines, or 0 for fewer than two lines.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          8,
+          6,
+          2,
+          5,
+          4,
+          8,
+          3,
+          7
+        ],
+        "expected": 49,
+        "hidden": false
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Move the shorter line because it limits the current area.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Move the shorter line because it limits the current area. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    l,r=0,len(data)-1\n    best=0\n    while l<r:\n        best=max(best,min(data[l],data[r])*(r-l))\n        if data[l]<data[r]: l+=1\n        else: r-=1\n    return best",
+    "tags": [
+      "two-pointers"
+    ]
+  },
+  {
+    "id": "ai-code-043",
+    "title": "Backspace comparison",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given an object with strings a and b, # deletes the preceding character if one exists. Return whether the resulting strings match.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": "ab#c",
+          "b": "ad#c"
+        },
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": "a",
+          "b": "b"
+        },
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": "##",
+          "b": ""
+        },
+        "expected": true,
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": "ab#c",
+          "b": "ac"
+        },
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Track the surviving characters; a backspace on an empty result does nothing.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Track the surviving characters; a backspace on an empty result does nothing. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    def clean(s):\n        out=[]\n        for c in s:\n            if c==\"#\":\n                if out: out.pop()\n            else: out.append(c)\n        return out\n    return clean(data[\"a\"])==clean(data[\"b\"])",
+    "tags": [
+      "two-pointers"
+    ]
+  },
+  {
+    "id": "ai-code-045",
+    "title": "Longest unique substring",
+    "topic": "Sliding Window",
+    "difficulty": "medium",
+    "statement": "Return the length of the longest contiguous substring with no repeated character.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "abcabcbb",
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": "bbbbb",
+        "expected": 1,
+        "hidden": true
+      },
+      {
+        "input": "",
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": "abba",
+        "expected": 2,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Move the left boundary past the last occurrence, never backward.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Move the left boundary past the last occurrence, never backward. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(alphabet size) space",
+    "solution": "def solve(data):\n    last={}\n    left=best=0\n    for right,c in enumerate(data):\n        left=max(left,last.get(c,-1)+1)\n        last[c]=right\n        best=max(best,right-left+1)\n    return best",
+    "tags": [
+      "sliding-window"
+    ]
+  },
+  {
+    "id": "ai-code-047",
+    "title": "Window distinct counts",
+    "topic": "Sliding Window",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and k, 1 <= k <= length, return the number of distinct values in each length-k window.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            1,
+            3
+          ],
+          "k": 3
+        },
+        "expected": [
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            2
+          ],
+          "k": 1
+        },
+        "expected": [
+          1,
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "k": 1
+        },
+        "expected": [
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "k": 1
+        },
+        "expected": [
+          1,
+          1,
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Maintain frequencies and delete zero-count keys.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Maintain frequencies and delete zero-count keys. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    a,k=data[\"nums\"],data[\"k\"]\n    c=Counter(a[:k])\n    out=[len(c)]\n    for i in range(k,len(a)):\n        c[a[i-k]]-=1\n        if c[a[i-k]]==0: del c[a[i-k]]\n        c[a[i]]+=1\n        out.append(len(c))\n    return out",
+    "tags": [
+      "sliding-window"
+    ]
+  },
+  {
+    "id": "ai-code-049",
+    "title": "Binary streak with one repair",
+    "topic": "Sliding Window",
+    "difficulty": "easy",
+    "statement": "Given a binary array, return the longest contiguous segment containing at most one zero.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "expected": 4,
+        "hidden": false
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Maintain a window with no more than one zero.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Maintain a window with no more than one zero. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    left=zeros=best=0\n    for right,x in enumerate(data):\n        zeros+=x==0\n        while zeros>1:\n            zeros-=data[left]==0\n            left+=1\n        best=max(best,right-left+1)\n    return best",
+    "tags": [
+      "sliding-window"
+    ]
+  },
+  {
+    "id": "ai-code-063",
+    "title": "First occurrence",
+    "topic": "Binary Search",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted nums and target, return the first matching index or -1.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "target": 2
+        },
+        "expected": 1,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "target": 1
+        },
+        "expected": -1,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            3
+          ],
+          "target": 2
+        },
+        "expected": -1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Search for the left boundary, then verify it actually matches.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Search for the left boundary, then verify it actually matches. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(log n) time; O(1) space",
+    "solution": "def solve(data):\n    from bisect import bisect_left\n    a=data[\"nums\"]; i=bisect_left(a,data[\"target\"])\n    return i if i<len(a) and a[i]==data[\"target\"] else -1",
+    "tags": [
+      "binary-search"
+    ]
+  },
+  {
+    "id": "ai-code-065",
+    "title": "Insertion slot",
+    "topic": "Binary Search",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted distinct nums and target, return the index where target is or should be inserted to preserve sorting.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5
+          ],
+          "target": 4
+        },
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "target": 1
+        },
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expected": 1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Find the first value greater than or equal to target.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Find the first value greater than or equal to target. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(log n) time; O(1) space",
+    "solution": "def solve(data):\n    from bisect import bisect_left\n    return bisect_left(data[\"nums\"],data[\"target\"])",
+    "tags": [
+      "binary-search"
+    ]
+  },
+  {
+    "id": "ai-code-067",
+    "title": "Sort three labels",
+    "topic": "Sorting",
+    "difficulty": "easy",
+    "statement": "Given an array containing only 0,1,2, return the sorted array without a general-purpose sort.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "expected": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          1,
+          1
+        ],
+        "expected": [
+          1,
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Count the three labels and reconstruct the result.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Count the three labels and reconstruct the result. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    counts=[0,0,0]\n    for x in data: counts[x]+=1\n    return [0]*counts[0]+[1]*counts[1]+[2]*counts[2]",
+    "tags": [
+      "sorting"
+    ]
+  },
+  {
+    "id": "ai-code-069",
+    "title": "Stable score ranking",
+    "topic": "Sorting",
+    "difficulty": "easy",
+    "statement": "Given objects with name and score, return names ordered by descending score, preserving input order on ties.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          {
+            "name": "A",
+            "score": 2
+          },
+          {
+            "name": "B",
+            "score": 3
+          },
+          {
+            "name": "C",
+            "score": 2
+          }
+        ],
+        "expected": [
+          "B",
+          "A",
+          "C"
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          {
+            "name": "Z",
+            "score": 0
+          }
+        ],
+        "expected": [
+          "Z"
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Use a stable sort with score as the descending key.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Use a stable sort with score as the descending key. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    return [x[\"name\"] for x in sorted(data,key=lambda x:-x[\"score\"])]",
+    "tags": [
+      "sorting"
+    ]
+  },
+  {
+    "id": "ai-code-068",
+    "title": "Merge meeting intervals",
+    "topic": "Sorting",
+    "difficulty": "medium",
+    "statement": "Given [start,end] intervals with start <= end, merge overlapping or touching intervals and return them sorted by start.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            8,
+            10
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            6
+          ],
+          [
+            8,
+            10
+          ]
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            3
+          ]
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Sort by start and extend the previous interval when the next start is within its end.",
+      "Write down the invariant that remains true after each iteration. Trace both the smallest input and a repeated-value input."
+    ],
+    "approach": "Sort by start and extend the previous interval when the next start is within its end. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    out=[]\n    for start,end in sorted(data):\n        if out and start<=out[-1][1]: out[-1][1]=max(out[-1][1],end)\n        else: out.append([start,end])\n    return out",
+    "tags": [
+      "sorting"
+    ]
+  }
+]

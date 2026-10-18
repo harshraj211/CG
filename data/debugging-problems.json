@@ -1,0 +1,2686 @@
+[
+  {
+    "id": "debug-001",
+    "title": "Repair: Pair with a target",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and target, return indices of the first pair found scanning left to right whose sum is target. Return [] if absent. Never reuse an index.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            3,
+            8,
+            4,
+            7
+          ],
+          "target": 11
+        },
+        "expected": [
+          0,
+          1
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            3
+          ],
+          "target": 6
+        },
+        "expected": [
+          0,
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Keep a map from previously seen value to its first index. Check the complement before inserting."
+    ],
+    "approach": "Keep a map from previously seen value to its first index. Check the complement before inserting. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    seen = {}\n    for i, x in enumerate(data[\"nums\"]):\n        y = data[\"target\"] - x\n        if y in seen: return [seen[y], i]\n        if x not in seen: seen[x] = i\n    return []",
+    "buggyCode": "def solve(data):\n    seen = {}\n    for i, x in enumerate(data[\"nums\"]):\n        y = data[\"target\"] + x\n        if y in seen: return [seen[y], i]\n        if x not in seen: seen[x] = i\n    return []",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-002",
+    "title": "Repair: Missing register entry",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "An array contains distinct integers from 0 to n with exactly one absent. Return the missing integer.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          0,
+          3,
+          1
+        ],
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Compare the expected arithmetic sum to the actual sum."
+    ],
+    "approach": "Compare the expected arithmetic sum to the actual sum. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    n = len(data)\n    return n*(n+1)//2 - sum(data)",
+    "buggyCode": "def solve(data):\n    n = len(data)\n    return n*(n+1)//2 - len(data)",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-003",
+    "title": "Repair: Repeated attendance ID",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Return true if any integer appears more than once in the array, otherwise false.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          4,
+          2
+        ],
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": false,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Compare the number of unique IDs with the number of entries."
+    ],
+    "approach": "Compare the number of unique IDs with the number of entries. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    return len(set(data)) != len(data)",
+    "buggyCode": "def solve(data):\n    return len(set(data)) == len(data)",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-004",
+    "title": "Repair: Move blank entries",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Move all zero values to the end of the array, preserving the order of nonzero values. Return the resulting array.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          0,
+          2,
+          0,
+          1
+        ],
+        "expected": [
+          2,
+          1,
+          0,
+          0
+        ],
+        "hidden": false
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0
+        ],
+        "hidden": true
+      },
+      {
+        "input": [
+          3
+        ],
+        "expected": [
+          3
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Collect nonzero entries in order, then append the required zeros."
+    ],
+    "approach": "Collect nonzero entries in order, then append the required zeros. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    nonzero = [x for x in data if x != 0]\n    return nonzero + [0]*(len(data)-len(nonzero))",
+    "buggyCode": "def solve(data):\n    nonzero = [x for x in data if x == 0]\n    return nonzero + [0]*(len(data)-len(nonzero))",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-005",
+    "title": "Repair: Best contiguous revenue",
+    "topic": "Arrays",
+    "difficulty": "medium",
+    "statement": "For a nonempty integer array return the largest sum of a nonempty contiguous subarray.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          -2,
+          3,
+          -1,
+          4,
+          -5
+        ],
+        "expected": 6,
+        "hidden": false
+      },
+      {
+        "input": [
+          -5,
+          -2
+        ],
+        "expected": -2,
+        "hidden": true
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "At each position choose whether to extend the previous subarray or start a new one."
+    ],
+    "approach": "At each position choose whether to extend the previous subarray or start a new one. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    best = current = data[0]\n    for x in data[1:]:\n        current = max(x, current+x)\n        best = max(best, current)\n    return best",
+    "buggyCode": "def solve(data):\n    best = current = data[0]\n    for x in data[1:]:\n        current = min(x, current+x)\n        best = max(best, current)\n    return best",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-006",
+    "title": "Repair: Majority vote",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given a nonempty array with a guaranteed value occurring more than half the time, return that value.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          3,
+          2,
+          3
+        ],
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": [
+          1,
+          1,
+          2,
+          1
+        ],
+        "expected": 1,
+        "hidden": true
+      },
+      {
+        "input": [
+          8
+        ],
+        "expected": 8,
+        "hidden": true
+      },
+      {
+        "input": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "expected": 1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Cancel pairs of different values using a candidate and a counter."
+    ],
+    "approach": "Cancel pairs of different values using a candidate and a counter. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    vote = count = 0\n    for x in data:\n        if count == 0: vote = x\n        count += 1 if x == vote else -1\n    return vote",
+    "buggyCode": "def solve(data):\n    vote = count = 0\n    for x in data:\n        if count == 1: vote = x\n        count += 1 if x == vote else -1\n    return vote",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-007",
+    "title": "Repair: Merge score lists",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted arrays a and b, return one sorted array containing every value from both.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": [
+            1,
+            4
+          ],
+          "b": [
+            2,
+            3
+          ]
+        },
+        "expected": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": [],
+          "b": [
+            1
+          ]
+        },
+        "expected": [
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": [
+            2,
+            2
+          ],
+          "b": [
+            2
+          ]
+        },
+        "expected": [
+          2,
+          2,
+          2
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Advance the pointer at the smaller current value. Append remaining values afterward."
+    ],
+    "approach": "Advance the pointer at the smaller current value. Append remaining values afterward. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    a,b = data[\"a\"],data[\"b\"]\n    i=j=0\n    out=[]\n    while i<len(a) and j<len(b):\n        if a[i]<=b[j]: out.append(a[i]); i+=1\n        else: out.append(b[j]); j+=1\n    return out+a[i:]+b[j:]",
+    "buggyCode": "def solve(data):\n    a,b = data[\"a\"],data[\"b\"]\n    i=j=0\n    out=[]\n    while i<len(a) and j<len(b):\n        if a[i]>=b[j]: out.append(a[i]); i+=1\n        else: out.append(b[j]); j+=1\n    return out+a[i:]+b[j:]",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-008",
+    "title": "Repair: One profitable trade",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "A nonempty array gives daily prices. Return the greatest profit from one purchase followed by one later sale, or 0 if no profitable trade exists.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          8,
+          3,
+          6,
+          2,
+          9
+        ],
+        "expected": 7,
+        "hidden": false
+      },
+      {
+        "input": [
+          5,
+          4,
+          3
+        ],
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Maintain the minimum price seen before evaluating each possible sale."
+    ],
+    "approach": "Maintain the minimum price seen before evaluating each possible sale. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    low=data[0]\n    best=0\n    for price in data:\n        best=max(best,price-low)\n        low=min(low,price)\n    return best",
+    "buggyCode": "def solve(data):\n    low=data[0]\n    best=0\n    for price in data:\n        best=max(best,price-low)\n        low=max(low,price)\n    return best",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-009",
+    "title": "Repair: Distinct common values",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with arrays a and b, return their distinct common values in ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": [
+            3,
+            1,
+            3
+          ],
+          "b": [
+            3,
+            2
+          ]
+        },
+        "expected": [
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": [],
+          "b": [
+            1
+          ]
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": [
+            1,
+            2
+          ],
+          "b": [
+            2,
+            1
+          ]
+        },
+        "expected": [
+          1,
+          2
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Intersect two sets, then sort the resulting distinct values."
+    ],
+    "approach": "Intersect two sets, then sort the resulting distinct values. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    return sorted(set(data[\"a\"]) & set(data[\"b\"]))",
+    "buggyCode": "def solve(data):\n    return sorted(set(data[\"a\"]) | set(data[\"b\"]))",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-010",
+    "title": "Repair: Combined ID catalogue",
+    "topic": "Arrays",
+    "difficulty": "easy",
+    "statement": "Given an object with arrays a and b, return all distinct values from either array in ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": [
+            3,
+            1
+          ],
+          "b": [
+            2,
+            3
+          ]
+        },
+        "expected": [
+          1,
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": [],
+          "b": []
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": [
+            1
+          ],
+          "b": [
+            1
+          ]
+        },
+        "expected": [
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "A set union removes duplicates across both collections."
+    ],
+    "approach": "A set union removes duplicates across both collections. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    return sorted(set(data[\"a\"]) | set(data[\"b\"]))",
+    "buggyCode": "def solve(data):\n    return sorted(set(data[\"a\"]) & set(data[\"b\"]))",
+    "tags": [
+      "debugging",
+      "arrays"
+    ]
+  },
+  {
+    "id": "debug-011",
+    "title": "Repair: Normalized palindrome",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Return whether the string reads the same forward and backward after lowercasing and keeping only alphanumeric characters.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "A man, a plan, a canal: Panama",
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": "hello",
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": "",
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Normalize first; compare symmetric characters."
+    ],
+    "approach": "Normalize first; compare symmetric characters. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    s=\"\".join(c.lower() for c in data if c.isalnum())\n    return s==s[::-1]",
+    "buggyCode": "def solve(data):\n    s=\"\".join(c.lower() for c in data if c.isalnum())\n    return s!=s[::-1]",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-012",
+    "title": "Repair: Anagram check",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Given an object with lowercase strings a and b, return whether their character counts match exactly.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": "listen",
+          "b": "silent"
+        },
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": "a",
+          "b": "aa"
+        },
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": "",
+          "b": ""
+        },
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Order does not matter, but multiplicity does."
+    ],
+    "approach": "Order does not matter, but multiplicity does. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    return Counter(data[\"a\"])==Counter(data[\"b\"])",
+    "buggyCode": "def solve(data):\n    from collections import Counter\n    return Counter(data[\"a\"])!=Counter(data[\"b\"])",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-013",
+    "title": "Repair: Shared prefix",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Given an array of strings, return the longest prefix shared by every string. Return an empty string for an empty array.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          "flower",
+          "flow",
+          "flight"
+        ],
+        "expected": "fl",
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": [
+          "dog",
+          "cat"
+        ],
+        "expected": "",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Shrink a candidate prefix until each word begins with it."
+    ],
+    "approach": "Shrink a candidate prefix until each word begins with it. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(total characters) time; O(prefix length) space",
+    "solution": "def solve(data):\n    if not data: return \"\"\n    p=data[0]\n    for s in data[1:]:\n        while not s.startswith(p): p=p[:-1]\n    return p",
+    "buggyCode": "def solve(data):\n    if not data: return \"\"\n    p=data[0]\n    for s in data[1:]:\n        while not s.endswith(p): p=p[:-1]\n    return p",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-014",
+    "title": "Repair: Reverse message words",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Return the words of a string in reverse order, separated by single spaces. Ignore leading, trailing and repeated whitespace.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "  we build software  ",
+        "expected": "software build we",
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "hello",
+        "expected": "hello",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Split on whitespace, reverse tokens, join with one space."
+    ],
+    "approach": "Split on whitespace, reverse tokens, join with one space. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    return \" \".join(data.split()[::-1])",
+    "buggyCode": "def solve(data):\n    return \" \".join(data.split())",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-015",
+    "title": "Repair: First unique character",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Return the index of the first character occurring exactly once, or -1 if none exists.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "swiss",
+        "expected": 1,
+        "hidden": false
+      },
+      {
+        "input": "aabb",
+        "expected": -1,
+        "hidden": true
+      },
+      {
+        "input": "",
+        "expected": -1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Count first, then scan in original order."
+    ],
+    "approach": "Count first, then scan in original order. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    counts=Counter(data)\n    return next((i for i,c in enumerate(data) if counts[c]==1),-1)",
+    "buggyCode": "def solve(data):\n    from collections import Counter\n    counts=Counter(data)\n    return next((i for i,c in enumerate(data) if counts[c]>1),-1)",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-016",
+    "title": "Repair: Run-length message",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Encode each run as character followed by its count. For example aaabb becomes a3b2. Empty input returns an empty string.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "aaabb",
+        "expected": "a3b2",
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "x",
+        "expected": "x1",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Flush the previous run when the character changes, and flush once after the loop."
+    ],
+    "approach": "Flush the previous run when the character changes, and flush once after the loop. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    if not data: return \"\"\n    out=[]\n    previous=data[0]\n    count=0\n    for c in data:\n        if c!=previous: out.append(previous+str(count)); previous=c; count=0\n        count+=1\n    out.append(previous+str(count))\n    return \"\".join(out)",
+    "buggyCode": "def solve(data):\n    if not data: return \"\"\n    out=[]\n    previous=data[0]\n    count=0\n    for c in data:\n        if c!=previous: out.append(previous+str(count+1)); previous=c; count=0\n        count+=1\n    out.append(previous+str(count))\n    return \"\".join(out)",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-017",
+    "title": "Repair: Vowel counter",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Count occurrences of English vowels a,e,i,o,u ignoring case.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "Assessment",
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": "rhythm",
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": "AEIOU",
+        "expected": 5,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Membership in a fixed vowel set is constant time."
+    ],
+    "approach": "Membership in a fixed vowel set is constant time. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    return sum(c.lower() in \"aeiou\" for c in data)",
+    "buggyCode": "def solve(data):\n    return sum(c.lower() in \"aeio\" for c in data)",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-018",
+    "title": "Repair: Cyclic text shift",
+    "topic": "Strings",
+    "difficulty": "easy",
+    "statement": "Given an object with strings a and b, return whether b is a cyclic rotation of a. Empty strings count as rotations.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": "abcd",
+          "b": "cdab"
+        },
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": "abc",
+          "b": "acb"
+        },
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": "",
+          "b": ""
+        },
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "A rotation of a appears inside a+a, provided lengths match."
+    ],
+    "approach": "A rotation of a appears inside a+a, provided lengths match. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n²) worst-case naive search; O(n) space",
+    "solution": "def solve(data):\n    a,b=data[\"a\"],data[\"b\"]\n    return len(a)==len(b) and b in a+a",
+    "buggyCode": "def solve(data):\n    a,b=data[\"a\"],data[\"b\"]\n    return len(a)==len(b) and b in a",
+    "tags": [
+      "debugging",
+      "strings"
+    ]
+  },
+  {
+    "id": "debug-019",
+    "title": "Repair: Inventory frequencies",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Return an object mapping each integer, converted to a string key, to its frequency in the array.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          2,
+          3
+        ],
+        "expected": {
+          "2": 2,
+          "3": 1
+        },
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": {},
+        "hidden": true
+      },
+      {
+        "input": [
+          -1,
+          -1
+        ],
+        "expected": {
+          "-1": 2
+        },
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Increment a counter for every occurrence."
+    ],
+    "approach": "Increment a counter for every occurrence. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    return {str(k):v for k,v in Counter(data).items()}",
+    "buggyCode": "def solve(data):\n    from collections import Counter\n    return {str(k):v+1 for k,v in Counter(data).items()}",
+    "tags": [
+      "debugging",
+      "hashing"
+    ]
+  },
+  {
+    "id": "debug-020",
+    "title": "Repair: Count target-sum segments",
+    "topic": "Hashing",
+    "difficulty": "medium",
+    "statement": "Given an object with nums and target, return the number of nonempty contiguous subarrays summing to target. Negative values are allowed.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            1,
+            1
+          ],
+          "target": 2
+        },
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            0
+          ],
+          "target": 0
+        },
+        "expected": 3,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            1
+          ],
+          "target": 0
+        },
+        "expected": 1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Count earlier prefix sums equal to current prefix minus the target."
+    ],
+    "approach": "Count earlier prefix sums equal to current prefix minus the target. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) expected time; O(n) space",
+    "solution": "def solve(data):\n    counts={0:1}\n    total=answer=0\n    for x in data[\"nums\"]:\n        total+=x\n        answer+=counts.get(total-data[\"target\"],0)\n        counts[total]=counts.get(total,0)+1\n    return answer",
+    "buggyCode": "def solve(data):\n    counts={0:0}\n    total=answer=0\n    for x in data[\"nums\"]:\n        total+=x\n        answer+=counts.get(total-data[\"target\"],0)\n        counts[total]=counts.get(total,0)+1\n    return answer",
+    "tags": [
+      "debugging",
+      "hashing"
+    ]
+  },
+  {
+    "id": "debug-021",
+    "title": "Repair: Longest consecutive IDs",
+    "topic": "Hashing",
+    "difficulty": "medium",
+    "statement": "Return the length of the longest sequence of consecutive integer values in an unsorted array. Ignore duplicate values.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          100,
+          4,
+          200,
+          1,
+          3,
+          2
+        ],
+        "expected": 4,
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": [
+          1,
+          1,
+          2
+        ],
+        "expected": 2,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Only start expanding from a value whose predecessor is absent."
+    ],
+    "approach": "Only start expanding from a value whose predecessor is absent. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) expected time; O(n) space",
+    "solution": "def solve(data):\n    s=set(data)\n    best=0\n    for x in s:\n        if x-1 not in s:\n            y=x\n            while y in s: y+=1\n            best=max(best,y-x)\n    return best",
+    "buggyCode": "def solve(data):\n    s=set(data)\n    best=0\n    for x in s:\n        if x-1 not in s:\n            y=x\n            while y in s: y+=1\n            best=max(best,y-x+1)\n    return best",
+    "tags": [
+      "debugging",
+      "hashing"
+    ]
+  },
+  {
+    "id": "debug-022",
+    "title": "Repair: First repeated ID",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Scan an array left to right and return the first value whose second occurrence is encountered, or null if none repeats.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          2,
+          1
+        ],
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": null,
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": null,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Return as soon as membership reveals a value already seen."
+    ],
+    "approach": "Return as soon as membership reveals a value already seen. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    seen=set()\n    for x in data:\n        if x in seen: return x\n        seen.add(x)\n    return None",
+    "buggyCode": "def solve(data):\n    seen=set()\n    for x in data:\n        if x not in seen: return x\n        seen.add(x)\n    return None",
+    "tags": [
+      "debugging",
+      "hashing"
+    ]
+  },
+  {
+    "id": "debug-023",
+    "title": "Repair: Unique across rosters",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Given an object with a and b arrays, return sorted distinct values appearing in exactly one roster.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "a": [
+            1,
+            2
+          ],
+          "b": [
+            2,
+            3
+          ]
+        },
+        "expected": [
+          1,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "a": [
+            1
+          ],
+          "b": [
+            1
+          ]
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "a": [],
+          "b": [
+            2
+          ]
+        },
+        "expected": [
+          2
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Use symmetric set difference."
+    ],
+    "approach": "Use symmetric set difference. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    return sorted(set(data[\"a\"]) ^ set(data[\"b\"]))",
+    "buggyCode": "def solve(data):\n    return sorted(set(data[\"a\"]) & set(data[\"b\"]))",
+    "tags": [
+      "debugging",
+      "hashing"
+    ]
+  },
+  {
+    "id": "debug-024",
+    "title": "Repair: Most frequent ID",
+    "topic": "Hashing",
+    "difficulty": "easy",
+    "statement": "Return the most frequent integer in a nonempty array, breaking ties by choosing the smallest value.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": [
+          9
+        ],
+        "expected": 9,
+        "hidden": true
+      },
+      {
+        "input": [
+          -1,
+          2,
+          -1
+        ],
+        "expected": -1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Choose by descending frequency and then ascending value."
+    ],
+    "approach": "Choose by descending frequency and then ascending value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    c=Counter(data)\n    return min(c,key=lambda x:(-c[x],x))",
+    "buggyCode": "def solve(data):\n    from collections import Counter\n    c=Counter(data)\n    return min(c,key=lambda x:(c[x],x))",
+    "tags": [
+      "debugging",
+      "hashing"
+    ]
+  },
+  {
+    "id": "debug-025",
+    "title": "Repair: Sorted target pair",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given an object with a sorted nums array and target, return indices of a matching pair using inward-moving pointers. Return [] if none exists.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "target": 6
+        },
+        "expected": [
+          1,
+          2
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            2
+          ],
+          "target": 4
+        },
+        "expected": [
+          0,
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "If the sum is too small move the left pointer; otherwise move the right."
+    ],
+    "approach": "If the sum is too small move the left pointer; otherwise move the right. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    a=data[\"nums\"]\n    l,r=0,len(a)-1\n    while l<r:\n        s=a[l]+a[r]\n        if s==data[\"target\"]: return [l,r]\n        if s<data[\"target\"]: l+=1\n        else: r-=1\n    return []",
+    "buggyCode": "def solve(data):\n    a=data[\"nums\"]\n    l,r=0,len(a)-1\n    while l<r:\n        s=a[l]+a[r]\n        if s==data[\"target\"]: return [l,r]\n        if s<data[\"target\"]: l-=1\n        else: r-=1\n    return []",
+    "tags": [
+      "debugging",
+      "two pointers"
+    ]
+  },
+  {
+    "id": "debug-026",
+    "title": "Repair: Compact sorted values",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given a sorted array, return one copy of each distinct value, preserving ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          4,
+          4
+        ],
+        "expected": [
+          4
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Compare each value to the last emitted value."
+    ],
+    "approach": "Compare each value to the last emitted value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    out=[]\n    for x in data:\n        if not out or x!=out[-1]: out.append(x)\n    return out",
+    "buggyCode": "def solve(data):\n    out=[]\n    for x in data:\n        if not out or x==out[-1]: out.append(x)\n    return out",
+    "tags": [
+      "debugging",
+      "two pointers"
+    ]
+  },
+  {
+    "id": "debug-027",
+    "title": "Repair: Reverse characters",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Return the string with all characters in reversed order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "desk",
+        "expected": "ksed",
+        "hidden": false
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "a",
+        "expected": "a",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Swap symmetric positions while the pointers have not met."
+    ],
+    "approach": "Swap symmetric positions while the pointers have not met. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    a=list(data)\n    l,r=0,len(a)-1\n    while l<r:\n        a[l],a[r]=a[r],a[l]\n        l+=1; r-=1\n    return \"\".join(a)",
+    "buggyCode": "def solve(data):\n    a=list(data)\n    l,r=0,len(a)-1\n    while l<r:\n        a[l],a[r]=a[r],a[l]\n        l+=1; r-=2\n    return \"\".join(a)",
+    "tags": [
+      "debugging",
+      "two pointers"
+    ]
+  },
+  {
+    "id": "debug-028",
+    "title": "Repair: Square a sorted list",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given a sorted array of integers, return their squares in ascending order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          -4,
+          -1,
+          0,
+          3
+        ],
+        "expected": [
+          0,
+          1,
+          9,
+          16
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          -2
+        ],
+        "expected": [
+          4
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "The largest remaining square comes from an endpoint; fill the result backward."
+    ],
+    "approach": "The largest remaining square comes from an endpoint; fill the result backward. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    out=[0]*len(data)\n    l,r=0,len(data)-1\n    for k in range(len(data)-1,-1,-1):\n        if abs(data[l])>abs(data[r]): out[k]=data[l]**2; l+=1\n        else: out[k]=data[r]**2; r-=1\n    return out",
+    "buggyCode": "def solve(data):\n    out=[0]*len(data)\n    l,r=0,len(data)-1\n    for k in range(len(data)-1,-1,-1):\n        if abs(data[l])<abs(data[r]): out[k]=data[l]**2; l+=1\n        else: out[k]=data[r]**2; r-=1\n    return out",
+    "tags": [
+      "debugging",
+      "two pointers"
+    ]
+  },
+  {
+    "id": "debug-029",
+    "title": "Repair: Remove a chosen value",
+    "topic": "Two Pointers",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and value, return nums with every occurrence of value removed, preserving order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            1,
+            3
+          ],
+          "value": 1
+        },
+        "expected": [
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "value": 2
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            1
+          ],
+          "value": 1
+        },
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Copy only values different from the removed value."
+    ],
+    "approach": "Copy only values different from the removed value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    return [x for x in data[\"nums\"] if x!=data[\"value\"]]",
+    "buggyCode": "def solve(data):\n    return [x for x in data[\"nums\"] if x==data[\"value\"]]",
+    "tags": [
+      "debugging",
+      "two pointers"
+    ]
+  },
+  {
+    "id": "debug-030",
+    "title": "Repair: Best fixed-window sum",
+    "topic": "Sliding Window",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and k, where 1 <= k <= length, return the largest sum of exactly k consecutive values.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            2,
+            1,
+            5,
+            1,
+            3
+          ],
+          "k": 3
+        },
+        "expected": 9,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            -3,
+            -2
+          ],
+          "k": 1
+        },
+        "expected": -2,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            4
+          ],
+          "k": 1
+        },
+        "expected": 4,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Update the current sum by adding the incoming and subtracting the outgoing value."
+    ],
+    "approach": "Update the current sum by adding the incoming and subtracting the outgoing value. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    a,k=data[\"nums\"],data[\"k\"]\n    s=best=sum(a[:k])\n    for i in range(k,len(a)):\n        s+=a[i]-a[i-k]\n        best=max(best,s)\n    return best",
+    "buggyCode": "def solve(data):\n    a,k=data[\"nums\"],data[\"k\"]\n    s=best=sum(a[:k])\n    for i in range(k,len(a)):\n        s+=a[i]+a[i-k]\n        best=max(best,s)\n    return best",
+    "tags": [
+      "debugging",
+      "sliding window"
+    ]
+  },
+  {
+    "id": "debug-031",
+    "title": "Repair: Longest unique substring",
+    "topic": "Sliding Window",
+    "difficulty": "medium",
+    "statement": "Return the length of the longest contiguous substring with no repeated character.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "abcabcbb",
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": "bbbbb",
+        "expected": 1,
+        "hidden": true
+      },
+      {
+        "input": "",
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": "abba",
+        "expected": 2,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Move the left boundary past the last occurrence, never backward."
+    ],
+    "approach": "Move the left boundary past the last occurrence, never backward. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(alphabet size) space",
+    "solution": "def solve(data):\n    last={}\n    left=best=0\n    for right,c in enumerate(data):\n        left=max(left,last.get(c,-1)+1)\n        last[c]=right\n        best=max(best,right-left+1)\n    return best",
+    "buggyCode": "def solve(data):\n    last={}\n    left=best=0\n    for right,c in enumerate(data):\n        left=last.get(c,-1)+1\n        last[c]=right\n        best=max(best,right-left+1)\n    return best",
+    "tags": [
+      "debugging",
+      "sliding window"
+    ]
+  },
+  {
+    "id": "debug-032",
+    "title": "Repair: Shortest positive target window",
+    "topic": "Sliding Window",
+    "difficulty": "medium",
+    "statement": "Given an object with positive nums and positive target, return the smallest length of a contiguous subarray with sum at least target, or 0 if absent.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            2,
+            3,
+            1,
+            2,
+            4,
+            3
+          ],
+          "target": 7
+        },
+        "expected": 2,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            1
+          ],
+          "target": 5
+        },
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            8
+          ],
+          "target": 7
+        },
+        "expected": 1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Positive values make shrinking a valid window monotone."
+    ],
+    "approach": "Positive values make shrinking a valid window monotone. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(1) space",
+    "solution": "def solve(data):\n    a=data[\"nums\"]\n    left=s=0\n    best=len(a)+1\n    for right,x in enumerate(a):\n        s+=x\n        while s>=data[\"target\"]:\n            best=min(best,right-left+1)\n            s-=a[left]; left+=1\n    return 0 if best==len(a)+1 else best",
+    "buggyCode": "def solve(data):\n    a=data[\"nums\"]\n    left=s=0\n    best=len(a)+1\n    for right,x in enumerate(a):\n        s+=x\n        while s>data[\"target\"]:\n            best=min(best,right-left+1)\n            s-=a[left]; left+=1\n    return 0 if best==len(a)+1 else best",
+    "tags": [
+      "debugging",
+      "sliding window"
+    ]
+  },
+  {
+    "id": "debug-033",
+    "title": "Repair: Window distinct counts",
+    "topic": "Sliding Window",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and k, 1 <= k <= length, return the number of distinct values in each length-k window.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            1,
+            3
+          ],
+          "k": 3
+        },
+        "expected": [
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            2
+          ],
+          "k": 1
+        },
+        "expected": [
+          1,
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "k": 1
+        },
+        "expected": [
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "k": 1
+        },
+        "expected": [
+          1,
+          1,
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Maintain frequencies and delete zero-count keys."
+    ],
+    "approach": "Maintain frequencies and delete zero-count keys. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import Counter\n    a,k=data[\"nums\"],data[\"k\"]\n    c=Counter(a[:k])\n    out=[len(c)]\n    for i in range(k,len(a)):\n        c[a[i-k]]-=1\n        if c[a[i-k]]==0: del c[a[i-k]]\n        c[a[i]]+=1\n        out.append(len(c))\n    return out",
+    "buggyCode": "def solve(data):\n    from collections import Counter\n    a,k=data[\"nums\"],data[\"k\"]\n    c=Counter(a[:k])\n    out=[len(c)]\n    for i in range(k,len(a)):\n        c[a[i-k]]-=1\n        if c[a[i-k]]==0: pass\n        c[a[i]]+=1\n        out.append(len(c))\n    return out",
+    "tags": [
+      "debugging",
+      "sliding window"
+    ]
+  },
+  {
+    "id": "debug-034",
+    "title": "Repair: Balanced delimiters",
+    "topic": "Stack",
+    "difficulty": "easy",
+    "statement": "Given a string containing only ()[]{} brackets, return whether it is correctly nested and balanced.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "([])",
+        "expected": true,
+        "hidden": false
+      },
+      {
+        "input": "([)]",
+        "expected": false,
+        "hidden": true
+      },
+      {
+        "input": "",
+        "expected": true,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "A closing bracket must match the most recently unmatched opening bracket."
+    ],
+    "approach": "A closing bracket must match the most recently unmatched opening bracket. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    stack=[]\n    pairs={\")\":\"(\",\"]\":\"[\",\"}\":\"{\"}\n    for c in data:\n        if c in \"([{\": stack.append(c)\n        elif not stack or stack.pop()!=pairs[c]: return False\n    return not stack",
+    "buggyCode": "def solve(data):\n    stack=[]\n    pairs={\")\":\"(\",\"]\":\"[\",\"}\":\"{\"}\n    for c in data:\n        if c in \"([{\": stack.append(c)\n        elif not stack or stack.pop()!=pairs[c]: return False\n    return bool(stack)",
+    "tags": [
+      "debugging",
+      "stack"
+    ]
+  },
+  {
+    "id": "debug-035",
+    "title": "Repair: Next greater values",
+    "topic": "Stack",
+    "difficulty": "medium",
+    "statement": "For each array value return the first strictly greater value to its right, or -1 if none exists.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          1,
+          3
+        ],
+        "expected": [
+          3,
+          3,
+          -1
+        ],
+        "hidden": false
+      },
+      {
+        "input": [
+          3,
+          3
+        ],
+        "expected": [
+          -1,
+          -1
+        ],
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Maintain unresolved indices in decreasing value order."
+    ],
+    "approach": "Maintain unresolved indices in decreasing value order. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) space",
+    "solution": "def solve(data):\n    out=[-1]*len(data)\n    stack=[]\n    for i,x in enumerate(data):\n        while stack and data[stack[-1]]<x: out[stack.pop()]=x\n        stack.append(i)\n    return out",
+    "buggyCode": "def solve(data):\n    out=[-1]*len(data)\n    stack=[]\n    for i,x in enumerate(data):\n        while stack and data[stack[-1]]>x: out[stack.pop()]=x\n        stack.append(i)\n    return out",
+    "tags": [
+      "debugging",
+      "stack"
+    ]
+  },
+  {
+    "id": "debug-036",
+    "title": "Repair: Postfix calculator",
+    "topic": "Stack",
+    "difficulty": "easy",
+    "statement": "Given an array of postfix tokens using integers and +,-,*, evaluate it. Expressions are valid and contain at least one number.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          "2",
+          "3",
+          "+",
+          "4",
+          "*"
+        ],
+        "expected": 20,
+        "hidden": false
+      },
+      {
+        "input": [
+          "5",
+          "2",
+          "-"
+        ],
+        "expected": 3,
+        "hidden": true
+      },
+      {
+        "input": [
+          "7"
+        ],
+        "expected": 7,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Push operands. Pop the right operand before the left operand."
+    ],
+    "approach": "Push operands. Pop the right operand before the left operand. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    stack=[]\n    for token in data:\n        if token in [\"+\",\"-\",\"*\"]:\n            b,a=stack.pop(),stack.pop()\n            stack.append(a+b if token==\"+\" else a-b if token==\"-\" else a*b)\n        else: stack.append(int(token))\n    return stack[0]",
+    "buggyCode": "def solve(data):\n    stack=[]\n    for token in data:\n        if token in [\"+\",\"-\",\"*\"]:\n            b,a=stack.pop(),stack.pop()\n            stack.append(a+b if token==\"+\" else b-a if token==\"-\" else a*b)\n        else: stack.append(int(token))\n    return stack[0]",
+    "tags": [
+      "debugging",
+      "stack"
+    ]
+  },
+  {
+    "id": "debug-037",
+    "title": "Repair: Adjacent duplicate cleanup",
+    "topic": "Stack",
+    "difficulty": "easy",
+    "statement": "Repeatedly remove adjacent equal character pairs until none remain. Return the remaining string.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": "abbaca",
+        "expected": "ca",
+        "hidden": false
+      },
+      {
+        "input": "aaaa",
+        "expected": "",
+        "hidden": true
+      },
+      {
+        "input": "",
+        "expected": "",
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "An equal top character cancels the incoming character."
+    ],
+    "approach": "An equal top character cancels the incoming character. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    stack=[]\n    for c in data:\n        if stack and stack[-1]==c: stack.pop()\n        else: stack.append(c)\n    return \"\".join(stack)",
+    "buggyCode": "def solve(data):\n    stack=[]\n    for c in data:\n        if stack and stack[-1]!=c: stack.pop()\n        else: stack.append(c)\n    return \"\".join(stack)",
+    "tags": [
+      "debugging",
+      "stack"
+    ]
+  },
+  {
+    "id": "debug-038",
+    "title": "Repair: Service queue log",
+    "topic": "Queue",
+    "difficulty": "easy",
+    "statement": "Given commands [\"enqueue\",value], [\"dequeue\"] or [\"front\"], return outputs for dequeue/front operations. Return null on an empty queue.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          [
+            "enqueue",
+            2
+          ],
+          [
+            "enqueue",
+            3
+          ],
+          [
+            "dequeue"
+          ],
+          [
+            "front"
+          ]
+        ],
+        "expected": [
+          2,
+          3
+        ],
+        "hidden": false
+      },
+      {
+        "input": [
+          [
+            "dequeue"
+          ]
+        ],
+        "expected": [
+          null
+        ],
+        "hidden": true
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Enqueue at the rear and remove at the front with a deque."
+    ],
+    "approach": "Enqueue at the rear and remove at the front with a deque. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import deque\n    q=deque(); out=[]\n    for cmd in data:\n        if cmd[0]==\"enqueue\": q.append(cmd[1])\n        elif cmd[0]==\"dequeue\": out.append(q.popleft() if q else None)\n        else: out.append(q[0] if q else None)\n    return out",
+    "buggyCode": "def solve(data):\n    from collections import deque\n    q=deque(); out=[]\n    for cmd in data:\n        if cmd[0]==\"enqueue\": q.append(cmd[1])\n        elif cmd[0]==\"dequeue\": out.append(q.pop() if q else None)\n        else: out.append(q[0] if q else None)\n    return out",
+    "tags": [
+      "debugging",
+      "queue"
+    ]
+  },
+  {
+    "id": "debug-039",
+    "title": "Repair: First negative per window",
+    "topic": "Queue",
+    "difficulty": "easy",
+    "statement": "Given an object with nums and k, 1 <= k <= length, return the first negative integer in each length-k window or 0 when there is none.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            -2,
+            3,
+            -4
+          ],
+          "k": 2
+        },
+        "expected": [
+          -2,
+          -2,
+          -4
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2
+          ],
+          "k": 1
+        },
+        "expected": [
+          0,
+          0
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -3
+          ],
+          "k": 1
+        },
+        "expected": [
+          -3
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Queue negative indices and remove expired indices from its front."
+    ],
+    "approach": "Queue negative indices and remove expired indices from its front. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    from collections import deque\n    a,k=data[\"nums\"],data[\"k\"]\n    q=deque(); out=[]\n    for i,x in enumerate(a):\n        if x<0: q.append(i)\n        while q and q[0]<=i-k: q.popleft()\n        if i>=k-1: out.append(a[q[0]] if q else 0)\n    return out",
+    "buggyCode": "def solve(data):\n    from collections import deque\n    a,k=data[\"nums\"],data[\"k\"]\n    q=deque(); out=[]\n    for i,x in enumerate(a):\n        if x>0: q.append(i)\n        while q and q[0]<=i-k: q.popleft()\n        if i>=k-1: out.append(a[q[0]] if q else 0)\n    return out",
+    "tags": [
+      "debugging",
+      "queue"
+    ]
+  },
+  {
+    "id": "debug-040",
+    "title": "Repair: Round-robin service order",
+    "topic": "Queue",
+    "difficulty": "easy",
+    "statement": "Given an object with positive work amounts jobs and positive quantum, repeatedly serve jobs in original order for at most quantum work units. Return indices in their completion order.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "jobs": [
+            3,
+            1,
+            2
+          ],
+          "quantum": 1
+        },
+        "expected": [
+          1,
+          2,
+          0
+        ],
+        "hidden": false
+      },
+      {
+        "input": {
+          "jobs": [
+            1,
+            1
+          ],
+          "quantum": 2
+        },
+        "expected": [
+          0,
+          1
+        ],
+        "hidden": true
+      },
+      {
+        "input": {
+          "jobs": [],
+          "quantum": 1
+        },
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Requeue unfinished jobs; emit an index only when its remaining work reaches zero."
+    ],
+    "approach": "Requeue unfinished jobs; emit an index only when its remaining work reaches zero. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(sum ceil(work/quantum)) time; O(n) space",
+    "solution": "def solve(data):\n    from collections import deque\n    q=deque(enumerate(data[\"jobs\"])); out=[]\n    while q:\n        i,work=q.popleft()\n        work-=data[\"quantum\"]\n        if work<=0: out.append(i)\n        else: q.append((i,work))\n    return out",
+    "buggyCode": "def solve(data):\n    from collections import deque\n    q=deque(enumerate(data[\"jobs\"])); out=[]\n    while q:\n        i,work=q.pop()\n        work-=data[\"quantum\"]\n        if work<=0: out.append(i)\n        else: q.append((i,work))\n    return out",
+    "tags": [
+      "debugging",
+      "queue"
+    ]
+  },
+  {
+    "id": "debug-041",
+    "title": "Repair: Reverse linked values",
+    "topic": "Linked List",
+    "difficulty": "easy",
+    "statement": "The input array serializes a singly linked list. Build nodes, reverse their next pointers, then return the reversed values as an array.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": [
+          3,
+          2,
+          1
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": [
+          7
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Save the next pointer before replacing it with the previous node."
+    ],
+    "approach": "Save the next pointer before replacing it with the previous node. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    class Node:\n        def __init__(self,v,n=None): self.v=v; self.n=n\n    head=None\n    for x in reversed(data): head=Node(x,head)\n    prev=None\n    while head:\n        nxt=head.n; head.n=prev; prev=head; head=nxt\n    out=[]\n    while prev: out.append(prev.v); prev=prev.n\n    return out",
+    "buggyCode": "def solve(data):\n    class Node:\n        def __init__(self,v,n=None): self.v=v; self.n=n\n    head=None\n    for x in data: head=Node(x,head)\n    prev=None\n    while head:\n        nxt=head.n; head.n=prev; prev=head; head=nxt\n    out=[]\n    while prev: out.append(prev.v); prev=prev.n\n    return out",
+    "tags": [
+      "debugging",
+      "linked list"
+    ]
+  },
+  {
+    "id": "debug-042",
+    "title": "Repair: Middle linked value",
+    "topic": "Linked List",
+    "difficulty": "easy",
+    "statement": "An array serializes a linked list. Return its middle value; for even length choose the second middle. Empty input returns null.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": null,
+        "hidden": true
+      },
+      {
+        "input": [
+          8
+        ],
+        "expected": 8,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "A fast pointer advancing twice as fast leaves the slow pointer at the second middle."
+    ],
+    "approach": "A fast pointer advancing twice as fast leaves the slow pointer at the second middle. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(1) for serialized input; O(n) for linked traversal; O(1) space",
+    "solution": "def solve(data):\n    return data[len(data)//2] if data else None",
+    "buggyCode": "def solve(data):\n    return data[(len(data)-1)//2] if data else None",
+    "tags": [
+      "debugging",
+      "linked list"
+    ]
+  },
+  {
+    "id": "debug-043",
+    "title": "Repair: Find target position",
+    "topic": "Binary Search",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted distinct nums and target, return its zero-based index or -1.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            7
+          ],
+          "target": 3
+        },
+        "expected": 1,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "target": 1
+        },
+        "expected": -1,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expected": -1,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 1
+        },
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Discard the half whose values cannot contain the target."
+    ],
+    "approach": "Discard the half whose values cannot contain the target. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(log n) time; O(1) space",
+    "solution": "def solve(data):\n    a=data[\"nums\"]; l,r=0,len(a)-1\n    while l<=r:\n        m=(l+r)//2\n        if a[m]==data[\"target\"]: return m\n        if a[m]<data[\"target\"]: l=m+1\n        else: r=m-1\n    return -1",
+    "buggyCode": "def solve(data):\n    a=data[\"nums\"]; l,r=0,len(a)-1\n    while l<r:\n        m=(l+r)//2\n        if a[m]==data[\"target\"]: return m\n        if a[m]<data[\"target\"]: l=m+1\n        else: r=m-1\n    return -1",
+    "tags": [
+      "debugging",
+      "binary search"
+    ]
+  },
+  {
+    "id": "debug-044",
+    "title": "Repair: First occurrence",
+    "topic": "Binary Search",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted nums and target, return the first matching index or -1.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "target": 2
+        },
+        "expected": 1,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "target": 1
+        },
+        "expected": -1,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            3
+          ],
+          "target": 2
+        },
+        "expected": -1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Search for the left boundary, then verify it actually matches."
+    ],
+    "approach": "Search for the left boundary, then verify it actually matches. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(log n) time; O(1) space",
+    "solution": "def solve(data):\n    from bisect import bisect_left\n    a=data[\"nums\"]; i=bisect_left(a,data[\"target\"])\n    return i if i<len(a) and a[i]==data[\"target\"] else -1",
+    "buggyCode": "def solve(data):\n    from bisect import bisect_right\n    a=data[\"nums\"]; i=bisect_right(a,data[\"target\"])\n    return i if i<len(a) and a[i]==data[\"target\"] else -1",
+    "tags": [
+      "debugging",
+      "binary search"
+    ]
+  },
+  {
+    "id": "debug-045",
+    "title": "Repair: Last occurrence",
+    "topic": "Binary Search",
+    "difficulty": "easy",
+    "statement": "Given an object with sorted nums and target, return the last matching index or -1.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the named object fields described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "target": 2
+        },
+        "expected": 3,
+        "hidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "target": 1
+        },
+        "expected": -1,
+        "hidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expected": -1,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Search for the first value greater than the target and step back."
+    ],
+    "approach": "Search for the first value greater than the target and step back. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(log n) time; O(1) space",
+    "solution": "def solve(data):\n    from bisect import bisect_right\n    a=data[\"nums\"]; i=bisect_right(a,data[\"target\"])-1\n    return i if i>=0 and a[i]==data[\"target\"] else -1",
+    "buggyCode": "def solve(data):\n    from bisect import bisect_right\n    a=data[\"nums\"]; i=bisect_right(a,data[\"target\"])-2\n    return i if i>=0 and a[i]==data[\"target\"] else -1",
+    "tags": [
+      "debugging",
+      "binary search"
+    ]
+  },
+  {
+    "id": "debug-046",
+    "title": "Repair: Sort three labels",
+    "topic": "Sorting",
+    "difficulty": "easy",
+    "statement": "Given an array containing only 0,1,2, return the sorted array without a general-purpose sort.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "expected": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          1,
+          1
+        ],
+        "expected": [
+          1,
+          1
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Count the three labels and reconstruct the result."
+    ],
+    "approach": "Count the three labels and reconstruct the result. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n) time; O(n) auxiliary space",
+    "solution": "def solve(data):\n    counts=[0,0,0]\n    for x in data: counts[x]+=1\n    return [0]*counts[0]+[1]*counts[1]+[2]*counts[2]",
+    "buggyCode": "def solve(data):\n    counts=[0,0,0]\n    for x in data: counts[0]+=1\n    return [0]*counts[0]+[1]*counts[1]+[2]*counts[2]",
+    "tags": [
+      "debugging",
+      "sorting"
+    ]
+  },
+  {
+    "id": "debug-047",
+    "title": "Repair: Merge meeting intervals",
+    "topic": "Sorting",
+    "difficulty": "medium",
+    "statement": "Given [start,end] intervals with start <= end, merge overlapping or touching intervals and return them sorted by start.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            8,
+            10
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            6
+          ],
+          [
+            8,
+            10
+          ]
+        ],
+        "hidden": false
+      },
+      {
+        "input": [],
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            3
+          ]
+        ],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Sort by start and extend the previous interval when the next start is within its end."
+    ],
+    "approach": "Sort by start and extend the previous interval when the next start is within its end. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(n log n) time; O(n) space",
+    "solution": "def solve(data):\n    out=[]\n    for start,end in sorted(data):\n        if out and start<=out[-1][1]: out[-1][1]=max(out[-1][1],end)\n        else: out.append([start,end])\n    return out",
+    "buggyCode": "def solve(data):\n    out=[]\n    for start,end in sorted(data):\n        if out and start<=out[-1][1]: out[-1][1]=min(out[-1][1],end)\n        else: out.append([start,end])\n    return out",
+    "tags": [
+      "debugging",
+      "sorting"
+    ]
+  },
+  {
+    "id": "debug-048",
+    "title": "Repair: Recursive digit sum",
+    "topic": "Recursion",
+    "difficulty": "easy",
+    "statement": "Given a nonnegative integer at most 10^12, return the sum of its decimal digits using recursion.",
+    "inputFormat": "A single JSON value is passed to solve(data). Use the array, string, or number described above.",
+    "outputFormat": "Return the JSON-compatible result described in the statement. Do not print the answer.",
+    "constraints": "Inputs follow the stated shape. Arrays and strings contain at most 10,000 items unless stated otherwise. Integer magnitudes are at most 10^6. Empty inputs are included only where a result is defined below.",
+    "tests": [
+      {
+        "input": 507,
+        "expected": 12,
+        "hidden": false
+      },
+      {
+        "input": 0,
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": 99,
+        "expected": 18,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace the sample carefully; do not assume the current implementation preserves the invariant.",
+      "Remove one final digit on each recursive call and define a single-digit base case."
+    ],
+    "approach": "Remove one final digit on each recursive call and define a single-digit base case. Implement the invariant in solve(data) and return the requested value. Check the sample and boundary cases before submission.",
+    "complexity": "O(log n) time and recursion space",
+    "solution": "def solve(data):\n    def visit(n):\n        return n if n<10 else n%10+visit(n//10)\n    return visit(data)",
+    "buggyCode": "def solve(data):\n    def visit(n):\n        return n if n<10 else n%10-visit(n//10)\n    return visit(data)",
+    "tags": [
+      "debugging",
+      "recursion"
+    ]
+  },
+  {
+    "id": "debug-049",
+    "title": "Repair: Account interest",
+    "topic": "OOP",
+    "difficulty": "easy",
+    "statement": "Given an object with principal and integer percent, an Account class should compute principal * percent / 100. Return the interest as a number.",
+    "inputFormat": "JSON object with principal and percent.",
+    "outputFormat": "Numeric interest amount.",
+    "constraints": "0 <= principal <= 1000000; 0 <= percent <= 100.",
+    "tests": [
+      {
+        "input": {
+          "principal": 1000,
+          "percent": 5
+        },
+        "expected": 50
+      },
+      {
+        "input": {
+          "principal": 0,
+          "percent": 10
+        },
+        "expected": 0,
+        "hidden": true
+      },
+      {
+        "input": {
+          "principal": 200,
+          "percent": 0
+        },
+        "expected": 0,
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Trace how the object fields are used by its method.",
+      "A percentage multiplies the base before dividing by 100."
+    ],
+    "approach": "Encapsulate principal in the Account and compute interest using the percentage formula.",
+    "complexity": "O(1) time and space",
+    "solution": "def solve(data):\n    class Account:\n        def __init__(self, principal): self.principal=principal\n        def interest(self, percent): return self.principal * percent / 100\n    return Account(data[\"principal\"]).interest(data[\"percent\"])",
+    "buggyCode": "def solve(data):\n    class Account:\n        def __init__(self, principal): self.principal=principal\n        def interest(self, percent): return self.principal + percent / 100\n    return Account(data[\"principal\"]).interest(data[\"percent\"])",
+    "tags": [
+      "oop",
+      "debugging"
+    ]
+  },
+  {
+    "id": "debug-050",
+    "title": "Repair: Grouped sales filter",
+    "topic": "SQL-like logic",
+    "difficulty": "medium",
+    "statement": "Given an object with rows (objects containing team and amount) and threshold, return sorted team names whose total amount is strictly greater than threshold. Implement the equivalent of GROUP BY team HAVING SUM(amount) > threshold.",
+    "inputFormat": "JSON object with rows array and threshold.",
+    "outputFormat": "Sorted array of team names.",
+    "constraints": "At most 10000 rows; each amount is an integer.",
+    "tests": [
+      {
+        "input": {
+          "rows": [
+            {
+              "team": "A",
+              "amount": 10
+            },
+            {
+              "team": "A",
+              "amount": 20
+            },
+            {
+              "team": "B",
+              "amount": 15
+            }
+          ],
+          "threshold": 20
+        },
+        "expected": [
+          "A"
+        ]
+      },
+      {
+        "input": {
+          "rows": [
+            {
+              "team": "A",
+              "amount": 20
+            }
+          ],
+          "threshold": 20
+        },
+        "expected": [],
+        "hidden": true
+      },
+      {
+        "input": {
+          "rows": [],
+          "threshold": 0
+        },
+        "expected": [],
+        "hidden": true
+      }
+    ],
+    "hints": [
+      "Compare filtering rows before grouping against filtering group totals.",
+      "Accumulate every row first, then apply the HAVING-style condition."
+    ],
+    "approach": "Build team totals with a map, then select and sort teams whose totals exceed threshold.",
+    "complexity": "O(n+g log g) time; O(g) space",
+    "solution": "def solve(data):\n    totals={}\n    for row in data[\"rows\"]:\n        totals[row[\"team\"]]=totals.get(row[\"team\"],0)+row[\"amount\"]\n    return sorted(team for team,total in totals.items() if total>data[\"threshold\"])",
+    "buggyCode": "def solve(data):\n    totals={}\n    for row in data[\"rows\"]:\n        if row[\"amount\"]>data[\"threshold\"]:\n            totals[row[\"team\"]]=totals.get(row[\"team\"],0)+row[\"amount\"]\n    return sorted(team for team,total in totals.items() if total>data[\"threshold\"])",
+    "tags": [
+      "sql",
+      "grouping",
+      "debugging"
+    ]
+  }
+]

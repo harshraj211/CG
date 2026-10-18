@@ -1,0 +1,60 @@
+**Solution Explanation**
+
+The problem is the classic *maximum sub‑array sum* (Kadane’s algorithm).
+
+* `current` – the maximum sum of a sub‑array that **must end** at the current position.
+* `best` – the maximum sum seen so far over all positions.
+
+For each element `x` we can either start a new sub‑array at `x` or extend the previous one:
+
+```
+current = max(x, current + x)
+best    = max(best, current)
+```
+
+The algorithm scans the array once, using only two integer variables, so it runs in linear time and constant extra space.
+
+**Correctness Sketch**
+
+*Initialization*:  
+`current = best = data[0]`. The only sub‑array ending at index 0 is `[data[0]]`, so both variables are correct.
+
+*Maintenance*:  
+Assume after processing `data[0..i‑1]` that `current` equals the maximum sum of a sub‑array ending at `i‑1`, and `best` equals the maximum sum of any sub‑array in `data[0..i‑1]`.  
+When processing `data[i] = x` we consider two possibilities for a sub‑array ending at `i`:
+1. Start a new sub‑array `[x]` → sum `x`.
+2. Extend the best sub‑array ending at `i‑1` → sum `current + x`.  
+Taking the larger of these gives the correct `current`.  
+Updating `best` with `max(best, current)` preserves the invariant that `best` is the maximum over all processed positions.
+
+*Termination*:  
+After the last element, `best` is the maximum sum of any non‑empty contiguous sub‑array of the whole input, which is exactly the required answer.
+
+**Complexity Analysis**
+
+* Time: `O(n)` – one pass over the `n` elements.  
+* Space: `O(1)` – only two extra integer variables.
+
+**Reference Implementation (Python)**
+
+```python
+def solve(data):
+    """
+    Returns the largest sum of a non‑empty contiguous subarray.
+    `data` is a list of integers (non‑empty).
+    """
+    # Initialise with the first element
+    current = best = data[0]
+
+    # Process the remaining elements
+    for x in data[1:]:
+        # Best sum ending at this position
+        current = x if x > current + x else current + x
+        # Overall best so far
+        if current > best:
+            best = current
+
+    return best
+```
+
+The function follows the execution contract: it receives the already‑decoded JSON array as `data` and returns the integer result without any I/O.
